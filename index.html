@@ -18,9 +18,7 @@
          <header>
             <nav>
                <div class="name">
-                  <a href="#hero">
-                     <h2>Weerasiri <span>Grocery Mart</span></h2>
-                  </a>
+                  <h2>Weerasiri <span>Grocery Mart</span></h2>
                </div>
                <ul class="nav-links">
                   <li><a href="#about">About</a></li>
@@ -32,10 +30,11 @@
             </nav>
          </header>
          <main>
-            <section class="hero">
+            <section class="hero" id="hero">
                <div class="text-content">
                   <h1><span>Supermarket</span> at Your Doorstep</h1>
-                  <a href="./login.php" class="cta">Explore</a>
+                  <h3>Delivery service only availble in Yakkala area</h3>
+                  <a href="./login.php" class="cta" id="home-cta">Explore</a>
                </div>
                <div class="img-container">
                   <img src="./images/cashier.png" alt="cashier">
@@ -43,24 +42,78 @@
             </section>
          </main>
       </div>
-      <section class="about">
-         <div class="img-container">
-            <img src="./images/fruits.png" alt="fruits">
-         </div>
-         <div class="text-content">
-            <div class="our-story">
-               <h2>Our Stroy</h2>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non aliquet fermentum, tortor vel. Arcu
-                  eu morbi enim aliquam
-                  pharetra commodo. Et accumsan eget aliquam aliquet mauris dolor sed purus. Tristique</p>
+      <section class="about" id="about">
+         <div class="about-container">
+            <div class="img-container">
+               <img src="./images/fruits.png" alt="fruits">
             </div>
-            <div class="our-mission">
-               <h2>Our Mission</h2>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non aliquet fermentum, tortor vel. Arcu
-                  eu morbi enim aliquam
-                  pharetra commodo. Et accumsan eget aliquam aliquet mauris dolor sed purus. Tristique</p>
+            <div class="text-content">
+               <h1>About us</h1>
+               <div class="our-story">
+                  <h2>Our Stroy</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non aliquet fermentum, tortor vel. Arcu
+                     eu morbi enim aliquam
+                     pharetra commodo. Et accumsan eget aliquam aliquet mauris dolor sed purus. Tristique</p>
+               </div>
+               <div class="our-mission">
+                  <h2>Our Mission</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non aliquet fermentum, tortor vel. Arcu
+                     eu morbi enim aliquam
+                     pharetra commodo. Et accumsan eget aliquam aliquet mauris dolor sed purus. Tristique</p>
+               </div>
             </div>
          </div>
+      </section>
+      <section class="services" id="services">
+         <h1>We Offer,</h1>
+         <div class="services-container">
+            <div class="card card 1">
+               <div class="icon-container">
+                  <img src="./icons/money.svg" alt="money">
+               </div>
+               <h3>Affordable Prices</h3>
+            </div>
+            <div class="card card 2">
+               <div class="icon-container">
+                  <img src="./icons/route.svg" alt="route">
+               </div>
+               <h3>Cash on Delivery</h3>
+            </div>
+            <div class="card card 3">
+               <div class="icon-container">
+                  <img src="./icons/clock.svg" alt="clock">
+               </div>
+               <h3>Delivery within 3 hours</h3>
+            </div>
+         </div>
+      </section>
+      <section class="contact" id="contact">
+         <div class="contact-container">
+            <div class="text-content">
+               <h1>Contact us</h1>
+               <form action="">
+                  <input type="text" placeholder="Your email"> <br>
+                  <button type="submit" id="submit-contact">Submit</button>
+               </form>
+               <div class="location-container">
+                  <img class="location" src="./icons/location.svg" alt="location">
+                  <a href="https://www.google.com/maps/place/Weerasiri+Bake+House+%26+Stores/@7.0868127,80.0345609,15z/data=!4m5!3m4!1s0x0:0x16243091d85e3887!8m2!3d7.0868127!4d80.0345609"
+                     target="blank">Our Location</a>
+               </div>
+            </div>
+            <div class="img-container">
+               <img src="./images/contact.png" alt="contact" class="contact-img">
+            </div>
+            <a href="#landing"><img src="./icons/up.svg" alt="up-arrow" class="up-arrow"></a>
+         </div>
+         <footer>
+            <h3>Tel - 011 222 2222, 011 333 3333</h3>
+            <ul class="social-links">
+               <li><a href="#"><img src="./icons/facebook.svg" alt="facebook"></a></li>
+               <li><a href="#"><img src="./icons/instagram.svg" alt="facebook"></a></li>
+               <li><a href="#"><img src="./icons/twitter.svg" alt="facebook"></a></li>
+            </ul>
+         </footer>
       </section>
       <script src="./js/menu.js"></script>
    </body>
