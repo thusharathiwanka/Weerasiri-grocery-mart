@@ -475,7 +475,12 @@ footer h3 {
   html {
     font-size: 50%;
   }
-}
+  #menu{
+    width: 8%;
+  }
+  #close {
+    width: 5%;
+  }
 
 @media screen and (max-width: 350px) {
   footer ul img {
