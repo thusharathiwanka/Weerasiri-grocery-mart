@@ -257,7 +257,7 @@ footer h3 {
   min-height: 90vh;
   margin: auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -266,11 +266,14 @@ footer h3 {
   height: 50vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  flex: 2 1 30rem;
+  padding-left: 10rem;
 }
 
 .contact .contact-container .img-container {
   text-align: center;
+  flex: 1 1 30rem;
 }
 
 .contact .contact-container .img-container img {
@@ -293,10 +296,6 @@ footer h3 {
   padding: 1rem;
   background: #06817b;
   border-radius: 50%;
-}
-
-.location {
-  width: 10%;
 }
 
 #submit-contact:hover {
@@ -350,10 +349,10 @@ footer h3 {
   }
 }
 
-@media screen and (max-width: 1149px) {
-  .contact .text-content {
+@media screen and (max-width: 1327px) {
+  .contact .contact-container .text-content {
     margin: 4rem 2rem;
-    text-align: center;
+    padding-left: 0;
   }
   .contact .contact-container .img-container {
     width: 100%;
@@ -361,6 +360,12 @@ footer h3 {
   }
   .contact .contact-container .location-container {
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1221px) {
+  .contact .contact-container .text-content {
+    text-align: center;
   }
 }
 
@@ -438,6 +443,9 @@ footer h3 {
 @media screen and (max-width: 600px) {
   footer ul img {
     width: 90%;
+  }
+  .location {
+    width: 8%;
   }
 }
 
