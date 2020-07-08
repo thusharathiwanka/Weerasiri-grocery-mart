@@ -263,7 +263,6 @@ footer h3 {
 }
 
 /* Media queries */
-
 @media screen and (max-width: 1560px) {
   .hero {
     font-size: 50%;
