@@ -313,6 +313,9 @@ footer h3 {
   .contact .contact-container .text-content {
     text-align: center;
   }
+  button {
+    margin: 2rem;
+  }
 }
 
 @media screen and (max-width: 830px) {
