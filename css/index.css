@@ -1,12 +1,4 @@
 /* Global styles */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -28,9 +20,7 @@ h2 {
 }
 
 body {
-  font-family: "poppins", sans-serif;
   color: white;
-  animation: landing 1s ease-in-out;
 }
 
 main {
@@ -351,11 +341,5 @@ footer h3 {
 
   .up-arrow {
     display: none;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  html {
-    font-size: 50%;
   }
 }

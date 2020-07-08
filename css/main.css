@@ -1,4 +1,18 @@
+/* Resetting default values */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Header and Footer */
+body {
+  font-family: "poppins", sans-serif;
+  animation: landing 1s ease-in-out;
+}
+
 header {
   max-width: 90%;
   margin: auto;
@@ -30,6 +44,24 @@ footer {
 
 footer h3 {
   flex: 3 1 30rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.3rem;
 }
 
 .nav-links,
@@ -51,6 +83,7 @@ footer h3 {
   right: 5%;
 }
 
+/* Media queries */
 @media screen and (max-width: 1066px) {
   footer {
     text-align: center;
@@ -94,6 +127,19 @@ footer h3 {
     transform: translateX(-100%);
   }
 }
+
+@media screen and (max-width: 830px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  html {
+    font-size: 80%;
+  }
+}
+
 @media screen and (max-width: 600px) {
   footer ul img {
     width: 90%;
@@ -102,11 +148,22 @@ footer h3 {
     width: 8%;
   }
 }
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 70%;
+  }
+}
+
 @media screen and (max-width: 450px) {
   footer ul img {
     width: 80%;
   }
+  html {
+    font-size: 60%;
+  }
 }
+
 @media screen and (max-width: 400px) {
   #menu {
     width: 8%;
@@ -114,7 +171,11 @@ footer h3 {
   #close {
     width: 5%;
   }
+  html {
+    font-size: 50%;
+  }
 }
+
 @media screen and (max-width: 350px) {
   footer ul img {
     width: 70%;
