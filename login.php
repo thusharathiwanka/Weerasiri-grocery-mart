@@ -34,6 +34,7 @@
                <input type="text" name="username" id="username" required autocomplete="off">
                <label for="password">Password</label>
                <input type="password" name="password" id="password" required autocomplete="off">
+               <p>Don't have an account ? <a href="./sign_up.php"> Sign Up</a></p>
                <button type="submit" name="submit">Login</button>
             </form>
          </div>

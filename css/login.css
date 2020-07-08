@@ -1,8 +1,9 @@
 /* Global styles */
 body {
-  background: linear-gradient(#ffbc70, #6e3622);
+  background: linear-gradient(#eb6370, #6e3622);
   color: white;
   overflow: hidden;
+  animation: landing 1s ease-in-out;
 }
 
 main {
@@ -12,6 +13,17 @@ main {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+}
+
+p {
+  padding-top: 2rem;
 }
 
 button {
@@ -52,6 +64,7 @@ label {
   flex-direction: column;
   padding-left: 15rem;
   flex: 3 1 30rem;
+  margin-bottom: 5rem;
 }
 
 .form-container form {
@@ -68,6 +81,16 @@ label {
   font-family: "poppins", sans-serif;
   padding: 0.5rem 1rem;
   width: 25rem;
+}
+
+/* Animations */
+@keyframes landing {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Media queries */
@@ -115,6 +138,7 @@ label {
   }
   .form-container {
     align-items: center;
+    text-align: center;
   }
   main {
     text-align: center;

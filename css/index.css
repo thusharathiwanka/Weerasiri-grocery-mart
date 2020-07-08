@@ -242,16 +242,6 @@ footer h3 {
   background: #77bde0;
 }
 
-/* Animations */
-@keyframes landing {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 /* Media queries */
 @media screen and (max-width: 1560px) {
   .hero {
