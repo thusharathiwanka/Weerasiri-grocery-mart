@@ -8,14 +8,16 @@
       <link rel="icon" href="./icons/watermelon.svg">
       <link rel="stylesheet" href="./css/main.css">
       <link rel="stylesheet" href="./css/login.css">
-      <title>Weerasiri Grocery Mart</title>
+      <title>Login</title>
    </head>
 
    <body>
       <header>
          <nav>
             <div class="name">
-               <h2>Weerasiri <span>Grocery Mart</span></h2>
+               <a href="./">
+                  <h2>Weerasiri <span>Grocery Mart</span></h2>
+               </a>
             </div>
             <ul class="nav-links">
                <li><a href="./#about">About</a></li>

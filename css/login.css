@@ -8,7 +8,7 @@ body {
 
 main {
   width: 100%;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,6 +20,7 @@ a {
   color: white;
   font-size: 1.2rem;
   padding-left: 1rem;
+  display: inline-block;
 }
 
 p {
@@ -81,6 +82,10 @@ label {
   font-family: "poppins", sans-serif;
   padding: 0.5rem 1rem;
   width: 25rem;
+}
+
+.form-container form input:focus {
+  outline: #6a82fb solid 2px;
 }
 
 /* Animations */
