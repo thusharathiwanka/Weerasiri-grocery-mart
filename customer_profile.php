@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+      <link rel="icon" href="./icons/watermelon.svg">
+      <link rel="stylesheet" href="./css/main.css">
+      <link rel="stylesheet" href="./css/customer_profile.css">
+      <title>Profile</title>
+   </head>
+
+   <body>
+      <div class="header-container">
+         <header>
+            <nav>
+               <div class="name">
+                  <a href="./">
+                     <h2>Weerasiri <span>Grocery Mart</span></h2>
+                  </a>
+               </div>
+               <ul class="nav-links">
+                  <li><a href="./cart.php">Cart</a></li>
+                  <li><a href="./log_out.php">Log out</a></li>
+                  <li><a href="./help.html">Help</a></li>
+               </ul>
+               <img src="./icons/menu-black.svg" alt="menu" id="menu">
+               <img src="./icons/close.svg" alt="close" id="close">
+            </nav>
+         </header>
+      </div>
+      <main>
+         <div class="content-container">
+            <div class="profile-container">
+               <div class="profile-content">
+                  <h2 class="hello">Hello,</h2>
+                  <h3>Username</h3>
+                  <div class="buttons">
+                     <div class="btn-container btn1">
+                        <img src="./icons/fruit-basket.svg" alt="basket">
+                        <a href="#">Start Shopping</a>
+                     </div>
+                     <div class="btn-container btn2">
+                        <img src="./icons/edit.svg" alt="edit">
+                        <a href="#">Edit Profile</a>
+                     </div>
+                     <div class="btn-container btn3">
+                        <img src="./icons/review.svg" alt="review">
+                        <a href="#">Add Review</a>
+                     </div>
+                     <div class="btn-container btn4">
+                        <img src="./icons/delete.svg" alt="delete">
+                        <a href="#">Delete Account</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="order-container">
+               <div class="form-container">
+                  <form action="">
+                     <p>Enter date to search orders</p>
+                     <input type="date" name="search" id="search" placeholder="Enter date">
+                     <button type="submit" name="submit"><img src="./icons/search.svg" alt="search"
+                           id="search"></button>
+                  </form>
+               </div>
+               <h3 id="orders">Your Orders</h3>
+               <div class="orders-titles">
+                  <p>Order ID</p>
+                  <p>Date</p>
+                  <p>Bill Amount</p>
+                  <p>Status</p>
+               </div>
+            </div>
+         </div>
+      </main>
+      <script src="./js/menu.js"></script>
+   </body>
+
+</html>

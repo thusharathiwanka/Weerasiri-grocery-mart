@@ -82,6 +82,7 @@ label {
   font-family: "poppins", sans-serif;
   padding: 0.5rem 1rem;
   width: 25rem;
+  border-radius: 5px;
 }
 
 .form-container form input:focus {
