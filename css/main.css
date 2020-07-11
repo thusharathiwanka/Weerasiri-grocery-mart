@@ -7,6 +7,7 @@
   box-sizing: border-box;
 }
 /* Header and Footer */
+/* Global styles */
 body {
   font-family: "poppins", sans-serif;
   animation: landing 1s ease-in-out;
@@ -57,6 +58,7 @@ h2 {
   font-weight: 500;
 }
 
+/* Custom styles */
 .nav-links a {
   text-decoration: none;
   color: white;

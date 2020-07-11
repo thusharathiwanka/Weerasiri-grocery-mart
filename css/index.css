@@ -33,7 +33,6 @@ main section span {
 }
 
 /* Hero section */
-
 main .hero {
   display: flex;
   min-height: 90vh;
