@@ -1,6 +1,6 @@
 /* Global styles */
-body {
-  min-height: 100%;
+main {
+  height: 80vh;
 }
 
 h3 {
@@ -31,7 +31,16 @@ form button {
   cursor: pointer;
 }
 
+footer h3 {
+  color: #424242;
+}
+
 /* Custom styles */
+.footer-container {
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
 a,
 .nav-links a {
   text-decoration: none;
@@ -52,7 +61,7 @@ a,
 
 .profile-container {
   background: linear-gradient(#00ccbe, #1a7f86);
-  min-height: 90vh;
+  min-height: 80vh;
   min-width: 25%;
   color: white;
   flex: 1 1 30rem;
@@ -138,6 +147,12 @@ a,
   }
   form p {
     padding-top: 5rem;
+  }
+  .footer-container {
+    display: none;
+  }
+  footer {
+    display: none;
   }
 }
 

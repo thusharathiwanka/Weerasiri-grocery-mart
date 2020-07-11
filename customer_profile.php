@@ -75,6 +75,16 @@
             </div>
          </div>
       </main>
+      <div class="footer-container">
+         <footer>
+            <h3>Tel - 011 222 2222, 011 333 3333</h3>
+            <ul class="social-links">
+               <li><a href="#"><img src="./icons/facebook-black.svg" alt="facebook"></a></li>
+               <li><a href="#"><img src="./icons/instagram-black.svg" alt="facebook"></a></li>
+               <li><a href="#"><img src="./icons/twitter-black.svg" alt="facebook"></a></li>
+            </ul>
+         </footer>
+      </div>
       <script src="./js/menu.js"></script>
    </body>
 

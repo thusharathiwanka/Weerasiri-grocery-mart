@@ -104,6 +104,10 @@ h2 {
     padding: 2rem;
   }
 
+  footer h3 {
+    padding-top: 1rem;
+  }
+
   .nav-links {
     position: fixed;
     flex-direction: column;
