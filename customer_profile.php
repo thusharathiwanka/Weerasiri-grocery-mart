@@ -16,9 +16,7 @@
          <header>
             <nav>
                <div class="name">
-                  <a href="./">
-                     <h2>Weerasiri <span>Grocery Mart</span></h2>
-                  </a>
+                  <h2>Weerasiri <span>Grocery Mart</span></h2>
                </div>
                <ul class="nav-links">
                   <li><a href="./cart.php">Cart</a></li>
