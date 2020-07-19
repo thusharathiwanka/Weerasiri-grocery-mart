@@ -30,7 +30,7 @@
       </header>
       <main>
          <h1>Sign Up</h1>
-         <form action="">
+         <form action="./includes/sign_up_inc.php" method="POST">
             <label for="name">Name</label>
             <input type="text" name="name" id="name" required autocomplete="off">
             <label for="email">E-mail</label>
