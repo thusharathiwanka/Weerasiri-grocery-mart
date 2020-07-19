@@ -8,7 +8,7 @@
       <link rel="icon" href="./icons/watermelon.svg">
       <link rel="stylesheet" href="./css/main.css">
       <link rel="stylesheet" href="./css/customer_orders.css">
-      <title>Orders</title>
+      <title>Profile</title>
    </head>
 
    <body>
@@ -57,7 +57,7 @@
             </div>
             <div class="order-container">
                <div class="edit-form-container profile-details">
-                  <h2>Profile Details</h2>
+                  <h2 class="profile-title">Profile Details</h2>
                   <a href="./edit_customer_profile.php" class="edit">Edit Details</a>
                </div>
             </div>

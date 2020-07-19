@@ -99,6 +99,10 @@ a,
   background: #43b146;
 }
 
+.name {
+  color: #424242;
+}
+
 .edit-form-container a:hover {
   background: #57e05c;
 }
@@ -159,6 +163,10 @@ a,
   align-items: center;
   flex-direction: column;
   min-height: 80vh;
+}
+
+.profile-title {
+  color: #424242;
 }
 
 .cart-img {
