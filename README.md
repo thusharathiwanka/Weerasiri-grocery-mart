@@ -1,4 +1,4 @@
 # Weerasiri-grocery-mart
 Online grocery store
 
-https://weerasirigrocerymart.netlify.app/
+Check out front end here => https://weerasirigrocerymart.netlify.app/
