@@ -8,8 +8,7 @@
       <link rel="icon" href="./icons/watermelon.svg">
       <link rel="stylesheet" href="./css/main.css">
       <link rel="stylesheet" href="./css/customer_orders.css">
-      <link rel="stylesheet" href="./css/edit_customer_profile.css">
-      <title>Edit Profile</title>
+      <title>Orders</title>
    </head>
 
    <body>
@@ -39,7 +38,7 @@
                   <div class="buttons">
                      <div class="btn-container btn1">
                         <img src="./icons/fruit-basket.svg" alt="basket">
-                        <a href="#">Start Shopping</a>
+                        <a href="menu.php">Start Shopping</a>
                      </div>
                      <div class="btn-container btn2">
                         <img src="./icons/edit.svg" alt="edit">
@@ -57,28 +56,33 @@
                </div>
             </div>
             <div class="order-container">
-               <div class="edit-form-container">
-                  <h2>Edit Profile</h2>
+               <div class="form-container">
                   <form action="">
-                     <label for="name">Name</label>
-                     <input type="text" name="name" id="name" required autocomplete="off">
-                     <label for="email">E-mail</label>
-                     <input type="email" name="email" id="email" required autocomplete="off">
-                     <label for="username">Username</label>
-                     <input type="text" name="username" id="username" required autocomplete="off">
-                     <label for="password">Password</label>
-                     <input type="password" name="password" id="password" required autocomplete="off">
-                     <label for="mobile">Mobile Number</label>
-                     <input type="text" name="mobile" id="mobile" required autocomplete="off" maxlength="10">
-                     <label for="address">Home Address</label>
-                     <input type="text" name="address" id="address" required autocomplete="off">
-                     <button type="submit" name="submit">Save Changes</button>
+                     <p>Enter date to search orders</p>
+                     <input type="date" name="search" id="search" placeholder="Enter date">
+                     <button type="submit" name="submit"><img src="./icons/search.svg" alt="search"
+                           id="search"></button>
                   </form>
+               </div>
+               <h3 id="orders">Your Orders</h3>
+               <div class="orders-titles">
+                  <p>Order ID</p>
+                  <p>Date</p>
+                  <p>Bill Amount</p>
+                  <p>Status</p>
                </div>
             </div>
          </div>
       </main>
       <div class="footer-container">
+         <footer>
+            <h3>Tel - 011 222 2222, 011 333 3333</h3>
+            <ul class="social-links">
+               <li><a href="#"><img src="./icons/facebook-black.svg" alt="facebook"></a></li>
+               <li><a href="#"><img src="./icons/instagram-black.svg" alt="facebook"></a></li>
+               <li><a href="#"><img src="./icons/twitter-black.svg" alt="facebook"></a></li>
+            </ul>
+         </footer>
       </div>
       <script src="./js/menu.js"></script>
    </body>

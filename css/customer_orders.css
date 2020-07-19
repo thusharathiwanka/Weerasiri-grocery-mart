@@ -32,7 +32,7 @@ form button {
 }
 
 footer h3 {
-  color: #424242;
+  color: #ffffff;
 }
 
 /* Custom styles */
@@ -61,7 +61,7 @@ a,
 
 .profile-container {
   background: linear-gradient(#00ccbe, #1a7f86);
-  min-height: 80vh;
+  min-height: 90vh;
   min-width: 25%;
   color: white;
   flex: 1 1 30rem;
@@ -77,11 +77,15 @@ a,
 }
 
 .buttons {
-  padding: 10rem 0;
+  padding: 2rem 0 15rem 0;
   display: flex;
   flex-direction: column;
   height: 70vh;
   justify-content: space-between;
+}
+
+.hello {
+  padding-top: 5rem;
 }
 
 .btn-container {
@@ -124,6 +128,16 @@ a,
   font-size: 1.2rem;
 }
 
+.cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-img {
+  padding-left: 1rem;
+}
+
 #orders {
   color: #424242;
   text-align: center;
@@ -135,6 +149,10 @@ a,
   .nav-links a {
     font-size: 2rem;
     color: white;
+  }
+
+  .cart-img {
+    display: none;
   }
 }
 

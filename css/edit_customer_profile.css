@@ -11,7 +11,8 @@ form {
   padding-top: 1rem;
 }
 
-form button {
+form button,
+.edit-form-container a {
   outline: none;
   border: none;
   padding: 0.6rem 3rem;
@@ -26,20 +27,21 @@ form button {
   background: #43b146;
 }
 
-button:hover {
+button:hover,
+.edit-form-container a:hover {
   background: #57e05c;
 }
 
 form input {
   padding: 0.4rem 1rem;
-  width: 25rem;
+  width: 30rem;
   border-radius: 5px;
   background: #c4c4c4;
   border: none;
 }
 
 label {
-  padding-top: 1rem;
+  padding: 1.5rem 1rem 0.5rem 1rem;
   color: #424242;
 }
 
