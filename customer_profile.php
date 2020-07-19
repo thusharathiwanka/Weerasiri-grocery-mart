@@ -8,8 +8,7 @@
       <link rel="icon" href="./icons/watermelon.svg">
       <link rel="stylesheet" href="./css/main.css">
       <link rel="stylesheet" href="./css/customer_orders.css">
-      <link rel="stylesheet" href="./css/edit_customer_profile.css">
-      <title>Profile</title>
+      <title>Orders</title>
    </head>
 
    <body>
@@ -39,7 +38,7 @@
                   <div class="buttons">
                      <div class="btn-container btn1">
                         <img src="./icons/fruit-basket.svg" alt="basket">
-                        <a href="#">Start Shopping</a>
+                        <a href="menu.php">Start Shopping</a>
                      </div>
                      <div class="btn-container btn2">
                         <img src="./icons/edit.svg" alt="edit">
@@ -57,14 +56,23 @@
                </div>
             </div>
             <div class="order-container">
-               <div class="edit-form-container">
+               <div class="edit-form-container profile-details">
                   <h2>Profile Details</h2>
                   <a href="./edit_customer_profile.php" class="edit">Edit Details</a>
                </div>
             </div>
          </div>
+         </div>
       </main>
       <div class="footer-container">
+         <footer>
+            <h3>Tel - 011 222 2222, 011 333 3333</h3>
+            <ul class="social-links">
+               <li><a href="#"><img src="./icons/facebook-black.svg" alt="facebook"></a></li>
+               <li><a href="#"><img src="./icons/instagram-black.svg" alt="facebook"></a></li>
+               <li><a href="#"><img src="./icons/twitter-black.svg" alt="facebook"></a></li>
+            </ul>
+         </footer>
       </div>
       <script src="./js/menu.js"></script>
    </body>

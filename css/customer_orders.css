@@ -84,6 +84,25 @@ a,
   justify-content: space-between;
 }
 
+.edit-form-container a {
+  outline: none;
+  border: none;
+  padding: 0.6rem 3rem;
+  color: white;
+  font-family: "poppins", sans-serif;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  margin: 2rem 2rem 0 2rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  word-wrap: none;
+  background: #43b146;
+}
+
+.edit-form-container a:hover {
+  background: #57e05c;
+}
+
 .hello {
   padding-top: 5rem;
 }
@@ -132,6 +151,14 @@ a,
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.profile-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 80vh;
 }
 
 .cart-img {

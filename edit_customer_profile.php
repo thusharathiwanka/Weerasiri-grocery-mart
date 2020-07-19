@@ -78,8 +78,6 @@
             </div>
          </div>
       </main>
-      <div class="footer-container">
-      </div>
       <script src="./js/menu.js"></script>
    </body>
 
