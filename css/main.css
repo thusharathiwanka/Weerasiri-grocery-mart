@@ -140,6 +140,13 @@ h2 {
   .nav-open {
     transform: translateX(-100%);
   }
+
+  #logout {
+    top: 50%;
+    left: 50%;
+    display: inline-block;
+    transform: translate(-50%, 1700%);
+  }
 }
 
 @media screen and (max-width: 830px) {

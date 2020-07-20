@@ -173,6 +173,36 @@ a,
   padding-left: 1rem;
 }
 
+.customer-details {
+  padding: 4rem;
+  min-width: 50%;
+  min-height: 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-btn {
+  outline: none;
+  border: 2px #5aec60 solid;
+  background: none;
+  padding: 0.56rem 1.3rem;
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: "poppins", sans-serif;
+  color: white;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.delete-form {
+  margin: 0;
+  padding: 0;
+}
+
 #orders {
   color: #424242;
   text-align: center;
@@ -183,16 +213,14 @@ a,
   color: white;
   font-family: "poppins", sans-serif;
   font-size: 1.2rem;
-  background: #5aec60;
+  background: #43b146;
   padding: 0.56rem 1rem;
   cursor: pointer;
-}
-
-#logout-from {
-  margin-bottom: 2rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
   position: absolute;
-  left: 0;
-  top: 0;
+  right: 3%;
+  top: 3%;
 }
 
 /* Media queries */
@@ -226,7 +254,8 @@ a,
 }
 
 @media screen and (max-width: 830px) {
-  .btn-container a {
+  .btn-container a,
+  .delete-btn {
     height: 49.2px;
   }
 }

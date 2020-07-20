@@ -11,7 +11,7 @@
                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
                <link rel="icon" href="./icons/watermelon.svg">
                <link rel="stylesheet" href="./css/main.css">
-               <link rel="stylesheet" href="./css/customer_orders.css">
+               <link rel="stylesheet" href="./css/customer.css">
                <title>Orders</title>
             </head>
 
@@ -95,7 +95,7 @@
 
          </html>';
    } else {
-      header("Location: ../404.html");
+      header("Location: ./404.html");
       exit();
    }
 ?>

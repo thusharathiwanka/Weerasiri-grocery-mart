@@ -75,6 +75,10 @@ label {
   text-align: center;
 }
 
+.logout-btn {
+  margin: 0;
+}
+
 /* Media queries */
 @media screen and (max-width: 959px) {
   .edit-form-container {

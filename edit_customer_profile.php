@@ -11,7 +11,7 @@
                   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
                   <link rel="icon" href="./icons/watermelon.svg">
                   <link rel="stylesheet" href="./css/main.css">
-                  <link rel="stylesheet" href="./css/customer_orders.css">
+                  <link rel="stylesheet" href="./css/customer.css">
                   <link rel="stylesheet" href="./css/edit_customer_profile.css">
                   <title>Edit Profile</title>
                </head>
@@ -27,7 +27,7 @@
                               <li><a href="./cart.php" class="cart">Cart <img src="./icons/cart.svg" alt="cart"
                                        class="cart-img"></a></li>
                               <li><form action="./includes/logout_inc.php" method="POST" id="logout-form">
-                              <button type="submit" name="submit" id="logout">Log out</button>
+                              <button type="submit" name="submit" id="logout" class="logout-btn">Log out</button>
                               </form></li>
                               </ul>
                            <img src="./icons/menu-black.svg" alt="menu" id="menu">
@@ -88,7 +88,7 @@
 
             </html>';
    } else {
-      header("Location: ../404.html");
+      header("Location: ./404.html");
       exit();
    }
 ?>

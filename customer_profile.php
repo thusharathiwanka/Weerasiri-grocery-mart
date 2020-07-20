@@ -11,7 +11,7 @@
                   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
                   <link rel="icon" href="./icons/watermelon.svg">
                   <link rel="stylesheet" href="./css/main.css">
-                  <link rel="stylesheet" href="./css/customer_orders.css">
+                  <link rel="stylesheet" href="./css/customer.css">
                   <title>Profile</title>
                </head>
 
@@ -40,7 +40,7 @@
                         <div class="profile-container">
                            <div class="profile-content">
                               <h2 class="hello">Hello,</h2>
-                              <h3>Username</h3>
+                              <h3>'.$_SESSION['customer_name'].'</h3>
                               <div class="buttons">
                                  <div class="btn-container btn1">
                                     <img src="./icons/fruit-basket.svg" alt="basket">
@@ -56,7 +56,7 @@
                                  </div>
                                  <div class="btn-container btn4">
                                     <img src="./icons/delete.svg" alt="delete">
-                                    <a href="#">Delete Account</a>
+                                    <form method="POST" action="delete_acc_inc.php" class="delete-form"><button onclick="confirmMessage();" name="submit" class="delete-btn">Delete Account</button></form>
                                  </div>
                               </div>
                            </div>
@@ -64,6 +64,13 @@
                         <div class="order-container">
                            <div class="edit-form-container profile-details">
                               <h2 class="profile-title">Profile Details</h2>
+                              <div class="customer-details">
+                                 <h3>Name - '.$_SESSION['customer_name'].'</h3>
+                                 <h3>Email - '.$_SESSION['customer_email'].'</h3>
+                                 <h3>Username - '.$_SESSION['customer_username'].'</h3>
+                                 <h3>Mobile Number - '.$_SESSION['customer_mobile'].'</h3>
+                                 <h3>Delivery Address - '.$_SESSION['customer_address'].'</h3>
+                              </div>
                               <a href="./edit_customer_profile.php" class="edit">Edit Details</a>
                            </div>
                         </div>
@@ -81,11 +88,12 @@
                      </footer>
                   </div>
                   <script src="./js/menu.js"></script>
+                  <script src="./js/confirm.js"></script>
                </body>
 
             </html>';
    } else {
-      header("Location: ../404.html");
+      header("Location: ./404.html");
       exit();
    }         
 ?>
