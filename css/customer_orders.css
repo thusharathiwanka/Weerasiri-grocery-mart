@@ -179,6 +179,22 @@ a,
   padding: 4rem 0;
 }
 
+#logout {
+  color: white;
+  font-family: "poppins", sans-serif;
+  font-size: 1.2rem;
+  background: #5aec60;
+  padding: 0.56rem 1rem;
+  cursor: pointer;
+}
+
+#logout-from {
+  margin-bottom: 2rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 /* Media queries */
 @media screen and (max-width: 1066px) {
   .nav-links a {
