@@ -1,3 +1,6 @@
+<?php
+   session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +34,7 @@
       <main>
          <div class="form-container">
             <h1>Login</h1>
-            <form action="" method="POST">
+            <form action="./includes/login_inc.php" method="POST">
                <label for="username">Username</label>
                <input type="text" name="username" id="username" required autocomplete="off">
                <label for="password">Password</label>

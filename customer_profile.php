@@ -1,3 +1,6 @@
+<?php
+   session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +25,11 @@
                   <li><a href="./customer_profile.php">Profile</a></li>
                   <li><a href="./cart.php" class="cart">Cart <img src="./icons/cart.svg" alt="cart"
                            class="cart-img"></a></li>
-                  <li><a href="./log_out.php">Log out</a></li>
+                  <li>
+                     <form action="./includes/logout_inc.php">
+                        <button type="submit" name="submit"></button>
+                     </form>
+                  </li>
                </ul>
                <img src="./icons/menu-black.svg" alt="menu" id="menu">
                <img src="./icons/close.svg" alt="close" id="close">
