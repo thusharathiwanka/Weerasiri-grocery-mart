@@ -46,6 +46,8 @@
             <input type="text" name="mobile" id="mobile" required autocomplete="off" maxlength="10">
             <label for="address">Home Address</label>
             <input type="text" name="address" id="address" required autocomplete="off">
+            <label for="address">City</label>
+            <input type="text" name="city" id="city" required autocomplete="off">
             <button type="submit" name="submit">Sign Up</button>
          </form>
          <img src="./images/cup-cake.png" alt="cup-cake" id="cup-cake">

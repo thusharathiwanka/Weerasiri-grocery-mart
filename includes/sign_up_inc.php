@@ -8,10 +8,11 @@
       $password = mysqli_real_escape_string($conn, $_POST['password']);
       $mobile = mysqli_real_escape_string($conn, $_POST['mobile']);
       $address = mysqli_real_escape_string($conn, $_POST['address']);
+      $city = mysqli_real_escape_string($conn, $_POST['city']);
 
       //Error handling
       //Checking for empty inputs
-      if(empty($name) || empty($email) || empty($username) || empty($password) || empty($mobile) || empty($address)) {
+      if(empty($name) || empty($email) || empty($username) || empty($password) || empty($mobile) || empty($address) || empty($city)) {
          header("Location: ../sign_up.php?signup=empty");
          exit();
       } else {
@@ -34,15 +35,28 @@
                   header("Location: ../sign_up.php?signup=user_exists");
                   exit(); 
                } else {
-                  //Hashing the password
-                  $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-                  //Inserting user to table
-                  $sql = "INSERT INTO customer (customer_name, customer_email, customer_username, customer_password, customer_mobile, customer_address) VALUES ('$name', '$email', '$username', '$hashedPassword', '$mobile', '$address');";
+                  //Checking for invalid mobile number
+                  if(!preg_match("/^[0-9]*$/", $mobile)) {
+                     header("Location: ../sign_up.php?signup=mobile_invalid");
+                     exit();
+                  } else {
+                     //Checking for invalid city   City should only be yakkala.
+                     $cityCheck = strcasecmp("Yakkala", $city);
+                     
+                     if($cityCheck != 0) {
+                        header("Location: ../sign_up.php?signup=city_invalid");
+                        exit();
+                     } else {
+                        //Hashing the password
+                        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+                        //Inserting user to table
+                        $sql = "INSERT INTO customer (customer_name, customer_email, customer_username, customer_password, customer_mobile, customer_address) VALUES ('$name', '$email', '$username', '$hashedPassword', '$mobile', '$address');";
+                        $result = mysqli_query($conn, $sql);
 
-                  $result = mysqli_query($conn, $sql);
-
-                  header("Location: ../login.php?signup=success");
-                  exit();
+                        header("Location: ../login.php?signup=success");
+                        exit();
+                     }
+                  }
                }
             }
          }
