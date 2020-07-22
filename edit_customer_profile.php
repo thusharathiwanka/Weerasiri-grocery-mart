@@ -66,19 +66,21 @@
                         <div class="order-container">
                            <div class="edit-form-container">
                               <h2>Edit Profile</h2>
-                              <form action="">
-                                 <label for="name">Name</label>
+                              <form action="" class="edit-form">
+                                 <label for="name" id="edit-name">Name</label>
                                  <input type="text" name="name" id="name" required autocomplete="off" value="'.$_SESSION['customer_name'].'">
                                  <label for="email">E-mail</label>
                                  <input type="email" name="email" id="email" required autocomplete="off" value="'.$_SESSION['customer_email'].'">
                                  <label for="username">Username</label>
                                  <input type="text" name="username" id="username" required autocomplete="off" value="'.$_SESSION['customer_username'].'">
+                                 <label for="username">Password</label>
+                                 <input type="password" name="new_password" id="new_password" required autocomplete="off">
                                  <label for="mobile">Mobile Number</label>
                                  <input type="text" name="mobile" id="mobile" required autocomplete="off" maxlength="10" value="'.$_SESSION['customer_mobile'].'">
                                  <label for="address">Home Address</label>
                                  <input type="text" name="address" id="address" required autocomplete="off" value="'.$_SESSION['customer_address'].'">
-                                 <label for="password">Enter Password to Save Changes</label>
-                                 <input type="password" name="password" id="password" required autocomplete="off">
+                                 <label for="password">Enter Old Password to Save Changes</label>
+                                 <input type="password" name="current_password" id="current_password" required autocomplete="off">
                                  <button type="submit" name="submit">Save Changes</button>
                               </form>
                            </div>

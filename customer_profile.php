@@ -9,8 +9,6 @@
       $result = mysqli_query($conn, $sql);
       $checkResult = mysqli_num_rows($result);
 
-      $customerName = "";
-
       if($checkResult > 0) {
          while($row = mysqli_fetch_assoc($result)) {
             $customerName = $row['customer_name'];
