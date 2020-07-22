@@ -2,6 +2,24 @@
    session_start();
 
    if(isset($_SESSION['customer_id'])) {
+      include_once './includes/db_conn_inc.php';
+
+      $customerID = $_SESSION['customer_id'];
+      $sql = "SELECT * FROM customer WHERE customer_id='$customerID'";
+      $result = mysqli_query($conn, $sql);
+      $checkResult = mysqli_num_rows($result);
+
+      $customerName = "";
+
+      if($checkResult > 0) {
+         while($row = mysqli_fetch_assoc($result)) {
+            $customerName = $row['customer_name'];
+            $customerEmail = $row['customer_email'];
+            $customerUsername = $row['customer_username'];
+            $customerMobile = $row['customer_mobile'];
+            $customerAddress = $row['customer_address'];
+         }
+      }
       echo '<!DOCTYPE html>
             <html lang="en">
 
@@ -65,11 +83,11 @@
                            <div class="edit-form-container profile-details">
                               <h2 class="profile-title">Profile Details</h2>
                               <div class="customer-details">
-                                 <h3>Name - '.$_SESSION['customer_name'].'</h3>
-                                 <h3>Email - '.$_SESSION['customer_email'].'</h3>
-                                 <h3>Username - '.$_SESSION['customer_username'].'</h3>
-                                 <h3>Mobile Number - '.$_SESSION['customer_mobile'].'</h3>
-                                 <h3>Delivery Address - '.$_SESSION['customer_address'].'</h3>
+                                 <h3>Name - '.$customerName.'</h3>
+                                 <h3>Email - '.$customerEmail.'</h3>
+                                 <h3>Username - '.$customerUsername.'</h3>
+                                 <h3>Mobile Number - '.$customerMobile.'</h3>
+                                 <h3>Delivery Address - '.$customerAddress.'</h3>
                               </div>
                               <a href="./edit_customer_profile.php" class="edit">Edit Details</a>
                            </div>
