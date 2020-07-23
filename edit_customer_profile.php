@@ -3,7 +3,6 @@
 
    if(isset($_SESSION['customer_id'])) {
       include_once './includes/db_conn_inc.php';
-
       echo '<!DOCTYPE html>
             <html lang="en">
 
@@ -66,7 +65,7 @@
                         <div class="order-container">
                            <div class="edit-form-container">
                               <h2>Edit Profile</h2>
-                              <form action="" class="edit-form">
+                              <form class="edit-form" action="./includes/edit_profile_inc.php" method="POST">
                                  <label for="name" id="edit-name">Name</label>
                                  <input type="text" name="name" id="name" required autocomplete="off" value="'.$_SESSION['customer_name'].'">
                                  <label for="email">E-mail</label>

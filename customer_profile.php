@@ -11,7 +11,7 @@
 
       if($checkResult > 0) {
          while($row = mysqli_fetch_assoc($result)) {
-            $customerName = $row['customer_name'];
+            $GLOBALS['customerName'] = $row['customer_name'];
             $customerEmail = $row['customer_email'];
             $customerUsername = $row['customer_username'];
             $customerMobile = $row['customer_mobile'];

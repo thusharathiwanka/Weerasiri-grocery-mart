@@ -18,7 +18,7 @@
       } else {
          //Checking for valid name
          if(!preg_match("/^[a-zA-Z ]*$/", $name)) {
-            header("Location: ../sign_up.php?=name_invalid");
+            header("Location: ../sign_up.php?signup=name_invalid");
             exit();
          } else {
             //Checking for valid email
@@ -36,7 +36,7 @@
                   exit(); 
                } else {
                   //Checking for invalid mobile number
-                  if(!preg_match("/^[0-9]*$/", $mobile)) {
+                  if(!preg_match("/^[0-9]*$/", $mobile) || strlen($mobile) != 10) {
                      header("Location: ../sign_up.php?signup=mobile_invalid");
                      exit();
                   } else {
