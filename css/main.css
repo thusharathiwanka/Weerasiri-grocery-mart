@@ -83,6 +83,26 @@ h2 {
   right: 5%;
 }
 
+.status-field {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.error,
+.success {
+  background: #c34646;
+  padding: 0.8rem 5rem;
+  display: inline-block;
+  transition: all 0.5s ease-in-out;
+  font-size: 1.2rem;
+}
+
+.success {
+  background: #2f9833;
+}
+
 /* Animations */
 @keyframes landing {
   from {

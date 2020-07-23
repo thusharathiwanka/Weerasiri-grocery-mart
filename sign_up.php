@@ -29,22 +29,87 @@
          </nav>
       </header>
       <main>
+         <div class="status-field">
+            <?php
+            if(isset($_GET['signup'])) {
+               $checkSignup = $_GET['signup'];
+
+               if($checkSignup == "empty") {
+                  echo "<p class='error'>You have to fill all the fields</p>";
+               } else if($checkSignup == "name_invalid") {
+                  echo "<p class='error'>Enter a valid name</p>";
+               } else if($checkSignup == "email_invalid") {
+                  echo "<p class='error'>Enter a valid email</p>";
+               } else if($checkSignup == "user_exists") {
+                  echo "<p class='error'>This username is already taken</p>";
+               } else if($checkSignup == "mobile_invalid") {
+                  echo "<p class='error'>Enter a valid mobile number</p>";
+               } else if($checkSignup == "city_invalid") {
+                  echo "<p class='error'>Only Yakkala area customers can be registered</p>";
+               }
+            }
+         ?>
+         </div>
          <h1>Sign Up</h1>
          <form action="./includes/sign_up_inc.php" method="POST">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" required autocomplete="off">
-            <label for="email">E-mail</label>
-            <input type="email" name="email" id="email" required autocomplete="off">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" required autocomplete="off">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" required autocomplete="off">
-            <label for="mobile">Mobile Number</label>
-            <input type="text" name="mobile" id="mobile" required autocomplete="off" maxlength="10">
-            <label for="address">Home Address</label>
-            <input type="text" name="address" id="address" required autocomplete="off">
-            <label for="address">City</label>
-            <input type="text" name="city" id="city" required autocomplete="off">
+            <?php
+               if(isset($_GET['name'])) {
+                  $name = $_GET['name'];
+                  echo '<label for="name">Name</label>
+                        <input type="text" name="name" id="name" autocomplete="off" value="'.$name.'">';
+               } else {
+                  echo '<label for="name">Name</label>
+                        <input type="text" name="name" id="name" autocomplete="off">';
+               }
+               
+               if(isset($_GET['email'])) {
+                  $email = $_GET['email'];
+                  echo '<label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" autocomplete="off" value="'.$email.'">';
+               } else {
+                  echo '<label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" autocomplete="off">';
+               }
+
+               if(isset($_GET['username'])) {
+                  $username = $_GET['username'];
+                  echo '<label for="username">Username</label>
+                        <input type="text" name="username" id="username" autocomplete="off" value="'.$username.'">';
+               } else {
+                  echo '<label for="username">Username</label>
+                        <input type="text" name="username" id="username" autocomplete="off">';
+               }
+
+               echo '<label for="password">Password</label>
+                     <input type="password" name="password" id="password" autocomplete="off">';
+
+               if(isset($_GET['mobile'])) {
+                  $mobile = $_GET['mobile'];
+                  echo '<label for="mobile">Mobile Number</label>
+                        <input type="text" name="mobile" id="mobile" autocomplete="off" maxlength="10" value="'.$mobile.'">';
+               } else {
+                  echo '<label for="mobile">Mobile Number</label>
+                        <input type="text" name="mobile" id="mobile" autocomplete="off" maxlength="10">';
+               }
+
+               if(isset($_GET['address'])) {
+                  $address = $_GET['address'];
+                  echo '<label for="address">Home Address</label>
+                        <input type="text" name="address" id="address" autocomplete="off" value="'.$address.'">';
+               } else {
+                  echo '<label for="address">Home Address</label>
+                        <input type="text" name="address" id="address" autocomplete="off">';
+               }
+
+               if(isset($_GET['city'])) {
+                  $city = $_GET['city'];
+                  echo '<label for="city">City</label>
+                        <input type="text" name="city" id="city" autocomplete="off" value="'.$city.'">';
+               } else {
+                  echo '<label for="city">City</label>
+                        <input type="text" name="city" id="city" autocomplete="off">';
+               }
+            ?>
             <button type="submit" name="submit">Sign Up</button>
          </form>
          <img src="./images/cup-cake.png" alt="cup-cake" id="cup-cake">
@@ -59,6 +124,7 @@
          </ul>
       </footer>
       <script src="./js/menu.js"></script>
+      <script src="./js/headsup.js"></script>
    </body>
 
 </html>

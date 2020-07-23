@@ -28,6 +28,17 @@
             <img src="./icons/close.svg" alt="close" id="close">
          </nav>
       </header>
+      <div class="status-field">
+         <?php
+            if(isset($_GET['signup'])) {
+               $checkSignup = $_GET['signup'];
+
+               if($checkSignup == "success") {
+                  echo "<p class='success'>Your account has been created successfully</p>";
+               }
+            }
+         ?>
+      </div>
       <main>
          <div class="form-container">
             <h1>Login</h1>
@@ -45,6 +56,7 @@
          </div>
       </main>
       <script src="./js/menu.js"></script>
+      <script src="./js/headsup.js"></script>
    </body>
 
 </html>

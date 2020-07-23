@@ -9,21 +9,21 @@
       $mobile = mysqli_real_escape_string($conn, $_POST['mobile']);
       $address = mysqli_real_escape_string($conn, $_POST['address']);
       $city = mysqli_real_escape_string($conn, $_POST['city']);
-
+      
       //Error handling
       //Checking for empty inputs
       if(empty($name) || empty($email) || empty($username) || empty($password) || empty($mobile) || empty($address) || empty($city)) {
-         header("Location: ../sign_up.php?signup=empty");
+         header("Location: ../sign_up.php?signup=empty&name=$name&email=$email&username=$username&mobile=$mobile&address=$address&city=$city");
          exit();
       } else {
          //Checking for valid name
          if(!preg_match("/^[a-zA-Z ]*$/", $name)) {
-            header("Location: ../sign_up.php?signup=name_invalid");
+            header("Location: ../sign_up.php?signup=name_invalid&email=$email&username=$username&mobile=$mobile&address=$address&city=$city");
             exit();
          } else {
             //Checking for valid email
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-               header("Location: ../sign_up.php?signup=email_invalid");
+               header("Location: ../sign_up.php?signup=email_invalid&name=$name&username=$username&mobile=$mobile&address=$address&city=$city");
                exit();
             } else {
                //Checking for existing username
@@ -32,19 +32,19 @@
                $checkResult = mysqli_num_rows($result);
 
                if($checkResult > 0) {
-                  header("Location: ../sign_up.php?signup=user_exists");
+                  header("Location: ../sign_up.php?signup=user_exists&name=$name&email=$email&username=$username&mobile=$mobile&address=$address&city=$city");
                   exit(); 
                } else {
                   //Checking for invalid mobile number
                   if(!preg_match("/^[0-9]*$/", $mobile) || strlen($mobile) != 10) {
-                     header("Location: ../sign_up.php?signup=mobile_invalid");
+                     header("Location: ../sign_up.php?signup=mobile_invalid&name=$name&email=$email&username=$username&address=$address&city=$city");
                      exit();
                   } else {
                      //Checking for invalid city   City should only be yakkala.
                      $cityCheck = strcasecmp("Yakkala", $city);
                      
                      if($cityCheck != 0) {
-                        header("Location: ../sign_up.php?signup=city_invalid");
+                        header("Location: ../sign_up.php?signup=city_invalid&name=$name&email=$email&username=$username&mobile=$mobile&address=$address");
                         exit();
                      } else {
                         //Hashing the password
