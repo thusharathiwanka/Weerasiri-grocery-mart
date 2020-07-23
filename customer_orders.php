@@ -27,7 +27,7 @@
                            <li><a href="./cart.php" class="cart">Cart <img src="./icons/cart.svg" alt="cart"
                                     class="cart-img"></a></li>
                            <li><form action="./includes/logout_inc.php" method="POST" id="logout-form">
-                           <button type="submit" name="submit" id="logout">Log out</button>
+                           <button type="submit" name="submit" id="logout" onclick="return confirm(\'Do you want to log out from your account ?\')">Log out</button>
                            </form></li>
                            </ul>
                         <img src="./icons/menu-black.svg" alt="menu" id="menu">
@@ -56,7 +56,7 @@
                               </div>
                               <div class="btn-container btn4">
                                  <img src="./icons/delete.svg" alt="delete">
-                                 <a href="#">Delete Account</a>
+                                 <a href="./includes/delete_profile_inc.php" name="submit" class="delete-btn" onclick="return confirm(\'Do you want to delete your account ?\')">Delete Account</a>
                               </div>
                            </div>
                         </div>

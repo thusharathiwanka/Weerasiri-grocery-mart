@@ -28,7 +28,7 @@
                               <li><a href="./cart.php" class="cart">Cart <img src="./icons/cart.svg" alt="cart"
                                        class="cart-img"></a></li>
                               <li><form action="./includes/logout_inc.php" method="POST" id="logout-form">
-                              <button type="submit" name="submit" id="logout" class="logout-btn">Log out</button>
+                              <button type="submit" name="submit" id="logout" class="logout-btn" onclick="return confirm(\'Do you want to log out from your account ?\')">Log out</button>
                               </form></li>
                               </ul>
                            <img src="./icons/menu-black.svg" alt="menu" id="menu">
@@ -57,7 +57,7 @@
                                  </div>
                                  <div class="btn-container btn4">
                                     <img src="./icons/delete.svg" alt="delete">
-                                    <a href="#">Delete Account</a>
+                                    <a href="./includes/delete_profile_inc.php" name="submit" class="delete-btn" onclick="return confirm(\'Do you want to delete your account ?\')">Delete Account</a>
                                  </div>
                               </div>
                            </div>
@@ -78,7 +78,7 @@
                                  <input type="text" name="mobile" id="mobile" required autocomplete="off" maxlength="10" value="'.$_SESSION['customer_mobile'].'">
                                  <label for="address">Home Address</label>
                                  <input type="text" name="address" id="address" required autocomplete="off" value="'.$_SESSION['customer_address'].'">
-                                 <label for="password">Enter Old Password to Save Changes</label>
+                                 <label for="password">Enter Current Password to Save Changes</label>
                                  <input type="password" name="current_password" id="current_password" required autocomplete="off">
                                  <button type="submit" name="submit">Save Changes</button>
                               </form>
