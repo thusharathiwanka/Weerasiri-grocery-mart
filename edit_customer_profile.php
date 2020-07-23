@@ -35,8 +35,25 @@
                            <img src="./icons/close.svg" alt="close" id="close">
                         </nav>
                      </header>
-                  </div>
-                  <main>
+                  </div>';
+                  if(isset($_GET['edit'])) {
+                     $checkEdit = $_GET['edit'];
+                     
+                     if($checkEdit == "empty") {
+                        echo "<div class='status-field'><p class='error edit-success'>Fields cannot be empty</p></div>";
+                     } else if($checkEdit == "name_invalid") {
+                        echo "<div class='status-field'><p class='error edit-success'>Enter a valid name</p></div>";
+                     } else if($checkEdit == "email_invalid") {
+                        echo "<div class='status-field'><p class='error edit-success'>Enter a valid email</p></div>";
+                     } else if($checkEdit == "user_exists") {
+                        echo "<div class='status-field'><p class='error edit-success'>This username is already taken</p></div>";
+                     } else if($checkEdit == "mobile_invalid") {
+                        echo "<div class='status-field'><p class='error edit-success'>Enter a valid mobile number</p></div>";
+                     } else if($checkEdit == "old_password_invalid") {
+                        echo "<div class='status-field'><p class='error edit-success'>Your current password is invalid</p></div>";
+                     }
+                  }
+                  echo'<main>
                      <div class="content-container">
                         <div class="profile-container">
                            <div class="profile-content">
@@ -57,7 +74,8 @@
                                  </div>
                                  <div class="btn-container btn4">
                                     <img src="./icons/delete.svg" alt="delete">
-                                    <a href="./includes/delete_profile_inc.php" name="submit" class="delete-btn" onclick="return confirm(\'Do you want to delete your account ?\')">Delete Account</a>
+                                    <a href="./includes/delete_profile_inc.php" name="submit" class="delete-btn"
+                                       onclick="return confirm(\'Do you want to delete your account ?\')">Delete Account</a>
                                  </div>
                               </div>
                            </div>
@@ -67,17 +85,22 @@
                               <h2>Edit Profile</h2>
                               <form class="edit-form" action="./includes/edit_profile_inc.php" method="POST">
                                  <label for="name" id="edit-name">Name</label>
-                                 <input type="text" name="name" id="name" required autocomplete="off" value="'.$_SESSION['customer_name'].'">
+                                 <input type="text" name="name" id="name" required autocomplete="off"
+                                    value="'.$_SESSION['customer_name'].'">
                                  <label for="email">E-mail</label>
-                                 <input type="email" name="email" id="email" required autocomplete="off" value="'.$_SESSION['customer_email'].'">
+                                 <input type="email" name="email" id="email" required autocomplete="off"
+                                    value="'.$_SESSION['customer_email'].'">
                                  <label for="username">Username</label>
-                                 <input type="text" name="username" id="username" required autocomplete="off" value="'.$_SESSION['customer_username'].'">
+                                 <input type="text" name="username" id="username" required autocomplete="off"
+                                    value="'.$_SESSION['customer_username'].'">
                                  <label for="username">Password</label>
                                  <input type="password" name="new_password" id="new_password" required autocomplete="off">
                                  <label for="mobile">Mobile Number</label>
-                                 <input type="text" name="mobile" id="mobile" required autocomplete="off" maxlength="10" value="'.$_SESSION['customer_mobile'].'">
+                                 <input type="text" name="mobile" id="mobile" required autocomplete="off" maxlength="10"
+                                    value="'.$_SESSION['customer_mobile'].'">
                                  <label for="address">Home Address</label>
-                                 <input type="text" name="address" id="address" required autocomplete="off" value="'.$_SESSION['customer_address'].'">
+                                 <input type="text" name="address" id="address" required autocomplete="off"
+                                    value="'.$_SESSION['customer_address'].'">
                                  <label for="password">Enter Current Password to Save Changes</label>
                                  <input type="password" name="current_password" id="current_password" required autocomplete="off">
                                  <button type="submit" name="submit">Save Changes</button>
@@ -87,9 +110,10 @@
                      </div>
                   </main>
                   <script src="./js/menu.js"></script>
-               </body>
+                  <script src="./js/headsup.js"></script>
+                  </body>
 
-            </html>';
+                  </html>';
    } else {
       header("Location: ./404.html");
       exit();

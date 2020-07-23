@@ -50,8 +50,15 @@
                            <img src="./icons/close.svg" alt="close" id="close">
                         </nav>
                      </header>
-                  </div>
-                  <main>
+                  </div>';
+                   if(isset($_GET['edit'])) {
+                     $checkEdit = $_GET['edit'];
+
+                     if($checkEdit == "success") {
+                         echo "<div class='status-field'><p class='success edit-success'>Your account has been updated successfully</p></div>";
+                     }
+                  }
+                  echo '<main>
                      <div class="content-container">
                         <div class="profile-container">
                            <div class="profile-content">
@@ -104,6 +111,7 @@
                      </footer>
                   </div>
                   <script src="./js/menu.js"></script>
+                  <script src="./js/headsup.js"></script>
                </body>
 
             </html>';

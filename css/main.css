@@ -88,6 +88,7 @@ h2 {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  white-space: nowrap;
 }
 
 .error,
@@ -101,6 +102,12 @@ h2 {
 
 .success {
   background: #2f9833;
+}
+
+.edit-success {
+  position: absolute;
+  text-align: center;
+  color: white;
 }
 
 /* Animations */
