@@ -37,14 +37,30 @@
                   echo "<p class='success'>Your account has been created successfully</p>";
                }
             }
+
+            if(isset($_GET['login'])) {
+               $checkLogin = $_GET['login'];
+
+               if($checkLogin == "invalid") {
+                  echo "<p class='error'>Your username or password is invalid</p>";
+               }
+            }
          ?>
       </div>
       <main>
          <div class="form-container">
             <h1>Login</h1>
             <form action="./includes/login_inc.php" method="POST">
-               <label for="username">Username</label>
-               <input type="text" name="username" id="username" required autocomplete="off">
+               <?php
+               if(isset($_GET['username'])) {
+                  $username = $_GET['username'];
+                  echo '<label for="username">Username</label>
+                        <input type="text" name="username" id="username" required autocomplete="off" value="'.$username.'">';
+               } else {
+                  echo '<label for="username">Username</label>
+                        <input type="text" name="username" id="username" required autocomplete="off">';
+               }
+               ?>
                <label for="password">Password</label>
                <input type="password" name="password" id="password" required autocomplete="off">
                <p>Don't have an account ? <a href="./sign_up.php"> Sign Up</a></p>

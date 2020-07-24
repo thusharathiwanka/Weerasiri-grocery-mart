@@ -19,7 +19,7 @@
          $checkResult = mysqli_num_rows($result);
 
          if($checkResult < 1) {
-            header("Location: ../login.php?login=invalid");
+            header("Location: ../login.php?login=invalid&username=$username");
             exit();
          } else {
             if($row = mysqli_fetch_assoc($result)) {
