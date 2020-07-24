@@ -15,6 +15,17 @@
    </head>
 
    <body>
+      <div class='status-field home-status'>
+         <?php
+         if(isset($_GET['delete'])) {
+         $checkDelete = $_GET['delete'];
+         
+            if($checkDelete == "success") {
+               echo "<p class='success delete-success'>Your account has been deleted successfully</p>";
+            } 
+         }
+      ?>
+      </div>
       <div class="" id="landing">
          <header>
             <nav>
@@ -117,6 +128,7 @@
          </footer>
       </section>
       <script src="./js/menu.js"></script>
+      <script src="./js/headsup.js"></script>
    </body>
 
 </html>

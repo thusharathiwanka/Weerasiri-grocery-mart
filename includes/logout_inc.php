@@ -4,7 +4,7 @@
       session_unset();
       session_destroy();
 
-      header("Location: ../index.html?logout=success");
+      header("Location: ../index.php?logout=success");
       exit();
    } else {
       header("Location: ../customer_profile.php?logout=unsuccess");

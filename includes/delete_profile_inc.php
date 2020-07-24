@@ -10,7 +10,7 @@
       header("Location: ../customer_profile.php?delete=unsuccess");
       exit();
    } else {
-      header("Location: ../index.html?delete=success");
+      header("Location: ../index.php?delete=success");
       exit();
 
       session_unset();
