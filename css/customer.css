@@ -84,7 +84,7 @@ a,
   justify-content: space-between;
 }
 
-.edit-form-container a {
+.edit-form-container .edit {
   outline: none;
   border: none;
   padding: 0.6rem 3rem;
@@ -103,7 +103,7 @@ a,
   color: #424242;
 }
 
-.edit-form-container a:hover {
+.edit-form-container .edit:hover {
   background: #57e05c;
 }
 
@@ -201,6 +201,10 @@ a,
 .delete-form {
   margin: 0;
   padding: 0;
+}
+
+.pdf {
+  padding: 2rem;
 }
 
 #orders {

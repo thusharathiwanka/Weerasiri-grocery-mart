@@ -95,6 +95,7 @@
                                  <h3>Delivery Address - '.$customerAddress.'</h3>
                               </div>
                               <a href="./edit_customer_profile.php" class="edit">Edit Details</a>
+                              <a href="./profile_details_pdf.php" class="pdf">Create Details Report</a>
                            </div>
                         </div>
                      </div>
