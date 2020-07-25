@@ -2,6 +2,7 @@
    if(isset($_POST['submit'])) {
       include_once 'db_conn_inc.php';
 
+      //Setting up variables and escaping special characters (like sql statements)
       $name = mysqli_real_escape_string($conn, $_POST['name']);
       $email = mysqli_real_escape_string($conn, $_POST['email']);
       $username = mysqli_real_escape_string($conn, $_POST['username']);
@@ -61,7 +62,6 @@
             }
          }
       }
-
    } else {
       header("Location: ../sign_up.php");
       exit();

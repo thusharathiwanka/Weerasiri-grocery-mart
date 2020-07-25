@@ -31,28 +31,31 @@
       <main>
          <div class="status-field">
             <?php
-            if(isset($_GET['signup'])) {
-               $checkSignup = $_GET['signup'];
+               //Checking if signup is there in url
+               if(isset($_GET['signup'])) {
+                  $checkSignup = $_GET['signup'];
 
-               if($checkSignup == "empty") {
-                  echo "<p class='error'>You have to fill all the fields</p>";
-               } else if($checkSignup == "name_invalid") {
-                  echo "<p class='error'>Enter a valid name</p>";
-               } else if($checkSignup == "email_invalid") {
-                  echo "<p class='error'>Enter a valid email</p>";
-               } else if($checkSignup == "user_exists") {
-                  echo "<p class='error'>This username is already taken</p>";
-               } else if($checkSignup == "mobile_invalid") {
-                  echo "<p class='error'>Enter a valid mobile number</p>";
-               } else if($checkSignup == "city_invalid") {
-                  echo "<p class='error'>Only Yakkala area customers can be registered</p>";
+                  //Checking for signup errors
+                  if($checkSignup == "empty") {
+                     echo "<p class='error'>You have to fill all the fields</p>";
+                  } else if($checkSignup == "name_invalid") {
+                     echo "<p class='error'>Enter a valid name</p>";
+                  } else if($checkSignup == "email_invalid") {
+                     echo "<p class='error'>Enter a valid email</p>";
+                  } else if($checkSignup == "user_exists") {
+                     echo "<p class='error'>This username is already taken</p>";
+                  } else if($checkSignup == "mobile_invalid") {
+                     echo "<p class='error'>Enter a valid mobile number</p>";
+                  } else if($checkSignup == "city_invalid") {
+                     echo "<p class='error'>Only Yakkala area customers can be registered</p>";
+                  }
                }
-            }
-         ?>
+            ?>
          </div>
          <h1>Sign Up</h1>
          <form action="./includes/sign_up_inc.php" method="POST">
             <?php
+               //Filling input fields when there is any error
                if(isset($_GET['name'])) {
                   $name = $_GET['name'];
                   echo '<label for="name">Name</label>

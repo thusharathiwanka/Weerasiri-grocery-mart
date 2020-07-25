@@ -95,6 +95,7 @@
 
          </html>';
    } else {
+      //Redirecting to error page
       header("Location: ./404.html");
       exit();
    }

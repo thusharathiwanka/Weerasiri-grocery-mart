@@ -3,6 +3,7 @@
 
    if(isset($_SESSION['customer_id'])) {
       include_once './includes/db_conn_inc.php';
+      
       echo '<!DOCTYPE html>
             <html lang="en">
 
@@ -109,12 +110,13 @@
                         </div>
                      </div>
                   </main>
-                  <script src="./js/menu.js"></script>
-                  <script src="./js/headsup.js"></script>
-                  </body>
+               <script src="./js/menu.js"></script>
+               <script src="./js/headsup.js"></script>
+            </body>
 
-                  </html>';
+         </html>';
    } else {
+      //Redirecting to the error page
       header("Location: ./404.html");
       exit();
    }

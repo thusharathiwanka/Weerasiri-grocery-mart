@@ -1,9 +1,9 @@
 <?php
-   session_start();
 
    if(isset($_POST['submit'])) {
       include_once 'db_conn_inc.php';
 
+      //Setting up variables and escaping special characters (like sql statements)
       $username = mysqli_real_escape_string($conn, $_POST['username']);
       $password = mysqli_real_escape_string($conn, $_POST['password']);
 
@@ -18,11 +18,12 @@
          $result = mysqli_query($conn, $sql);
          $checkResult = mysqli_num_rows($result);
 
+         //Checking if there is any matching username
          if($checkResult < 1) {
             header("Location: ../login.php?login=invalid&username=$username");
             exit();
          } else {
-            if($row = mysqli_fetch_assoc($result)) {
+            if ($row = mysqli_fetch_assoc($result)) {
                //Dehashing the password
                $hashedPasswordCheck = password_verify($password, $row['customer_password']);
 

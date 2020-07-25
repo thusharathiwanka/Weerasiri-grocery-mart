@@ -30,6 +30,7 @@
       </header>
       <div class="status-field">
          <?php
+            //Checking if signup is there in url
             if(isset($_GET['signup'])) {
                $checkSignup = $_GET['signup'];
 
@@ -37,7 +38,7 @@
                   echo "<p class='success'>Your account has been created successfully</p>";
                }
             }
-
+            //Checking if login is there in url
             if(isset($_GET['login'])) {
                $checkLogin = $_GET['login'];
 
@@ -52,8 +53,10 @@
             <h1>Login</h1>
             <form action="./includes/login_inc.php" method="POST">
                <?php
+               //Checking if username is there in url
                if(isset($_GET['username'])) {
                   $username = $_GET['username'];
+                  //Filling text field with entered url
                   echo '<label for="username">Username</label>
                         <input type="text" name="username" id="username" required autocomplete="off" value="'.$username.'">';
                } else {

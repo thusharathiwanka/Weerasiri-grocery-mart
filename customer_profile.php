@@ -56,9 +56,9 @@
 
                      if($checkEdit == "success") {
                          echo "<div class='status-field'><p class='success edit-success'>Your account has been updated successfully</p></div>";
+                        }
                      }
-                  }
-                  echo '<main>
+                     echo '<main>
                      <div class="content-container">
                         <div class="profile-container">
                            <div class="profile-content">
@@ -117,6 +117,7 @@
 
             </html>';
    } else {
+      //Redirecting to the error page
       header("Location: ./404.html");
       exit();
    }         
