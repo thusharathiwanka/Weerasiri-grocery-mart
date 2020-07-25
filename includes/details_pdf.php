@@ -19,6 +19,8 @@
    $customerData .= '<strong>Customer Mobile No - </strong>'.$_SESSION['customer_mobile'].'<br><br>';
    $customerData .= '<strong>Customer Address - </strong>'.$_SESSION['customer_address'].'<br><br>';
 
+   //Writing pdf
    $mpdf->WriteHTML($customerData);
+   //Outputting to browser as pdf
    $mpdf->Output('My Details.pdf', 'D');
 ?>
