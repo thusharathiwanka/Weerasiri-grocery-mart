@@ -71,7 +71,7 @@
                                  </div>
                                  <div class="btn-container btn3">
                                     <img src="./icons/edit.svg" alt="edit">
-                                    <a href="./customer_orders.php">Details Report</a>
+                                    <a href="./includes/details_pdf.php">Details Report</a>
                                  </div>
                                  <div class="btn-container btn4">
                                     <img src="./icons/delete.svg" alt="delete">
