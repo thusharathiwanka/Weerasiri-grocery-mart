@@ -6,6 +6,7 @@
    $mpdf = new \Mpdf\Mpdf();
 
    $customerData = '';
+   date_default_timezone_set("Asia/Colombo");
 
    //Concatenating html and data into variable
    $customerData .= '<div style="text-align: center;">';
@@ -18,7 +19,7 @@
    $customerData .= '<strong>Customer Username - </strong>'.$_SESSION['customer_username'].'<br><br>';
    $customerData .= '<strong>Customer Mobile No - </strong>'.$_SESSION['customer_mobile'].'<br><br>';
    $customerData .= '<strong>Customer Address - </strong>'.$_SESSION['customer_address'].'<br><br>';
-
+   $customerData .= '<p>Generated on - '.date("Y-m-d").'</p>';
    //Writing pdf
    $mpdf->WriteHTML($customerData);
    //Outputting to browser as pdf
