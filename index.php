@@ -63,15 +63,18 @@
                <h1>About us</h1>
                <div class="our-story">
                   <h2>Our Stroy</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non aliquet fermentum, tortor vel. Arcu
-                     eu morbi enim aliquam
-                     pharetra commodo. Et accumsan eget aliquam aliquet mauris dolor sed purus. Tristique</p>
+                  <p>Weerasiri Grocery Mart is a private property established in Yakkala town, Gampaha district and we
+                     have been serving our customers for over 70 years.
+                     We offer our products to the customers at very reasonable prices. Here you can buy grocery
+                     products, dairy products, beverages, frozen food, stationary, household, as well as our freshly
+                     prepared bakery products.
+                  </p>
                </div>
                <div class="our-mission">
-                  <h2>Our Mission</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non aliquet fermentum, tortor vel. Arcu
-                     eu morbi enim aliquam
-                     pharetra commodo. Et accumsan eget aliquam aliquet mauris dolor sed purus. Tristique</p>
+                  <h2>Our Vision</h2>
+                  <p>To be an independent, innovative, honest and sustainable cooperative in which customers are able to
+                     choose from a wide range of goods at reasonable prices. In other words, to be a model company and a
+                     reference in the distribution sector.</p>
                </div>
             </div>
          </div>

@@ -70,12 +70,12 @@
                                     <a href="menu.php">Start Shopping</a>
                                  </div>
                                  <div class="btn-container btn2">
-                                    <img src="./icons/edit.svg" alt="edit">
-                                    <a href="./customer_orders.php">Your Orders</a>
-                                 </div>
-                                 <div class="btn-container btn3">
                                     <img src="./icons/review.svg" alt="review">
                                     <a href="#">Add Review</a>
+                                 </div>
+                                 <div class="btn-container btn3">
+                                    <img src="./icons/edit.svg" alt="edit">
+                                    <a href="./customer_orders.php">Details Report</a>
                                  </div>
                                  <div class="btn-container btn4">
                                     <img src="./icons/delete.svg" alt="delete">
@@ -95,7 +95,6 @@
                                  <h3>Delivery Address - '.$customerAddress.'</h3>
                               </div>
                               <a href="./edit_customer_profile.php" class="edit">Edit Details</a>
-                              <a href="./profile_details_pdf.php" class="pdf">Create Details Report</a>
                            </div>
                         </div>
                      </div>
