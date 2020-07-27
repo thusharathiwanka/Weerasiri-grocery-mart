@@ -30,6 +30,7 @@
                $_SESSION['admin_id'] = $row['admin_id'];
                $_SESSION['admin_username'] = $row['admin_username'];
                $_SESSION['admin_password'] = $row['admin_password'];
+               $_SESSION['admin_name'] = $row['admin_name'];
                $adminType = $row['admin_type'];
                
                //Redirecting admin to their account

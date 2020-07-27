@@ -14,18 +14,18 @@ form {
 
 form input {
   outline: none;
-  border: 2px solid #5aec60;
+  border: 2px solid #5c258d;
   font-size: 1.2rem;
   font-family: "poppins", sans-serif;
-  padding: 0.2rem 3rem;
+  padding: 0.2rem 1rem;
   position: relative;
 }
 
 form button {
   outline: none;
   border: none;
-  background: #5aec60;
-  padding: 0.56rem 1rem;
+  background: #5c258d;
+  padding: 0.5rem 1rem;
   position: absolute;
   right: 2%;
   cursor: pointer;
@@ -143,8 +143,11 @@ a,
 
 .orders-titles {
   width: 100%;
+  height: 10%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem;
 }
 
 .orders-titles p {
@@ -206,6 +209,10 @@ a,
 
 .pdf {
   padding: 2rem;
+}
+
+.customer {
+  justify-content: space-evenly;
 }
 
 #orders {
