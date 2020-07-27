@@ -3,10 +3,16 @@
 
    if(isset($_SESSION['admin_id'])) {
       include_once './includes/db_conn_inc.php';
-
-      $sql = "SELECT * FROM customer";
+      
+      //Search
+      if(isset($_POST['submit'])) {
+         $searchKey = $_POST['search'];
+         $sql = "SELECT * FROM customer WHERE customer_name LIKE '%$searchKey%'";
+      } else { //All customers
+         $sql = "SELECT * FROM customer";
+      }
       $customers = mysqli_query($conn, $sql);
-
+      
       echo '<!DOCTYPE html>
             <html lang="en">
             <head>
@@ -42,7 +48,7 @@
                            <h3>'.$_SESSION['admin_name'].'</h3>
                            <div class="buttons">
                               <div class="btn-container btn1">
-                                 <a href="#">View Customers</a>
+                                 <a href="./owner.php">View Customers</a>
                               </div>
                               <div class="btn-container btn2">
                                  <a href="./customer_orders.php">Manage Vehicles</a>
@@ -52,7 +58,7 @@
                      </div>
                      <div class="order-container">
                         <div class="form-container">
-                           <form action="">
+                           <form action="" method="POST">
                               <p>Enter name to search customers</p>
                               <input type="text" name="search" id="search">
                               <button type="submit" name="submit"><img src="./icons/search.svg" alt="search"
