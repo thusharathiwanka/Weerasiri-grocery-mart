@@ -20,12 +20,12 @@ form button,
   cursor: pointer;
   transition: background 0.3s ease-in-out;
   word-wrap: none;
-  background: #43b146;
+  background: #01b6aa;
 }
 
 button:hover,
 .edit-form-container a:hover {
-  background: #57e05c;
+  background: #1a7f86;
 }
 
 form input {

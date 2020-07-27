@@ -96,7 +96,7 @@ a,
   cursor: pointer;
   transition: background 0.3s ease-in-out;
   word-wrap: none;
-  background: #43b146;
+  background: #01b6aa;
 }
 
 .name {
@@ -104,7 +104,7 @@ a,
 }
 
 .edit-form-container .edit:hover {
-  background: #57e05c;
+  background: #1a7f86;
 }
 
 .hello {
@@ -225,7 +225,7 @@ a,
   color: white;
   font-family: "poppins", sans-serif;
   font-size: 1.2rem;
-  background: #43b146;
+  background: #01b6aa;
   padding: 0.56rem 1rem;
   cursor: pointer;
   border-radius: 5px;
