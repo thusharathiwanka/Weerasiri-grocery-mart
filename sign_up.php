@@ -47,7 +47,7 @@
                   } else if($checkSignup == "mobile_invalid") {
                      echo "<p class='error'>Enter a valid mobile number</p>";
                   } else if($checkSignup == "city_invalid") {
-                     echo "<p class='error'>Only Yakkala area customers can be registered</p>";
+                     echo "<p class='error'>Sorry, you are not eligible to register</p>";
                   }
                }
             ?>
