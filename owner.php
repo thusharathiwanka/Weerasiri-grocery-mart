@@ -33,10 +33,12 @@
                            <h2>Weerasiri <span>Grocery Mart</span></h2>
                         </div>
                         <ul class="nav-links">
+                           <li><a></a></li>
+                           <li><a href="./owner.php">Profile</a></li>
                            <li><form action="./includes/admin_logout_inc.php" method="POST" id="logout-form">
                            <button type="submit" name="submit" id="logout" onclick="return confirm(\'Do you want to log out from your account ?\')">Log out</button>
                            </form></li>
-                           </ul>
+                        </ul>
                      </nav>
                   </header>
                </div>
