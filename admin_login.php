@@ -21,7 +21,9 @@
             if(isset($_GET['login'])) {
                $checkLogin = $_GET['login'];
 
-               if($checkLogin == "invalid") {
+               if($checkLogin == "empty") {
+                  echo "<p class='error'>Username and password cannot be empty</p>";
+               } else if($checkLogin == "invalid") {
                   echo "<p class='error'>Your username or password is invalid</p>";
                }
             }
