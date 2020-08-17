@@ -62,7 +62,7 @@
                      </div>
                      <div class="order-container">
                         <div class="form-container">
-                           <form action="" method="POST">
+                           <form method="POST" class="search-form">
                               <p>Enter name to search customers</p>
                               <input type="text" name="search" id="search">
                               <button type="submit" name="submit"><img src="./icons/search.svg" alt="search"
@@ -85,7 +85,8 @@
                                  echo "<p>".$row['customer_name']."</p>";
                                  echo "<p>".$row['customer_username']."</p>";
                                  echo "<p>".$row['customer_mobile']."</p>";
-                                 echo '<form action="delete_customer_inc.php" method="POST" class="delete-form"><button class="cust-delete-btn">Delete</button></form>';
+                                 echo '<form action="./includes/delete_customer_inc.php" method="POST" id="delete-form">
+                           <button type="submit" name="submit" id="delete-customer" onclick="return confirm(\'Do you want to delete this customer ?\')">Delete</button>';
                                  echo '</div>';
                               }
                            } else {

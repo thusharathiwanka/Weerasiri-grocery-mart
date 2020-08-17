@@ -21,16 +21,6 @@ form input {
   position: relative;
 }
 
-form button {
-  outline: none;
-  border: none;
-  background: #5c258d;
-  padding: 0.5rem 1rem;
-  position: absolute;
-  right: 2%;
-  cursor: pointer;
-}
-
 footer h3 {
   color: #ffffff;
 }
@@ -48,6 +38,16 @@ a,
   font-size: 1.2rem;
   padding-left: 1rem;
   display: inline-block;
+}
+
+.search-form button {
+  outline: none;
+  border: none;
+  background: #5c258d;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  right: 2%;
+  cursor: pointer;
 }
 
 .header-container {
