@@ -29,7 +29,7 @@
                $hashedPasswordCheck = password_verify($password, $row['customer_password']);
 
                if($hashedPasswordCheck == false) {
-                  header("Location: ../login.php?login=invalid");
+                  header("Location: ../login.php?login=invalid&username=$username");
                   exit();
                } else if($hashedPasswordCheck == true) {
                   //Creating sessions and login user

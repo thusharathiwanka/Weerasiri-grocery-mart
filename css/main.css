@@ -18,6 +18,10 @@ header {
   margin: auto;
 }
 
+a {
+  text-decoration: none;
+}
+
 nav {
   min-height: 10vh;
   display: flex;
@@ -58,10 +62,14 @@ h2 {
 }
 
 /* Custom styles */
-.nav-links a {
-  text-decoration: none;
+.nav-links a,
+.buttons a {
   color: white;
   font-size: 1.3rem;
+}
+
+.buttons a {
+  font-size: 1.2rem;
 }
 
 .nav-links,

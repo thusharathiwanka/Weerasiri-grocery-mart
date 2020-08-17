@@ -87,22 +87,21 @@
                            <h3>Customer Mobile</h3>
                            <h3>Action</h3>
                         </div>';
-                           if($checkResult > 0) {
-                              while($row = mysqli_fetch_array($customers)) {
-                                 echo "<hr>";
-                                 echo '<div class="orders-titles customers">';
-                                 echo "<p>".$row['customer_id']."</p>";
-                                 echo "<p>".$row['customer_name']."</p>";
-                                 echo "<p>".$row['customer_username']."</p>";
-                                 echo "<p>".$row['customer_mobile']."</p>";
-                                 echo '<form action="./includes/delete_customer_inc.php" method="POST" id="delete-form">
-                                       <input type="hidden" name="user_id" value="'.$row['customer_id'].'">
-                                       <button type="submit" name="submit" id="delete-customer" onclick="return confirm(\'Do you want to delete this customer ?\')">Delete</button></from>';
-                                 echo '</div>';
-                              }
-                           } else {
-                              echo "<p style='text-align: center;'>There are no matches for '".$searchKey."'</p>";
+                        if($checkResult > 0) {
+                           while($row = mysqli_fetch_array($customers)) {
+                              echo "<hr>";
+                              echo '<div class="orders-titles customers">';
+                              echo "<p>".$row['customer_id']."</p>";
+                              echo "<p>".$row['customer_name']."</p>";
+                              echo "<p>".$row['customer_username']."</p>";
+                              echo "<p>".$row['customer_mobile']."</p>";
+                              echo '<button type="submit" name="submit" id="delete-customer" onclick="return confirm(\'Do you want to delete this customer ?\')"><a href="./includes/delete_customer_inc.php?delete_id='.$row['customer_id'].'">Delete</a></button>';
+                              echo '</div>';
                            }
+                        } 
+                        else {
+                           echo "<p style='text-align: center;'>There are no matches for '".$searchKey."'</p>";
+                        }
                   echo '</div>
                   </div>
                </main>
