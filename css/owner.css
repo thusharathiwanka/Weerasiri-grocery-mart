@@ -23,3 +23,7 @@
 #logout {
   background: #5c258d;
 }
+
+.status-field .success {
+  color: white;
+}

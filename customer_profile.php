@@ -43,7 +43,7 @@
                               <li><a href="./cart.php" class="cart">Cart <img src="./icons/cart.svg" alt="cart"
                                        class="cart-img"></a></li>
                               <li><form action="./includes/logout_inc.php" method="POST" id="logout-form">
-                              <button type="submit" name="submit" id="logout" onclick="return confirm(\'Do you want to log out from your account ?\')">Log out</button>
+                              <button type="submit" name="submit" class="logout-btn" id="logout" onclick="return confirm(\'Do you want to log out from your account ?\')">Log out</button>
                               </form></li>
                               </ul>
                            <img src="./icons/menu-black.svg" alt="menu" id="menu">

@@ -41,6 +41,7 @@ form input {
   border: none;
   outline: none;
   font-family: "poppins", sans-serif;
+  border-radius: 5px;
 }
 
 form input:focus {
@@ -59,6 +60,7 @@ form button {
   color: white;
   cursor: pointer;
   transition: background 0.3s ease-in-out;
+  border-radius: 5px;
 }
 
 select {
@@ -74,6 +76,7 @@ select {
   cursor: pointer;
   width: 12rem;
   padding: 0.5rem;
+  border-radius: 5px;
 }
 
 button:hover {
@@ -94,9 +97,11 @@ button:hover {
   background: #5c258d;
   top: 0;
   right: 0;
-  padding: 0.6rem;
+  padding: 0.5rem 0.6rem;
   pointer-events: none;
   transition: all 0.5s ease;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .select:hover::after {
