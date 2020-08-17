@@ -86,7 +86,7 @@
                                  echo "<p>".$row['customer_username']."</p>";
                                  echo "<p>".$row['customer_mobile']."</p>";
                                  echo '<form action="./includes/delete_customer_inc.php" method="POST" id="delete-form">
-                           <button type="submit" name="submit" id="delete-customer" onclick="return confirm(\'Do you want to delete this customer ?\')">Delete</button>';
+                                       <button type="submit" name="submit" id="delete-customer" onclick="return confirm(\'Do you want to delete this customer ?\')">Delete</button>';
                                  echo '</div>';
                               }
                            } else {
