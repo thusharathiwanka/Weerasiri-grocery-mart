@@ -8,11 +8,13 @@
       if(isset($_POST['submit'])) {
          $searchKey = $_POST['search'];
          $sql = "SELECT * FROM customer WHERE customer_name LIKE '%$searchKey%'";
-      } else { //All customers
+      } else { 
+         //All customers
          $sql = "SELECT * FROM customer";
       }
       $customers = mysqli_query($conn, $sql);
-      
+      $checkResult = mysqli_num_rows($customers);
+
       echo '<!DOCTYPE html>
             <html lang="en">
             <head>
@@ -73,15 +75,21 @@
                            <h3>Customer Name</h3>
                            <h3>Customer Username</h3>
                            <h3>Customer Mobile</h3>
+                           <h3>Action</h3>
                         </div>';
-                            while($row = mysqli_fetch_array($customers)) {
-                              echo "<hr>";
-                              echo '<div class="orders-titles customers">';
-                              echo "<p>".$row['customer_id']."</p>";
-                              echo "<p>".$row['customer_name']."</p>";
-                              echo "<p>".$row['customer_username']."</p>";
-                              echo "<p>".$row['customer_mobile']."</p>";
-                              echo '</div>';
+                           if($checkResult > 0) {
+                              while($row = mysqli_fetch_array($customers)) {
+                                 echo "<hr>";
+                                 echo '<div class="orders-titles customers">';
+                                 echo "<p>".$row['customer_id']."</p>";
+                                 echo "<p>".$row['customer_name']."</p>";
+                                 echo "<p>".$row['customer_username']."</p>";
+                                 echo "<p>".$row['customer_mobile']."</p>";
+                                 echo '<form action="delete_customer_inc.php" method="POST" class="delete-form"><button class="cust-delete-btn">Delete</button></form>';
+                                 echo '</div>';
+                              }
+                           } else {
+                              echo "<p style='text-align: center;'>There are no matches for '".$searchKey."'</p>";
                            }
                   echo '</div>
                   </div>

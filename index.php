@@ -18,7 +18,7 @@
       <div class='status-field home-status'>
          <?php
          if(isset($_GET['delete'])) {
-         $checkDelete = $_GET['delete'];
+            $checkDelete = $_GET['delete'];
          
             if($checkDelete == "success") {
                echo "<p class='success delete-success'>Your account has been deleted successfully</p>";
