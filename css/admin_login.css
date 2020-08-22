@@ -74,7 +74,7 @@ select {
   font-family: "poppins", sans-serif;
   font-size: 1rem;
   cursor: pointer;
-  width: 12rem;
+  width: 13rem;
   padding: 0.5rem;
   border-radius: 5px;
 }
@@ -97,7 +97,7 @@ button:hover {
   background: #5c258d;
   top: 0;
   right: 0;
-  padding: 0.5rem 0.6rem;
+  padding: 0.56rem 0.6rem;
   pointer-events: none;
   transition: all 0.5s ease;
   border-top-right-radius: 5px;

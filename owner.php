@@ -58,14 +58,20 @@
                   <div class="content-container">
                      <div class="profile-container">
                         <div class="profile-content">
-                           <h2 class="hello">Hello,</h2>
-                           <h3>'.$_SESSION['admin_name'].'</h3>
+                           <h2 class="hello">Admin Panel</h2>
+                           <h3>Owner</h3>
                            <div class="buttons">
                               <div class="btn-container btn1">
-                                 <a href="./owner.php">View Customers</a>
+                                 <a href="./owner.php">Manage Customers</a>
                               </div>
                               <div class="btn-container btn2">
                                  <a href="./customer_orders.php">Manage Vehicles</a>
+                              </div>
+                              <div class="btn-container btn3">
+                                 <a href="./customer_feedback.php">Manage Feedbacks</a>
+                              </div>
+                              <div class="btn-container btn4">
+                                 <a href="./customer_feedback.php">Update Details</a>
                               </div>
                            </div>
                         </div>
