@@ -1,5 +1,5 @@
 main {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,4 +119,12 @@ button:hover {
   color: white;
   border-radius: 1rem;
   padding: 1rem;
+}
+
+.header-container {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.name {
+  color: #424242;
 }

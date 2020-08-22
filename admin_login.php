@@ -15,6 +15,17 @@
    </head>
 
    <body>
+      <div class="header-container">
+         <header>
+            <nav>
+               <div class="name">
+                  <h2>Weerasiri <span>Grocery Mart</span></h2>
+               </div>
+               <img src="./icons/menu-black.svg" alt="menu" id="menu">
+               <img src="./icons/close.svg" alt="close" id="close">
+            </nav>
+         </header>
+      </div>
       <div class="status-field">
          <?php
             //Checking if login is there in url
