@@ -73,6 +73,9 @@
                               <div class="btn-container btn4">
                                  <a href="./customer_feedback.php">Update Details</a>
                               </div>
+                              <div class="btn-container btn5">
+                                 <a href="./customer_feedback.php">Income Report</a>
+                              </div>
                            </div>
                         </div>
                      </div>
