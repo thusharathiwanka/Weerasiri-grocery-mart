@@ -89,7 +89,7 @@
                            </form>
                         </div>
                         <h3 id="orders">All Registered Customers</h3>
-                        <div class="orders-titles">
+                        <div class="orders-titles titles">
                            <h3>Customer ID</h3>
                            <h3>Customer Name</h3>
                            <h3>Customer Username</h3>
