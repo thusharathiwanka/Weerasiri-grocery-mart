@@ -60,32 +60,32 @@
                if(isset($_GET['name'])) {
                   $name = $_GET['name'];
                   echo '<label for="name">Name</label>
-                        <input type="text" name="name" id="name" autocomplete="off" value="'.$name.'">';
+                        <input type="text" name="name" id="name" autocomplete="off" maxlength="50" value="'.$name.'">';
                } else {
                   echo '<label for="name">Name</label>
-                        <input type="text" name="name" id="name" autocomplete="off">';
+                        <input type="text" name="name" id="name" autocomplete="off" maxlength="50">';
                }
                
                if(isset($_GET['email'])) {
                   $email = $_GET['email'];
                   echo '<label for="email">E-mail</label>
-                        <input type="email" name="email" id="email" autocomplete="off" value="'.$email.'">';
+                        <input type="email" name="email" id="email" autocomplete="off" maxlength="50" value="'.$email.'">';
                } else {
                   echo '<label for="email">E-mail</label>
-                        <input type="email" name="email" id="email" autocomplete="off">';
+                        <input type="email" name="email" id="email" autocomplete="off" maxlength="50">';
                }
 
                if(isset($_GET['username'])) {
                   $username = $_GET['username'];
                   echo '<label for="username">Username</label>
-                        <input type="text" name="username" id="username" autocomplete="off" value="'.$username.'">';
+                        <input type="text" name="username" id="username" autocomplete="off" maxlength="20" value="'.$username.'">';
                } else {
                   echo '<label for="username">Username</label>
-                        <input type="text" name="username" id="username" autocomplete="off">';
+                        <input type="text" name="username" id="username" autocomplete="off" maxlength="20">';
                }
 
                echo '<label for="password">Password</label>
-                     <input type="password" name="password" id="password" autocomplete="off">';
+                     <input type="password" name="password" id="password" autocomplete="off" maxlength="50">';
 
                if(isset($_GET['mobile'])) {
                   $mobile = $_GET['mobile'];
@@ -99,10 +99,10 @@
                if(isset($_GET['address'])) {
                   $address = $_GET['address'];
                   echo '<label for="address">Home Address</label>
-                        <input type="text" name="address" id="address" autocomplete="off" value="'.$address.'">';
+                        <input type="text" name="address" id="address" autocomplete="off" maxlength="50" value="'.$address.'">';
                } else {
                   echo '<label for="address">Home Address</label>
-                        <input type="text" name="address" id="address" autocomplete="off">';
+                        <input type="text" name="address" id="address" autocomplete="off" maxlength="50">';
                }
 
                if(isset($_GET['city'])) {
