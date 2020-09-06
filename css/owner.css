@@ -20,7 +20,8 @@
   justify-content: center;
 }
 
-#logout {
+#logout,
+#admin-edit-btn {
   background: #5c258d;
 }
 
@@ -37,4 +38,8 @@
 
 .profile-content h3 {
   padding-bottom: 4rem;
+}
+
+.order-container h2 {
+  margin-top: 1rem;
 }

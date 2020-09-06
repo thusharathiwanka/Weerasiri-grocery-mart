@@ -51,8 +51,15 @@
                   if($checkSignup == "success") {
                      echo "<div class='status-field'><p class='success'>User deleted successfully</p></div>";
                   } else if($checkSignup == "unsuccess") {
-                     echo "<div class='status-field'><p class='error'>User not deleted. try again later</p></div>";
+                        echo "<div class='status-field'><p class='error'>User not deleted. try again later</p></div>";
                   }
+               } else if(isset($_GET['edit'])) {
+                     $checkEdit = $_GET['edit'];
+
+                     //Checking for profile updating errors
+                     if($checkEdit == "success") {
+                           echo "<div class='status-field'><p class='success edit-success'>Your account has been updated successfully</p></div>";
+                     }
                }
                echo '<main>
                   <div class="content-container">
@@ -71,7 +78,7 @@
                                  <a href="./customer_feedback.php">Manage Feedbacks</a>
                               </div>
                               <div class="btn-container btn4">
-                                 <a href="./customer_feedback.php">Update Details</a>
+                                 <a href="./admin_edit_profile.php">Update Details</a>
                               </div>
                               <div class="btn-container btn5">
                                  <a href="./customer_feedback.php">Income Report</a>
