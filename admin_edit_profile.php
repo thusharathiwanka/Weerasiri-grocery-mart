@@ -52,6 +52,8 @@
                         echo "<div class='status-field'><p class='error edit-success'>Enter a valid mobile number</p></div>";
                      } else if($checkEdit == "old_password_invalid") {
                         echo "<div class='status-field'><p class='error edit-success'>Your current password is invalid</p></div>";
+                     } else if($checkEdit == "success") {
+                        echo "<div class='status-field'><p class='success edit-success'>Your account has been updated successfully</p></div>";
                      }
                   }
                   echo'<main>
@@ -117,25 +119,6 @@
             </body>
 
          </html>';
-         if(isset($_GET['edit'])) {
-            $checkEdit = $_GET['edit'];
-            
-            if($checkEdit == "empty") {
-               echo "<div class='status-field'><p class='error edit-success'>Fields cannot be empty</p></div>";
-            } else if($checkEdit == "name_invalid") {
-               echo "<div class='status-field'><p class='error edit-success'>Enter a valid name</p></div>";
-            } else if($checkEdit == "email_invalid") {
-               echo "<div class='status-field'><p class='error edit-success'>Enter a valid email</p></div>";
-            } else if($checkEdit == "user_exists") {
-               echo "<div class='status-field'><p class='error edit-success'>This username is already taken</p></div>";
-            } else if($checkEdit == "mobile_invalid") {
-               echo "<div class='status-field'><p class='error edit-success'>Enter a valid mobile number</p></div>";
-            } else if($checkEdit == "old_password_invalid") {
-               echo "<div class='status-field'><p class='error edit-success'>Your current password is invalid</p></div>";
-            } else if($checkEdit == "success") {
-               echo "<div class='status-field'><p class='success edit-success'>Your account has been updated successfully</p></div>";
-            }
-         }
    } else {
       //Redirecting to the error page
       header("Location: ./404.html");

@@ -12,6 +12,7 @@
          //All customers
          $sql = "SELECT * FROM customer";
       }
+      
       $customers = mysqli_query($conn, $sql);
       $checkResult = mysqli_num_rows($customers);
 
@@ -46,14 +47,14 @@
                </div>';
                if(isset($_GET['delete'])) {
                   $checkSignup = $_GET['delete'];
-                  
+
                   //Checking for user deleting errors
                   if($checkSignup == "success") {
                      echo "<div class='status-field'><p class='success'>User deleted successfully</p></div>";
                   } else if($checkSignup == "unsuccess") {
                      echo "<div class='status-field'><p class='error'>User not deleted. try again later</p></div>";
                   }
-               } 
+               }
                echo '<main>
                   <div class="content-container">
                      <div class="profile-container">
@@ -107,8 +108,7 @@
                               echo '<button type="submit" name="submit" id="delete-customer" onclick="return confirm(\'Do you want to delete this customer ?\')"><a href="./includes/delete_customer_inc.php?delete_id='.$row['customer_id'].'">Delete</a></button>';
                               echo '</div>';
                            }
-                        } 
-                        else {
+                        } else {
                            echo "<p style='text-align: center;'>There are no matches for '".$searchKey."'</p>";
                         }
                   echo '</div>
