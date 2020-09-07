@@ -8,7 +8,7 @@
       if(isset($_POST['submit'])) {
          $searchKey = $_POST['search'];
          $sql = "SELECT * FROM customer WHERE customer_name LIKE '%$searchKey%'";
-      } else { 
+      } else {
          //All customers
          $sql = "SELECT * FROM customer";
       }
@@ -46,21 +46,14 @@
                </div>';
                if(isset($_GET['delete'])) {
                   $checkSignup = $_GET['delete'];
-
+                  
                   //Checking for user deleting errors
                   if($checkSignup == "success") {
                      echo "<div class='status-field'><p class='success'>User deleted successfully</p></div>";
                   } else if($checkSignup == "unsuccess") {
-                        echo "<div class='status-field'><p class='error'>User not deleted. try again later</p></div>";
+                     echo "<div class='status-field'><p class='error'>User not deleted. try again later</p></div>";
                   }
-               } else if(isset($_GET['edit'])) {
-                     $checkEdit = $_GET['edit'];
-
-                     //Checking for profile updating errors
-                     if($checkEdit == "success") {
-                           echo "<div class='status-field'><p class='success edit-success'>Your account has been updated successfully</p></div>";
-                     }
-               }
+               } 
                echo '<main>
                   <div class="content-container">
                      <div class="profile-container">

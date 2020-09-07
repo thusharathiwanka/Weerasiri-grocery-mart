@@ -58,26 +58,27 @@
                      <div class="content-container">
                         <div class="profile-container">
                            <div class="profile-content">
-                              <h2 class="hello">Admin Panel</h2>
-                           <h3>Owner</h3>
-                           <div class="buttons">
-                              <div class="btn-container btn1">
-                                 <a href="./owner.php">Manage Customers</a>
+                              <h2 class="hello">Hello,</h2>
+                              <h3>'.$_SESSION['customer_name'].'</h3>
+                              <div class="buttons">
+                                 <div class="btn-container btn1">
+                                    <img src="./icons/fruit-basket.svg" alt="basket">
+                                    <a href="menu.php">Start Shopping</a>
+                                 </div>
+                                 <div class="btn-container btn2">
+                                    <img src="./icons/review.svg" alt="review">
+                                    <a href="#">Add Review</a>
+                                 </div>
+                                 <div class="btn-container btn3">
+                                    <img src="./icons/edit.svg" alt="edit">
+                                    <a href="./includes/details_pdf.php">Details Report</a>
+                                 </div>
+                                 <div class="btn-container btn4">
+                                    <img src="./icons/delete.svg" alt="delete">
+                                    <a href="./includes/delete_profile_inc.php" name="submit" class="delete-btn" onclick="return confirm(\'Do you want to delete your account ?\')">Delete Account</a>
+                                 </div>
+                                 </div>
                               </div>
-                              <div class="btn-container btn2">
-                                 <a href="./customer_orders.php">Manage Vehicles</a>
-                              </div>
-                              <div class="btn-container btn3">
-                                 <a href="./customer_feedback.php">Manage Feedbacks</a>
-                              </div>
-                              <div class="btn-container btn4">
-                                 <a href="./admin_edit_profile.php">Update Details</a>
-                              </div>
-                              <div class="btn-container btn5">
-                                 <a href="./customer_feedback.php">Income Report</a>
-                              </div>
-                              </div>
-                           </div>
                         </div>
                         <div class="order-container">
                            <div class="edit-form-container">

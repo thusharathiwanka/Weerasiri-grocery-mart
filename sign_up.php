@@ -111,7 +111,7 @@
                         <input type="text" name="city" id="city" autocomplete="off" value="'.$city.'">';
                } else {
                   echo '<label for="city">City</label>
-                        <input type="text" name="city" id="city" autocomplete="off">';
+                        <input type="text" name="city" id="city" autocomplete="off" placeholder="Only yakkala area customers can be registered">';
                }
             ?>
             <button type="submit" name="submit">Sign Up</button>

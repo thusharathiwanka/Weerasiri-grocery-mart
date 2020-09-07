@@ -55,7 +55,7 @@
                      $_SESSION['admin_acc_no'] = $acc_no;
                      $_SESSION['admin_bank'] = $bank;
 
-                     header("Location: ../owner.php?edit=success");
+                     header("Location: ../admin_edit_profile.php?edit=success");
                      exit();
                   }
                }

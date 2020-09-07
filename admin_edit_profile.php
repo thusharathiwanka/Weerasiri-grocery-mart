@@ -132,6 +132,8 @@
                echo "<div class='status-field'><p class='error edit-success'>Enter a valid mobile number</p></div>";
             } else if($checkEdit == "old_password_invalid") {
                echo "<div class='status-field'><p class='error edit-success'>Your current password is invalid</p></div>";
+            } else if($checkEdit == "success") {
+               echo "<div class='status-field'><p class='success edit-success'>Your account has been updated successfully</p></div>";
             }
          }
    } else {
