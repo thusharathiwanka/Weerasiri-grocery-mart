@@ -1,8 +1,7 @@
 <?php
    if(isset($_POST['submit'])) {
       session_start();
-      session_unset();
-      session_destroy();
+      unset($_SESSION['customer_id']);
 
       header("Location: ../index.php?logout=success");
       exit();
