@@ -27,10 +27,6 @@ h1 {
   padding: 2rem 0;
 }
 
-p {
-  padding-top: 2rem;
-}
-
 button {
   outline: none;
   border: none;
@@ -40,7 +36,7 @@ button {
   font-family: "poppins", sans-serif;
   font-size: 1.3rem;
   border-radius: 5px;
-  margin: 5rem 2rem 2rem 0;
+  margin: 3rem 2rem 2rem 0;
   cursor: pointer;
   width: 10rem;
   transition: background 0.3s ease-in-out;
@@ -58,6 +54,10 @@ label {
 /* Custom styles */
 .food {
   height: auto;
+}
+
+.sign-up {
+  padding: 2rem 0 0.5rem 0;
 }
 
 .img-container {

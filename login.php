@@ -67,7 +67,8 @@
                ?>
                <label for="password">Password</label>
                <input type="password" name="password" id="password" required autocomplete="off">
-               <p>Don't have an account ? <a href="./sign_up.php"> Sign Up</a></p>
+               <p class="sign-up">Don't have an account ? <a href="./sign_up.php"> Sign Up</a></p>
+               <p class="reset-pw">Forget your password ? <a href="./reset_password.php">Reset Now</a></p>
                <button type="submit" name="submit">Login</button>
             </form>
          </div>
