@@ -46,21 +46,35 @@
 
 .pop-window {
   width: 50rem;
-  height: 40rem;
+  height: 35rem;
   background: white;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 20px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 20px;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-20%, -40%);
 }
 
-.action-btn {
+.action-btn,
+.customer {
   display: flex;
   flex-direction: column;
 }
 
+.customer {
+  margin-top: 15rem;
+}
+
+.customer p {
+  font-size: 1.6rem;
+  padding-bottom: 1rem;
+}
+
 .action-btn button {
   margin: 0.2rem 0;
+}
+
+#back a {
+  color: white;
 }
