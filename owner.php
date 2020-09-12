@@ -106,8 +106,8 @@
                               echo "<p>".$row['customer_username']."</p>";
                               echo "<p>".$row['customer_mobile']."</p>";
                               echo '<div class="action-btn">';
-                              echo '<button name="submit" id="delete-customer" class="view-customer")"><a href="./view_customer.php?view_id='.$row['customer_id'].'">View</a></button>';
-                              echo '<button type="submit" name="submit" id="delete-customer" onclick="return confirm(\'Do you want to delete this customer ?\')"><a href="./includes/delete_customer_inc.php?delete_id='.$row['customer_id'].'">Delete</a></button>';
+                                 echo '<button name="submit" id="delete-customer" class="view-customer")"><a href="./view_customer.php?view_id='.$row['customer_id'].'">View</a></button>';
+                                 echo '<button type="submit" name="submit" id="delete-customer" onclick="return confirm(\'Do you want to delete this customer ?\')"><a href="./includes/delete_customer_inc.php?delete_id='.$row['customer_id'].'">Delete</a></button>';
                               echo '</div>';
                               echo '</div>';
                            }
