@@ -69,6 +69,7 @@
 .customer p {
   font-size: 1.6rem;
   padding-bottom: 1rem;
+  font-weight: 500;
 }
 
 .action-btn button {
@@ -77,4 +78,5 @@
 
 #back a {
   color: white;
+  padding: 0.56rem 1rem;
 }
