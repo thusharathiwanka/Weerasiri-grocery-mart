@@ -96,7 +96,30 @@
                            <h3>Customer Username</h3>
                            <h3>Customer Mobile</h3>
                            <h3>Action</h3>
-                        </div>';
+                        </div>
+                        <div class="pop-window">';
+                           if(isset($_GET['view_id'])) {
+                              $viewID = $_GET['view_id'];
+                              echo $viewID;
+                              
+                              $sql = "SELECT * FROM customer WHERE customer_id='$viewID'";
+                              $customer = mysqli_query($conn, $sql);
+                              $checkCustomer = mysqli_num_rows($customer);
+                              
+                              if($checkResult > 0) {
+                                 while($row = mysqli_fetch_array($customer)) {
+                                    echo '<div class="orders-titles customers">';
+                                    echo "<p> Customer ID - ".$row['customer_id']."</p>";
+                                    echo "<p> Customer Name - ".$row['customer_name']."</p>";
+                                    echo "<p> Customer Username - ".$row['customer_username']."</p>";
+                                    echo "<p> Customer Email - ".$row['customer_email']."</p>";
+                                    echo "<p> Customer Mobile No - ".$row['customer_mobile']."</p>";
+                                    echo "<p> Customer Address".$row['customer_address']."</p>";
+                                    echo '</div>';
+                                 }
+                              }
+                           }
+                        echo '</div>';
                         if($checkResult > 0) {
                            while($row = mysqli_fetch_array($customers)) {
                               echo "<hr>";
@@ -105,7 +128,10 @@
                               echo "<p>".$row['customer_name']."</p>";
                               echo "<p>".$row['customer_username']."</p>";
                               echo "<p>".$row['customer_mobile']."</p>";
-                              echo '<button type="submit" name="submit" id="delete-customer" onclick="return confirm(\'Do you want to delete this customer ?\')"><a href="./includes/delete_customer_inc.php?delete_id='.$row['customer_id'].'">Delete</a></button>';
+                              echo '<div class="action-btn">';
+                              echo '<button type="submit" name="submit" id="delete-customer")"><a href="./owner.php?view_id='.$row['customer_id'].'">View</a></button>';
+                              echo '<button name="submit" id="delete-customer" onclick="return confirm(\'Do you want to delete this customer ?\')"><a href="./includes/delete_customer_inc.php?delete_id='.$row['customer_id'].'">Delete</a></button>';
+                              echo '</div>';
                               echo '</div>';
                            }
                         } else {
@@ -115,6 +141,7 @@
                   </div>
                </main>
                <script src="./js/headsup.js"></script>
+               <script src="./js/popup.js"></script>
             </body>
          </html>';
    } else {

@@ -43,3 +43,24 @@
 .order-container h2 {
   margin-top: 1rem;
 }
+
+.pop-window {
+  width: 50rem;
+  height: 40rem;
+  background: white;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+}
+
+.action-btn button {
+  margin: 0.2rem 0;
+}
