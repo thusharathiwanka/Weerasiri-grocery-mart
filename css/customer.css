@@ -131,6 +131,10 @@ footer h3 {
   word-wrap: none;
 }
 
+.btn2 a {
+  padding: 0.52rem 0.5rem;
+}
+
 .btn-container img {
   padding: 0.5rem;
   background: #5aec60;
