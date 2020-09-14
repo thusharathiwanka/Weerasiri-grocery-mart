@@ -91,30 +91,30 @@
                         </div>
                         <h3 id="orders">All Registered Customers</h3>
                         <div class="orders-titles titles">
-                           <h3>Customer ID</h3>
-                           <h3>Customer Name</h3>
-                           <h3>Customer Username</h3>
-                           <h3>Customer Mobile</h3>
-                           <h3>Action</h3>
-                        </div>';
-                        if($checkResult > 0) {
-                           while($row = mysqli_fetch_array($customers)) {
-                              echo "<hr>";
-                              echo '<div class="orders-titles customers">';
-                              echo "<p>".$row['customer_id']."</p>";
-                              echo "<p>".$row['customer_name']."</p>";
-                              echo "<p>".$row['customer_username']."</p>";
-                              echo "<p>".$row['customer_mobile']."</p>";
-                              echo '<div class="action-btn">';
-                                 echo '<button name="submit" id="delete-customer" class="view-customer")"><a href="./view_customer.php?view_id='.$row['customer_id'].'">View</a></button>';
-                                 echo '<button type="submit" name="submit" id="delete-customer" onclick="return confirm(\'Do you want to delete this customer ?\')"><a href="./includes/delete_customer_inc.php?delete_id='.$row['customer_id'].'">Delete</a></button>';
-                              echo '</div>';
-                              echo '</div>';
-                           }
-                        } else {
-                           echo "<p style='text-align: center;'>There are no matches for '".$searchKey."'</p>";
-                        }
-                  echo '</div>
+                           <div class="right">
+                              <table>
+                                 <tr>
+                                    <th>Customer ID</th>
+                                    <th>Customer Name</th>
+                                    <th>Customer Username</th>
+                                    <th>Mobile</th>
+                                    <th>Actions</th>
+                                 </tr>';
+                              if($checkResult > 0) {
+                                 while($row = mysqli_fetch_array($customers)) {
+                                    echo "<tr><td>". $row['customer_id']. "</td><td>". $row['customer_name']."</td><td>".$row['customer_username']."</td><td>".$row['customer_mobile']."</td>";
+                                    echo '<div class="action-btn">';
+                                       echo '<td><button name="submit" id="delete-customer" class="view-customer")"><a href="./view_customer.php?view_id='.$row['customer_id'].'">View</a></button>';
+                                       echo '<button type="submit" name="submit" id="delete-customer" class="delete-customer" onclick="return confirm(\'Do you want to delete this customer ?\')"><a href="./includes/delete_customer_inc.php?delete_id='.$row['customer_id'].'">Delete</a></button></td></tr>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                 }
+                              } else {
+                                 echo "<p style='text-align: center;'>There are no matches for '".$searchKey."'</p>";
+                              }
+                        echo '</table>
+
+                           </div></div>
                   </div>
                </main>
                <script src="./js/headsup.js"></script>

@@ -84,3 +84,52 @@
 .view-customer a {
   margin-top: 2rem;
 }
+
+table {
+  text-align: center;
+}
+
+.right table th,
+.right table td {
+  width: 25rem;
+  font-size: 1.3rem;
+}
+
+.right table th {
+  background-color: #5c258d;
+  color: white;
+  padding: 0.5rem;
+}
+
+.right table td {
+  border-bottom: 1px solid #dddddd;
+  padding: 1rem;
+}
+
+tr:last-of-type {
+  border-bottom: 3px solid #f45c43;
+}
+
+#delete-customer {
+  outline: none;
+  border: none;
+  margin: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: "poppins", sans-serif;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.delete-customer {
+  background: #ff5252;
+}
+
+#delete-customer a {
+  color: white;
+}
+
+.view-customer {
+  background: #4caf50;
+}
