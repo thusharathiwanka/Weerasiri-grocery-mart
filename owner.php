@@ -66,7 +66,7 @@
                                  <a href="./owner.php">Manage Customers</a>
                               </div>
                               <div class="btn-container btn2">
-                                 <a href="./customer_orders.php">Manage Vehicles</a>
+                                 <a href="./Vehicles.php">Manage Vehicles</a>
                               </div>
                               <div class="btn-container btn3">
                                  <a href="./customer_feedback.php">Manage Feedbacks</a>
