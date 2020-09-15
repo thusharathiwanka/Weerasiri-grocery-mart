@@ -1,0 +1,12 @@
+.allDelete {
+  background: red;
+  border-radius: 0 20px 0 20px;
+  width: 90px;
+}
+.allDelete:hover {
+  background: white;
+}
+
+.profile-container {
+  background: linear-gradient(#1f4037, #99f2c8);
+}

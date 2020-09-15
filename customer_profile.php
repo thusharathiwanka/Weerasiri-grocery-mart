@@ -67,7 +67,7 @@
                               <div class="buttons">
                                  <div class="btn-container btn1">
                                     <img src="./icons/fruit-basket.svg" alt="basket">
-                                    <a href="menu.php">Start Shopping</a>
+                                    <a href="cartNew.php">Start Shopping</a>
                                  </div>
                                  <div class="btn-container btn2">
                                     <img src="./icons/review.svg" alt="review">
