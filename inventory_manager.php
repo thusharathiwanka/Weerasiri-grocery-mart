@@ -25,7 +25,7 @@
                <link rel="stylesheet" href="./css/owner.css">
                <link rel="stylesheet" href="./css/inventory_manager.css">
 
-               <title>inventory manager</title>
+               <title>WGM | Inventory Manager</title>
             </head>
             <body>
                <div class="header-container">
@@ -84,29 +84,30 @@
                         </div>
                         <h3 id="orders">Product</h3>
                         <div class="orders-titles titles">
-                           <h3>Item Id</h3>
-                           <h3>Item Name</h3>
-                           <h3>Description</h3>
-                           <h3>price</h3>
-                           <h3>Quentity</h3>
-                           <h3>Action</h3>
+                        <table>
+                        <tr>
+                           <th>Item Id</th>
+                           <th>Item Name</th>
+                           <th>Description</th>
+                           <th>price</th>
+                           <th>Quentity</th>
+                           <th>Action</th>
+                        </tr>
                         </div>';
                         if($checkResult > 0) {
                            while($row = mysqli_fetch_array($item)) {
-                              echo "<hr>";
-                              echo '<div class="orders-titles customers">';
-                              echo "<p>".$row['item_id']."</p>";
-                              echo "<p>".$row['item_name']."</p>";
-                              echo "<p>".$row['item_description']."</p>";
-                              echo "<p>".$row['item_unit_price']."</p>";
-                              echo "<p>".$row['item_quentity']."</p>";
-                              echo '<button type="submit" name="submit" class="allDelete" id="delete-items" onclick="return confirm(\'Do you want to delete this item ?\')"><a href="./includes/inventory_manager_inc.php?delete_item='.$row['item_id'].'">Delete</a></button>';
-                              echo '</div>';
+                             
+                             
+
+                              echo "<tr><td>".$row['id']."</td><td>".$row['item_name']."</td><td>".$row['item_description']."</td><td>Rs.".$row['item_unit_price']."</td><td>".$row['item_quentity']."</td><td>".'<button type="submit" name="submit" class="allDelete" id="delete-items" onclick="return confirm(\'Do you want to delete this item ?\')"><a href="./includes/inventory_manager_inc.php?delete_item='.$row['id'].'">Delete</a></button>'."</td></tr>";
+                              
                            }
                         } 
+                       
                         else {
                            echo "<p style='text-align: center;'>There are no matches for '".$searchKey."'</p>";
                         }
+                        echo' </table>';
                   echo '</div>
                   </div>
                </main>

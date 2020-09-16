@@ -3,18 +3,18 @@ session_start();
 if(isset($_SESSION['customer_id'])) {
 	include_once './includes/db_conn_inc.php';
 
-	$connect = mysqli_connect("localhost:3306", "root", "", "supermarketdb");
+	$connect = mysqli_connect("localhost", "root", "", "supermarketdb");
 
 	if(isset($_POST["add_to_cart"]))
 	{
 		if(isset($_SESSION["shopping_cart"]))
 		{
 			$item_array_id = array_column($_SESSION["shopping_cart"], "item_id");
-			if(!in_array($_GET["item_id"], $item_array_id))
+			if(!in_array($_GET["id"], $item_array_id))
 			{
 				$count = count($_SESSION["shopping_cart"]);
 				$item_array = array(
-					'item_id'			=>	$_GET["item_id"],
+					'item_id'			=>	$_GET["id"],
 					'item_name'			=>	$_POST["hidden_name"],
 					'item_price'		=>	$_POST["hidden_price"],
 					'item_quantity'		=>	$_POST["quantity"]
@@ -29,7 +29,7 @@ if(isset($_SESSION['customer_id'])) {
 		else
 		{
 			$item_array = array(
-				'item_id'			=>	$_GET["item_id"],
+				'item_id'			=>	$_GET["id"],
 				'item_name'			=>	$_POST["hidden_name"],
 				'item_price'		=>	$_POST["hidden_price"],
 				'item_quantity'		=>	$_POST["quantity"]
@@ -44,11 +44,11 @@ if(isset($_SESSION['customer_id'])) {
 		{
 			foreach($_SESSION["shopping_cart"] as $keys => $values)
 			{
-				if($values["item_id"] == $_GET["item_id"])
+				if($values["item_id"] == $_GET["id"])
 				{
 					unset($_SESSION["shopping_cart"][$keys]);
 					echo '<script>alert("Item Removed")</script>';
-					echo '<script>window.location="cartNew.php"</script>';
+					echo '<script>window.location="Store.php"</script>';
 				}
 			}
 		}
@@ -114,8 +114,8 @@ if(isset($_SESSION['customer_id'])) {
       <div class="content-container">
          <div class="profile-container">
             <div class="profile-content">
-               <h2 class="hello">Choose your products</h2>
-               <h3>easy,fast & user-friendly</h3>
+               <h2 class="hello">Hello,</h2>
+               <h3><?php echo $_SESSION['customer_name'];?></h3>
                <div class="buttons">
                   <div class="btn-container btn1">
 
@@ -150,7 +150,7 @@ if(isset($_SESSION['customer_id'])) {
                </center>
                <br /><br />
                <?php
-				$query = "SELECT * FROM item ORDER BY item_id ASC";
+				$query = "SELECT * FROM item ORDER BY id ASC";
 				$result = mysqli_query($connect, $query);
 				if(mysqli_num_rows($result) > 0)
 				{
@@ -158,27 +158,31 @@ if(isset($_SESSION['customer_id'])) {
 					{
 				?>
                <div class="col-md-4">
-                  <form method="post" action="cartNew.php?action=add&id=<?php echo $row["item_id"]; ?>">
+                  <form method="post" action="Store.php?action=add&id=<?php echo $row["id"]; ?>">
                      <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;"
                         align="center">
                         <img src="img/<?php echo $row["item_image"]; ?>" class="img-responsive" /><br />
 
                         <h4 class="text-info"><?php echo $row["item_name"]; ?></h4>
 
-                        <h4 class="text-danger">Rs. <?php echo $row["item_unit_price"]; ?></h4>
+                        <h4 class="text-danger">Rs. <?php echo $row["item_unit_price"]; ?>.00</h4>
 
-                        <input type="number" name="quantity" value="1" class="form-control" />
+                        <input type="number" name="quantity" value="1" min="1" class="form-control" />
 
-                        <input type="hidden" name="hidden_name" value="<?php echo $row["name"]; ?>" />
+                        <input type="hidden" name="hidden_name" value="<?php echo $row["item_name"]; ?>" />
 
-                        <input type="hidden" name="hidden_price" value="<?php echo $row["price"]; ?>" />
+                        <input type="hidden" name="hidden_price" value="<?php echo $row["item_unit_price"]; ?>" />
 
                         <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success"
                            value="Add to Cart" />
 
+                           
+
                      </div>
+                     
                   </form>
                </div>
+               
                <?php
 					}
 				}

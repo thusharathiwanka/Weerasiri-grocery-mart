@@ -5,7 +5,7 @@
       $itemID = $_GET['delete_item'];
 
       //Delete query
-      $sql = "DELETE FROM item WHERE item_id='$itemID'";
+      $sql = "DELETE FROM item WHERE id='$itemID'";
       $result = mysqli_query($conn, $sql);
 
       //Checking if deleted or not

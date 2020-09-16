@@ -11,7 +11,7 @@
        <link rel="stylesheet" href="./css/owner.css">
        <link rel="stylesheet" href="./css/update_items.css">
        <link rel="stylesheet" href="./css/inventory_manager.css">
-       <title>update items</title>
+       <title>WGM | Update Items</title>
     </head>
 
     <body>

@@ -1,21 +1,4 @@
 <?php
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
    session_start();
   ?>    
       <!DOCTYPE html>
@@ -89,7 +72,7 @@
                               <div class="buttons">
                               <div class="btn-container btn2">
                               <img src="./icons/review.svg" alt="review">
-                              <a href="#">Add Reviews</a>
+                              <a href="add_reviews.php">Add Reviews</a>
                            </div>
                                  <div class="btn-container btn2">
                                     <img src="./icons/review.svg" alt="review">

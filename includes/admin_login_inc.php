@@ -42,10 +42,10 @@
                   header("Location: ../owner.php?login=success");
                   exit();   
                } else if($adminType == "HR_manager") {
-                  header("Location: ../hr_manager.php?login=success");
+                  header("Location: ../employeelist.php?login=success");
                   exit();   
                } else if($adminType == "Delivery_manager") {
-                  header("Location: ../delivery_manager.php?login=success");
+                  header("Location: ../add_deliveries.php?login=success");
                   exit();   
                } else if($adminType == "Inventory_manager") {
                   header("Location: ../inventory_manager.php?login=success");

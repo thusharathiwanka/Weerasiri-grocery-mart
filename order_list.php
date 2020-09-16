@@ -2,24 +2,20 @@
    session_start();
 
    if(isset($_SESSION['customer_id'])) {
-      include_once './includes/db_conn_inc.php';
+    include_once './includes/db_conn_inc.php';
 
-      $customerID = $_SESSION['customer_id'];
-      $sql = "SELECT * FROM customer WHERE customer_id='$customerID'";
-      $result = mysqli_query($conn, $sql);
-      $checkResult = mysqli_num_rows($result);
-
-      if($checkResult > 0) {
-         while($row = mysqli_fetch_assoc($result)) {
-            $customerName = $row['customer_name'];
-            $customerEmail = $row['customer_email'];
-            $customerUsername = $row['customer_username'];
-            $customerMobile = $row['customer_mobile'];
-            $customerAddress = $row['customer_address'];
-         }
-      }
+    if(isset($_POST['submit'])) {
+       $searchKey = $_POST['search'];
+       $sql = "SELECT * FROM customer_order WHERE item_name LIKE '%$searchKey%'";
+    } else { 
+       //All items
+       $sql = "SELECT * FROM customer_order";
+    }
+    $customers = mysqli_query($conn, $sql);
+    $checkResult = mysqli_num_rows($customers);
       echo '<!DOCTYPE html>
             <html lang="en">
+
 
                <head>
                   <meta charset="UTF-8">
@@ -28,7 +24,9 @@
                   <link rel="icon" href="./icons/watermelon.svg">
                   <link rel="stylesheet" href="./css/main.css">
                   <link rel="stylesheet" href="./css/customer.css">
-                  <title>Profile</title>
+                  <link rel="stylesheet" href="./css/cart.css">
+
+                  <title>WGM | Order List</title>
                </head>
 
                <body>
@@ -71,36 +69,66 @@
                                  </div>
                                  <div class="btn-container btn2">
                                     <img src="./icons/review.svg" alt="review">
-                                    <a href="add_reviews.php">Add Review</a>
+                                    <a href="order_list.php">Order List</a>
                                  </div>
                                  <div class="btn-container btn3">
                                     <img src="./icons/edit.svg" alt="edit">
-                                    <a href="./includes/details_pdf.php">Details Report</a>
-                                 </div>
-                                 <div class="btn-container btn4">
-                                    <img src="./icons/delete.svg" alt="delete">
-                                    <a href="./includes/delete_profile_inc.php" name="submit" class="delete-btn" onclick="return confirm(\'Do you want to delete your account ?\')">Delete Account</a>
+                                    <a href="./includes/bill_pdf.php">Details Report</a>
                                  </div>
                               </div>
                            </div>
                         </div>
                         <div class="order-container">
                            <div class="edit-form-container profile-details">
-                              <h2 class="profile-title">Profile Details</h2>
-                              <div class="customer-details">
-                                 <h3>Name - '.$customerName.'</h3>
-                                 <h3>Email - '.$customerEmail.'</h3>
-                                 <h3>Username - '.$customerUsername.'</h3>
-                                 <h3>Mobile Number - '.$customerMobile.'</h3>
-                                 <h3>Delivery Address - '.$customerAddress.'</h3>
-                              </div>
-                              <a href="./edit_customer_profile.php" class="edit">Edit Details</a>
-                           </div>
-                        </div>
-                     </div>
-                     </div>
+                              <h2 class="profile-title">All Orders</h2><br>
+                                 <div class="orders-titles titles">
+                                    
+                                    <h3>Order ID</h3>
+                                    <h3>Ordered Date</h3>
+                                    <h3>Total Price</h3>
+                                    <h3>Payment Method</h3>
+                                    <h3>Action</h3>
+                                 </div>';
+
+                                 if($checkResult > 0) {
+                                    while($row = mysqli_fetch_array($customers)) {
+                                       echo "<hr>";
+                                       echo '<div class="orders-titles customers">';
+                                       echo "<p>".$row['order_id']."</p>";
+                                       echo "<p>".$row['order_date']."</p>";
+                                       echo "<p>Rs.".$row['total_price'].".00</p>";
+                                       echo "<p>".$row['payment_method']."</p>";
+                                       echo '<button type="submit" name="submit" id="delete-customer" onclick="return confirm(\'Do you want to delete this order ?\')"><a href="./includes/delete_orders_inc.php?delete_id='.$row['order_id'].'">Delete</a></button>';
+                                       
+
+                                       echo '</div>';
+                                    }
+
+                                    
+                                 } 
+                                 else {
+                                    //echo "<p style='text-align: center;'>'There are no matches for '".$searchKey."'</p>";
+                                    
+                                 }
+
+                                 
+                               
+                                      
+                           
+                    echo '</div>
+<hr>
+                    
+            
+   
+                    </div>
+                    
+
+                    </div>
+                    </div>
+                    </div>
                   </main>
-                  
+        
+                  <script src="./js/cart.js"></script>
                   <script src="./js/menu.js"></script>
                   <script src="./js/headsup.js"></script>
                </body>

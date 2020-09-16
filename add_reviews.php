@@ -55,7 +55,7 @@
                            </div>
                                  <div class="btn-container btn2">
                                     <img src="./icons/review.svg" alt="review">
-                                    <a href="#">All Reviews</a>
+                                    <a href="All_reviews.php">All Reviews</a>
                                  </div>
                                  <div class="btn-container btn3">
                                     <img src="./icons/edit.svg" alt="edit">
