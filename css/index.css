@@ -71,7 +71,7 @@ form input {
 }
 
 .cta {
-  background: #67a4c3;
+  background: #376f92;
   padding: 0.6rem 3rem;
   display: inline-block;
   margin-top: 4rem;
@@ -239,7 +239,7 @@ footer h3 {
 }
 
 #home-cta:hover {
-  background: #77bde0;
+  background: #285069;
 }
 
 /* Media queries */
