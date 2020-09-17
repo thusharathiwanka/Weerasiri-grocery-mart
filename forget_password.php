@@ -21,7 +21,9 @@
          <header>
             <nav>
                <div class="name">
-                  <h2>Weerasiri <span>Grocery Mart</span></h2>
+                  <a href="./">
+                     <h2>Weerasiri <span>Grocery Mart</span></h2>
+                  </a>
                </div>
                <ul class="nav-links">
                   <li><a href="./index.php">Home</a></li>
@@ -36,9 +38,9 @@
          <main>
             <div class="content">
                <h3>Enter your email address to reset password</h2>
-                  <form action="">
+                  <form action="./includes/forget_password_inc.php" method="POST">
                      <input type="email" name="email"><br>
-                     <button type="submit">Submit</button>
+                     <button type="submit" name="submit">Submit</button>
                   </form>
                   <img src="./images/forget-pwd.png" alt="forget-pwd" class="forget-img">
             </div>

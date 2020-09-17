@@ -43,12 +43,14 @@
                      echo "<p class='error'>Enter a valid name</p>";
                   } else if($checkSignup == "email_invalid") {
                      echo "<p class='error'>Enter a valid email</p>";
+                  } else if($checkSignup == "email_exists") {
+                     echo "<p class='error'>This email is already registered</p>";
                   } else if($checkSignup == "user_exists") {
                      echo "<p class='error'>This username is already taken</p>";
                   } else if($checkSignup == "mobile_invalid") {
                      echo "<p class='error'>Enter a valid mobile number</p>";
                   } else if($checkSignup == "city_invalid") {
-                     echo "<p class='error'>Sorry, you are not eligible to register</p>";
+                     echo "<p class='error'>Sorry, you are not in the coverage area</p>";
                   }
                }
             ?>
