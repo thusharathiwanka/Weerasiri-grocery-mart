@@ -1,7 +1,7 @@
 <?php
    session_start();
 
-   if(isset($_SESSION['admin_id'])) {
+   if(isset($_SESSION['delivery_admin_id'])) {
       include_once './includes/db_conn_inc.php';
 
       //Search

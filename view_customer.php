@@ -1,7 +1,7 @@
 <?php
    session_start();
 
-   if(isset($_SESSION['admin_id'])) {
+   if(isset($_SESSION['owner_id'])) {
       include_once './includes/db_conn_inc.php';
 
       echo '<!DOCTYPE html>

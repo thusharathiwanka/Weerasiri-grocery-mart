@@ -26,8 +26,27 @@
             exit();
          } else {
             if ($row = mysqli_fetch_assoc($result)) {
+               $adminType = $row['admin_type'];
+               
+               //Redirecting admin to their account
                //Creating sessions and login user
-               $_SESSION['admin_id'] = $row['admin_id'];
+               if($adminType == "Owner") {
+                  $_SESSION['owner_id'] = $row['admin_id'];
+                  header("Location: ../owner.php?login=success");
+               } else if($adminType == "HR_manager") {
+                  $_SESSION['hr_admin_id'] = $row['admin_id'];
+                  header("Location: ../employeelist.php?login=success"); 
+               } else if($adminType == "Delivery_manager") {
+                  $_SESSION['delivery_admin_id'] = $row['admin_id'];
+                  header("Location: ../add_deliveries.php?login=success");
+               } else if($adminType == "Inventory_manager") {
+                  $_SESSION['inventory_admin_id'] = $row['admin_id'];
+                  header("Location: ../inventory_manager.php?login=success"); 
+               } else if($adminType == "Supplier_manager") {
+                  $_SESSION['supplier_admin_id'] = $row['admin_id'];
+                  header("Location: ../supplier_manager.php?login=success");
+               }
+
                $_SESSION['admin_username'] = $row['admin_username'];
                $_SESSION['admin_password'] = $row['admin_password'];
                $_SESSION['admin_name'] = $row['admin_name'];
@@ -35,25 +54,6 @@
                $_SESSION['admin_mobile'] = $row['admin_mobileno'];
                $_SESSION['bank_acc_no'] = $row['admin_bank_acc_no'];
                $_SESSION['admin_bank'] = $row['admin_bank'];
-               $adminType = $row['admin_type'];
-               
-               //Redirecting admin to their account
-               if($adminType == "Owner") {
-                  header("Location: ../owner.php?login=success");
-                  exit();   
-               } else if($adminType == "HR_manager") {
-                  header("Location: ../employeelist.php?login=success");
-                  exit();   
-               } else if($adminType == "Delivery_manager") {
-                  header("Location: ../add_deliveries.php?login=success");
-                  exit();   
-               } else if($adminType == "Inventory_manager") {
-                  header("Location: ../inventory_manager.php?login=success");
-                  exit();   
-               } else if($adminType == "Supplier_manager") {
-                  header("Location: ../supplier_manager.php?login=success");
-                  exit();   
-               } 
             } 
          }
       }
