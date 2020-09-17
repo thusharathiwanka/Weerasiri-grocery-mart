@@ -36,7 +36,7 @@ button {
   font-family: "poppins", sans-serif;
   font-size: 1.3rem;
   border-radius: 5px;
-  margin: 3rem 2rem 2rem 0;
+  margin: 2rem 2rem 2rem 0;
   cursor: pointer;
   width: 10rem;
   transition: background 0.3s ease-in-out;
@@ -57,7 +57,11 @@ label {
 }
 
 .sign-up {
-  padding: 2rem 0 0.5rem 0;
+  padding: 1rem 0 0.5rem 0;
+}
+
+.forget {
+  padding-top: 0;
 }
 
 .img-container {

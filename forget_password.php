@@ -11,7 +11,7 @@
       <link rel="icon" href="./icons/watermelon.svg">
       <link rel="stylesheet" href="./css/main.css">
       <link rel="stylesheet" href="./css/forget_password.css">
-      <title>Weerasiri Grocery Mart</title>
+      <title>Forget Password</title>
    </head>
 
    <body>
