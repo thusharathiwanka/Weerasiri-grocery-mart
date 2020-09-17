@@ -45,7 +45,7 @@
             $mailer->Body = "Your password has been changed.<br>Your new password is ".$newPassword."<br>This is automatically generated password. You can change it after login";
 
             if($mailer->send()){
-               header("Location: ../forget_password.php?forget=email_send");
+               header("Location: ../login.php?forget=email_send");
             } else {
                header("Location: ../forget_password.php?forget=email_not_send");
             }

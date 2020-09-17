@@ -17,14 +17,12 @@
    <body>
       <div class='status-field home-status'>
          <?php
-            //Checking if signup is there in url
+            //Checking if forget is there in url
             if(isset($_GET['forget'])) {
                $checkSend = $_GET['forget'];
 
-               //Checking for signup errors
-               if($checkSend == "email_send") {
-                  echo "<p class='success'>You password changed. Please check your emails</p>";
-               } else if($checkSend == "email_not_send" || $checkSend == "password_not_changed") {
+               //Checking for password changing and email send errors
+               if($checkSend == "email_not_send" || $checkSend == "password_not_changed") {
                   echo "<p class='error'>Sorry. Something went wrong</p>";
                } else if($checkSend == "email_not_found") {
                   echo "<p class='error'>Your email is not registered with the system</p>";

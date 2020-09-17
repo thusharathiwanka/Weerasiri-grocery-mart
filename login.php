@@ -39,6 +39,7 @@
                   echo "<p class='success'>Your account has been created successfully</p>";
                }
             }
+
             //Checking if login is there in url
             if(isset($_GET['login'])) {
                $checkLogin = $_GET['login'];
@@ -47,6 +48,16 @@
                   echo "<p class='error'>Your username or password is invalid</p>";
                }
             }
+
+            //Checking if forget is there in url
+            if(isset($_GET['forget'])) {
+               $checkSend = $_GET['forget'];
+
+            //Checking for email is send or not
+            if($checkSend == "email_send") {
+               echo "<p class='success'>You password changed. Please check your emails</p>";
+            }
+         }
          ?>
       </div>
       <main>
