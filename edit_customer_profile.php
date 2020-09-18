@@ -102,7 +102,7 @@
                                           <td><input type="text" name="username" id="username" required autocomplete="off"
                                              value="'.$_SESSION['customer_username'].'"></td></tr>
                                           <tr><td><label for="password">Password</label></td>
-                                          <td><input type="password" name="new_password" id="new_password" required autocomplete="off">
+                                          <td><input type="password" name="new_password" id="new_password" required autocomplete="off" placeholder="Enter password">
                                           <tr><td><label for="mobile">Mobile Number</label></td>
                                           <td><input type="text" name="mobile" id="mobile" required autocomplete="off" maxlength="10"
                                              value="'.$_SESSION['customer_mobile'].'"></td></tr>
