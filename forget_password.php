@@ -52,7 +52,7 @@
             <div class="content">
                <h3>Enter your email address to reset password</h2>
                   <form action="./includes/forget_password_inc.php" method="POST">
-                     <input type="email" name="email"><br>
+                     <input type="email" name="email" autocomplete="off"><br>
                      <button type="submit" name="submit">Submit</button>
                   </form>
                   <img src="./images/forget-pwd.png" alt="forget-pwd" class="forget-img">
