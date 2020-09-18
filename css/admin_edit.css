@@ -48,5 +48,6 @@ button:hover {
 }
 
 .check-btn {
+  margin-top: 2rem;
   padding: 0.35rem 1rem;
 }
