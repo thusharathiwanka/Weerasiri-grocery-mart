@@ -86,8 +86,14 @@
                         <input type="text" name="username" id="username" autocomplete="off" maxlength="20">';
                }
 
-               echo '<label for="password">Password</label>
+               if(isset($_GET['password'])) {
+                  $password = $_GET['password'];
+                  echo '<label for="password">Password</label>
+                     <input type="password" name="password" id="password" autocomplete="off" maxlength="50" value="'.$password.'">';
+               } else {
+                  echo '<label for="password">Password</label>
                      <input type="password" name="password" id="password" autocomplete="off" maxlength="50">';
+               }
 
                if(isset($_GET['mobile'])) {
                   $mobile = $_GET['mobile'];

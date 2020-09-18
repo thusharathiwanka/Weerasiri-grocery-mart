@@ -1,6 +1,7 @@
 const url = new URL(location);
 url.searchParams.delete("edit");
 url.searchParams.delete("login");
+url.searchParams.delete("logout");
 url.searchParams.delete("signup");
 url.searchParams.delete("username");
 url.searchParams.delete("forget");
