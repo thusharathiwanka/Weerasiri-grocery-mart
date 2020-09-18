@@ -22,7 +22,7 @@ button:hover {
 
 /* Custom classes styles */
 .select {
-  margin: 4rem;
+  margin: 5rem 2rem 3rem 2rem;
   position: relative;
   overflow: hidden;
 }
@@ -48,6 +48,5 @@ button:hover {
 }
 
 .check-btn {
-  margin: 0;
   padding: 0.35rem 1rem;
 }
