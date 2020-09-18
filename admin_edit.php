@@ -172,7 +172,7 @@
                                        <td><input type="password" name="current_password" id="current_password" required autocomplete="off" placeholder="Enter owner password to save chanages">
                                     </table>
                                   </div>
-                                 <button type="submit" name="submit" id="admin-edit-btn">Save Changes</button>
+                                 <button type="submit" name="submit" id="admin-edit-btn" class="admin-edit-btn">Save Changes</button>
                               </form>
                            </div>
                         </div>
