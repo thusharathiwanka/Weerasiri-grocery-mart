@@ -44,8 +44,16 @@
          <div class="form-container">
             <h1>Admin Login</h1>
             <form action="./includes/admin_login_inc.php" method="POST" autocomplete="off">
-               <label for="username">Username</label>
-               <input type="text" name="username">
+               <?php
+                  if(isset($_GET['username'])) {
+                     $username = $_GET['username'];
+                     echo '<label for="username">Username</label>
+                     <input type="text" name="username" id="username" maxlength="50" value="'.$username.'">';
+                  } else {
+                     echo '<label for="username">Username</label>
+                     <input type="text" name="username" id="username" maxlength="50">';
+                  }
+               ?>
                <br>
                <label for="password">Password</label>
                <input type="password" name="password" id="password">

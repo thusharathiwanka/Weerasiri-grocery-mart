@@ -22,7 +22,7 @@
          
          //Checking if there is any matching row
          if($checkResult < 1) {
-            header("Location: ../admin_login.php?login=invalid");
+            header("Location: ../admin_login.php?login=invalid&username=$username");
             exit();
          } else {
             if ($row = mysqli_fetch_assoc($result)) {
