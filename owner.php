@@ -71,9 +71,6 @@
                               <div class="btn-container btn3">
                                  <a href="./Manage_reviews.php">Manage Feedbacks</a>
                               </div>
-                              <div class="btn-container btn4">
-                                 <a href="./admin_edit_profile.php">Update Details</a>
-                              </div>
                               <div class="btn-container btn5">
                                  <a href="./customer_feedback.php">Income Report</a>
                               </div>

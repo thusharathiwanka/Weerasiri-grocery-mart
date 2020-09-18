@@ -108,7 +108,7 @@
             <div class="text-content">
                <h1>Contact us</h1>
                <form action="https://formspree.io/mknqqewe" method="POST">
-                  <input type="email" placeholder="Your email" name="_replyto"> <br>
+                  <input type="email" placeholder="Your email" name="_replyto" autocomplete="off"> <br>
                   <button type="submit" id="submit-contact" value="Send">Submit</button>
                </form>
                <div class="location-container">
