@@ -91,17 +91,17 @@
                         </div>
                         <h3 id="orders">All Registered Customers</h3>
                         <div class="orders-titles titles">';
-                           echo '<div class="right">';
-                           echo '<table>
-                              <tr>
-                                 <th>Customer ID</th>
-                                 <th>Customer Name</th>
-                                 <th>Customer Username</th>
-                                 <th>Customer Mobile</th>
-                                 <th>Actions</th>
-                              </tr>';
-                              
                               if($checkResult > 0) {
+                                 echo '<div class="right">';
+                                 echo '<table>
+                                    <tr>
+                                       <th>Customer ID</th>
+                                       <th>Customer Name</th>
+                                       <th>Customer Username</th>
+                                       <th>Customer Mobile</th>
+                                       <th>Actions</th>
+                                    </tr>';
+                              
                                  while($row = mysqli_fetch_array($customers)) {
                                     echo "<tr><td>". $row['customer_id']. "</td><td>". $row['customer_name']."</td><td>".$row['customer_username']."</td><td>".$row['customer_mobile']."</td>";
                                     echo '<div class="action-btn">';
@@ -110,7 +110,8 @@
                                     echo '</div>';
                                  }
                               } else {
-                                 echo "<p style='text-align: center;>There are no matches for '".$searchKey."'</p>";
+                                 echo "<p style='text-align: center; margin-left: 30rem; background: #c34646; color: white; padding: 0.5rem 1rem; display: block'>There are no matches for '".$searchKey."'</p>";
+                                 echo '<button type="submit" name="submit" id="back" style="position: absolute; left: 22%; top: 100%;"><a href="./owner.php">Back to List</button>';   
                               }
                               echo '</table>';
                         echo '</div>
