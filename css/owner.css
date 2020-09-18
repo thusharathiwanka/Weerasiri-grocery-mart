@@ -54,6 +54,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-20%, -40%);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .action-btn,
@@ -79,6 +81,11 @@
 #back a {
   color: white;
   padding: 0.56rem 1rem;
+}
+
+#back {
+  margin-left: 19.5rem;
+  margin-top: 1.7rem;
 }
 
 .view-customer a {

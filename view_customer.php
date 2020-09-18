@@ -15,6 +15,11 @@
                <link rel="stylesheet" href="./css/customer.css">
                <link rel="stylesheet" href="./css/owner.css">
                <title>Admin - Owner</title>
+               <style>
+                  .right table td {
+                     text-align: left;
+                  }
+               </style>
             </head>
             <body>
                <div class="header-container">
@@ -69,21 +74,22 @@
                               $customer = mysqli_query($conn, $sql);
                               $checkCustomer = mysqli_num_rows($customer);
                               
+                              echo'<div class="right">
+                              <table>
+                                 <tr>
+                                    <th>Customer Details</th>
+                                    <th>Values</th>
+                                 </tr>';
+                              
                               if($checkCustomer > 0) {
                                  while($row = mysqli_fetch_array($customer)) {
-                                    echo '<div class="orders-titles customer">';
-                                    echo "<p> Customer ID - ".$row['customer_id']."</p>";
-                                    echo "<p> Customer Name - ".$row['customer_name']."</p>";
-                                    echo "<p> Customer Username - ".$row['customer_username']."</p>";
-                                    echo "<p> Customer Email - ".$row['customer_email']."</p>";
-                                    echo "<p> Customer Mobile No - ".$row['customer_mobile']."</p>";
-                                    echo "<p> Customer Address - ".$row['customer_address']."</p>";
-                                    echo '<button type="submit" name="submit" id="back"><a href="./owner.php">Back to List</button>';
-                                    echo '</div>';
+                                    echo "<tr><td>Customer ID</td><td>". $row['customer_id']. "</td></tr><tr><td>Customer Name</td><td>". $row['customer_name']."</td></tr><tr><td>Customer Email</td><td>". $row['customer_email']."</td></tr><tr><td>Customer Username</td><td>".$row['customer_username']."</td></tr><tr><td>Customer Mobile</td><td>".$row['customer_mobile']."</td></tr><tr><td>Customer Address</td><td>".$row['customer_address']."</td></tr>";
                                  }
                               }
                            }
+                           echo '</table>';
                         echo '</div>';
+                        echo '<button type="submit" name="submit" id="back"><a href="./owner.php">Back to List</button>';
                   echo '</div>
                   </div>
                </main>

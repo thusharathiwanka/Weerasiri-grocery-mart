@@ -109,12 +109,11 @@
                                     echo '</div>';
                                     echo '</div>';
                                  }
+                                 echo '</table>';
                               } else {
                                  echo "<p style='text-align: center;'>There are no matches for '".$searchKey."'</p>";
                               }
-                        echo '</table>
-
-                           </div></div>
+                        echo '</div>
                   </div>
                </main>
                <script src="./js/headsup.js"></script>
