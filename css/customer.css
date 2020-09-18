@@ -238,6 +238,31 @@ footer h3 {
   justify-content: space-evenly;
 }
 
+table {
+  text-align: center;
+}
+
+.right table th,
+.right table td {
+  width: 25rem;
+  font-size: 1.3rem;
+}
+
+.right table th {
+  background-color: #01b6aa;
+  color: white;
+  padding: 0.5rem;
+}
+
+.right table td {
+  border-bottom: 1px solid #dddddd;
+  padding: 1rem;
+}
+
+tr:last-of-type {
+  border-bottom: 3px solid #f45c43;
+}
+
 #orders {
   color: #424242;
   text-align: center;

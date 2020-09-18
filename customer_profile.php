@@ -29,6 +29,12 @@
                   <link rel="stylesheet" href="./css/main.css">
                   <link rel="stylesheet" href="./css/customer.css">
                   <title>Profile</title>
+
+                  <style>
+                     .right table td {
+                        text-align: left;
+                     }
+                  </style>
                </head>
 
                <body>
@@ -88,11 +94,18 @@
                            <div class="edit-form-container profile-details">
                               <h2 class="profile-title">Profile Details</h2>
                               <div class="customer-details">
-                                 <h3>Name - '.$customerName.'</h3>
-                                 <h3>Email - '.$customerEmail.'</h3>
-                                 <h3>Username - '.$customerUsername.'</h3>
-                                 <h3>Mobile Number - '.$customerMobile.'</h3>
-                                 <h3>Delivery Address - '.$customerAddress.'</h3>
+                                 <div class="right">
+                                    <table>
+                                       <tr>
+                                          <th>Customer Details</th>
+                                          <th>Values</th>
+                                       </tr>
+                                       <tr><td>Customer Name</td><td>'.$customerName.'</td></tr>
+                                       <tr><td>Customer Email</td><td>'.$customerEmail.'</td></tr>
+                                       <tr><td>Customer Username</td><td>'.$customerUsername.'</td></tr>
+                                       <tr><td>Customer Mobile Number</td><td>'.$customerMobile.'</td></tr>
+                                       <tr><td>Customer Delivery Address</td><td>'.$customerAddress.'</td></tr>
+                                    </table>
                               </div>
                               <a href="./edit_customer_profile.php" class="edit">Edit Details</a>
                            </div>

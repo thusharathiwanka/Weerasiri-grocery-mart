@@ -16,6 +16,12 @@
                   <link rel="stylesheet" href="./css/customer.css">
                   <link rel="stylesheet" href="./css/edit_customer_profile.css">
                   <title>Edit Profile</title>
+
+                  <style>
+                     .right table td {
+                        text-align: left;
+                     }
+                  </style>
                </head>
                <body>
                   <div class="header-container">
@@ -84,25 +90,28 @@
                            <div class="edit-form-container">
                               <h2>Edit Profile</h2>
                               <form class="edit-form" action="./includes/edit_profile_inc.php" method="POST">
-                                 <label for="name" id="edit-name">Name</label>
-                                 <input type="text" name="name" id="name" required autocomplete="off"
-                                    value="'.$_SESSION['customer_name'].'">
-                                 <label for="email">E-mail</label>
-                                 <input type="email" name="email" id="email" required autocomplete="off"
-                                    value="'.$_SESSION['customer_email'].'">
-                                 <label for="username">Username</label>
-                                 <input type="text" name="username" id="username" required autocomplete="off"
-                                    value="'.$_SESSION['customer_username'].'">
-                                 <label for="password">Password</label>
-                                 <input type="password" name="new_password" id="new_password" required autocomplete="off">
-                                 <label for="mobile">Mobile Number</label>
-                                 <input type="text" name="mobile" id="mobile" required autocomplete="off" maxlength="10"
-                                    value="'.$_SESSION['customer_mobile'].'">
-                                 <label for="address">Home Address</label>
-                                 <input type="text" name="address" id="address" required autocomplete="off"
-                                    value="'.$_SESSION['customer_address'].'">
-                                 <label for="password">Enter Current Password to Save Changes</label>
-                                 <input type="password" name="current_password" id="current_password" required autocomplete="off">
+                                    <div class="right">
+                                       <table>
+                                          <tr><td><label for="name" id="edit-name">Name</label></td>
+                                          <td><input type="text" name="name" id="name" required autocomplete="off"
+                                             value="'.$_SESSION['customer_name'].'"></td></tr>
+                                          <tr><td><label for="email">E-mail</label></td>
+                                          <td><input type="email" name="email" id="email" required autocomplete="off"
+                                             value="'.$_SESSION['customer_email'].'"></td></tr>
+                                          <tr><td><label for="username">Username</label></td>
+                                          <td><input type="text" name="username" id="username" required autocomplete="off"
+                                             value="'.$_SESSION['customer_username'].'"></td></tr>
+                                          <tr><td><label for="password">Password</label></td>
+                                          <td><input type="password" name="new_password" id="new_password" required autocomplete="off">
+                                          <tr><td><label for="mobile">Mobile Number</label></td>
+                                          <td><input type="text" name="mobile" id="mobile" required autocomplete="off" maxlength="10"
+                                             value="'.$_SESSION['customer_mobile'].'"></td></tr>
+                                          <tr><td><label for="address">Home Address</label></td>
+                                          <td><input type="text" name="address" id="address" required autocomplete="off"
+                                             value="'.$_SESSION['customer_address'].'"></td></tr>
+                                          <tr><td><label for="password">Current Password</label>
+                                          <td><input type="password" name="current_password" id="current_password" required autocomplete="off" placeholder="Enter current password to save changes">
+                                       </table>
                                  <button type="submit" name="submit">Save Changes</button>
                               </form>
                            </div>
