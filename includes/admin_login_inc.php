@@ -52,6 +52,7 @@
                $_SESSION['admin_name'] = $row['admin_name'];
                $_SESSION['admin_email'] = $row['admin_email'];
                $_SESSION['admin_mobile'] = $row['admin_mobileno'];
+               $_SESSION['admin_salary'] = $row['admin_salary'];
                $_SESSION['bank_acc_no'] = $row['admin_bank_acc_no'];
                $_SESSION['admin_bank'] = $row['admin_bank'];
             } 

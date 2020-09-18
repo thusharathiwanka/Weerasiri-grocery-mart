@@ -112,6 +112,7 @@
                                           <tr><td><label for="password">Current Password</label>
                                           <td><input type="password" name="current_password" id="current_password" required autocomplete="off" placeholder="Enter current password to save changes">
                                        </table>
+                                    </div>
                                  <button type="submit" name="submit">Save Changes</button>
                               </form>
                            </div>

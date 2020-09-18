@@ -1,0 +1,53 @@
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  color: #42275a;
+  font-family: "poppins", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 13rem;
+  border: 2px solid #42275a;
+  padding: 0.4rem;
+  border-radius: 5px;
+}
+
+button:hover {
+  color: white;
+  background: #542280;
+}
+
+/* Custom classes styles */
+.select {
+  margin: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  background: #5c258d;
+  color: white;
+  top: 0;
+  right: 0;
+  padding: 0.56rem 0.6rem;
+  pointer-events: none;
+  transition: all 0.5s ease;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.check-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-btn {
+  margin: 0;
+  padding: 0.35rem 1rem;
+}
