@@ -1,6 +1,6 @@
 <?php
    session_start();
-
+   
    if(isset($_POST['submit'])) {
       include_once 'db_conn_inc.php';
 
@@ -17,7 +17,7 @@
 
       //Error handling
       //Checking for empty inputs
-      if(empty($name) || empty($email) || empty($username) || empty($newPassword) || empty($mobile) || empty($salary) || empty($acc_no) || empty($bank) || empty($ownerPassword)) {
+      if(empty($name) || empty($email) || empty($username) || empty($newPassword) || empty($mobile) || empty($acc_no) || empty($bank) || empty($ownerPassword)) {
          header("Location: ../admin_edit.php?edit=empty");
          exit();
       } else {
@@ -36,6 +36,11 @@
                   header("Location: ../admin_edit.php?edit=mobile_invalid");
                   exit();
                } else {
+                  if($salary < 0) {
+                     header("Location: ../admin_edit.php?edit=salary_invalid");
+                     exit();
+                  }
+                     //Checking if owner password correct or not
                      $sql = "SELECT * FROM admin WHERE admin_password='$ownerPassword' AND admin_type='Owner'";
                      $result = mysqli_query($conn, $sql);
                      $checkResult = mysqli_num_rows($result);
@@ -44,7 +49,7 @@
                      header("Location: ../admin_edit.php?edit=owner_password_invalid");
                      exit();
                   } else {
-                     //Updating user to table
+                     //Updating admin in table
                      $sql = "UPDATE admin SET admin_name='$name', admin_email='$email', admin_username='$username', admin_password='$newPassword', admin_mobileno='$mobile', admin_salary='$salary', admin_bank_acc_no='$acc_no', admin_bank='$bank' WHERE admin_username='$username'";
                      $result = mysqli_query($conn, $sql);
 

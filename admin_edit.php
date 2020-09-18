@@ -72,6 +72,8 @@
                         echo "<div class='status-field'><p class='error edit-success'>Your current password is invalid</p></div>";
                      } else if($checkEdit == "unsuccess") {
                         echo "<div class='status-field'><p class='error edit-success'>Something went wrong</p></div>";
+                     } else if($checkEdit == "salary_invalid") {
+                        echo "<div class='status-field'><p class='error edit-success'>Enter a valid salary</p></div>";
                      } else if($checkEdit == "success") {
                         echo "<div class='status-field'><p class='success edit-success'>Details has been updated successfully</p></div>";
                      }
