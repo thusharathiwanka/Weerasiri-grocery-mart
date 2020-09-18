@@ -120,22 +120,24 @@
                               </form>
                            </div>';
                            if(isset($_POST['submit-check'])) {
-                              $adminType = $_POST['type'];
-                              
-                              $sql = "SELECT * FROM admin WHERE admin_type='$adminType'";
-                              $result = mysqli_query($conn, $sql);
-                              $checkResult = mysqli_num_rows($result);
+                              if(!empty($_POST['type'])) {
+                                 $adminType = $_POST['type'];
+                                 
+                                 $sql = "SELECT * FROM admin WHERE admin_type='$adminType'";
+                                 $result = mysqli_query($conn, $sql);
+                                 $checkResult = mysqli_num_rows($result);
 
-                              if($checkResult > 0) {
-                                 while($row = mysqli_fetch_assoc($result)) {
-                                    $adminName = $row['admin_name'];
-                                    $adminEmail = $row['admin_email'];
-                                    $adminUsername = $row['admin_username'];
-                                    $adminPassword = $row['admin_password'];
-                                    $adminMobile = $row['admin_mobileno'];
-                                    $adminSalary = $row['admin_salary'];
-                                    $adminBankAcc = $row['admin_bank_acc_no'];
-                                    $adminBank = $row['admin_bank'];
+                                 if($checkResult > 0) {
+                                    while($row = mysqli_fetch_assoc($result)) {
+                                       $adminName = $row['admin_name'];
+                                       $adminEmail = $row['admin_email'];
+                                       $adminUsername = $row['admin_username'];
+                                       $adminPassword = $row['admin_password'];
+                                       $adminMobile = $row['admin_mobileno'];
+                                       $adminSalary = $row['admin_salary'];
+                                       $adminBankAcc = $row['admin_bank_acc_no'];
+                                       $adminBank = $row['admin_bank'];
+                                    }
                                  }
                               }
                            }
