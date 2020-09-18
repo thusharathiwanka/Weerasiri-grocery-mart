@@ -49,13 +49,13 @@
                                  <a href="./owner.php">Manage Customers</a>
                               </div>
                               <div class="btn-container btn2">
-                                 <a href="./customer_orders.php">Manage Vehicles</a>
+                                 <a href="./Vehicles.php">Manage Vehicles</a>
                               </div>
                               <div class="btn-container btn3">
-                                 <a href="./customer_feedback.php">Manage Feedbacks</a>
+                                 <a href="./Manage_reviews.php">Manage Feedbacks</a>
                               </div>
                               <div class="btn-container btn4">
-                                 <a href="./admin_edit_profile.php">Update Details</a>
+                                 <a href="./admin_edit.php">Update Details</a>
                               </div>
                               <div class="btn-container btn5">
                                  <a href="./customer_feedback.php">Income Report</a>

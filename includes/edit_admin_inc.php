@@ -39,26 +39,28 @@
                   if($salary < 0) {
                      header("Location: ../admin_edit.php?edit=salary_invalid");
                      exit();
-                  }
+                  } else {
                      //Checking if owner password correct or not
                      $sql = "SELECT * FROM admin WHERE admin_password='$ownerPassword' AND admin_type='Owner'";
                      $result = mysqli_query($conn, $sql);
                      $checkResult = mysqli_num_rows($result);
 
-                  if($checkResult < 0) {
-                     header("Location: ../admin_edit.php?edit=owner_password_invalid");
-                     exit();
-                  } else {
-                     //Updating admin in table
-                     $sql = "UPDATE admin SET admin_name='$name', admin_email='$email', admin_username='$username', admin_password='$newPassword', admin_mobileno='$mobile', admin_salary='$salary', admin_bank_acc_no='$acc_no', admin_bank='$bank' WHERE admin_username='$username'";
-                     $result = mysqli_query($conn, $sql);
-
-                     if(!$result) {
-                        header("Location: ../admin_edit.php?edit=unsuccess");
+                     echo $checkResult;
+                     if($checkResult <= 0) {
+                        header("Location: ../admin_edit.php?edit=owner_password_invalid");
                         exit();
                      } else {
-                        header("Location: ../admin_edit.php?edit=success");
-                        exit();
+                        //Updating admin in table
+                        $sql = "UPDATE admin SET admin_name='$name', admin_email='$email', admin_username='$username', admin_password='$newPassword', admin_mobileno='$mobile', admin_salary='$salary', admin_bank_acc_no='$acc_no', admin_bank='$bank' WHERE admin_username='$username'";
+                        $result = mysqli_query($conn, $sql);
+                        
+                        if(!$result) {
+                           header("Location: ../admin_edit.php?edit=unsuccess");
+                           exit();
+                        } else {
+                           header("Location: ../admin_edit.php?edit=success");
+                           exit();
+                        }
                      }
                   }
                }
