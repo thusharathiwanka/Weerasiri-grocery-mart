@@ -7,6 +7,7 @@ url.searchParams.delete("username");
 url.searchParams.delete("forget");
 url.searchParams.delete("delete");
 url.searchParams.delete("name");
+url.searchParams.delete("password");
 url.searchParams.delete("email");
 url.searchParams.delete("mobile");
 url.searchParams.delete("address");
