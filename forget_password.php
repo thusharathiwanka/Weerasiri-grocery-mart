@@ -26,6 +26,10 @@
                   echo "<p class='error'>Sorry. Something went wrong</p>";
                } else if($checkSend == "email_not_found") {
                   echo "<p class='error'>Your email is not registered with the system</p>";
+               } else if($checkSend == "email_empty") {
+                  echo "<p class='error'>Email cannot be empty</p>";
+               } else if($checkSend == "email_invalid") {
+                  echo "<p class='error'>Enter a valid email</p>";
                }
             }
          ?>
