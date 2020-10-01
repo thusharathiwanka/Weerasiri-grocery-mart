@@ -55,7 +55,7 @@
 
             //Checking for email is send or not
             if($checkSend == "email_send") {
-               echo "<p class='success'>You password changed. Please check your emails</p>";
+               echo "<p class='success'>Your password has been changed. Please check your emails</p>";
             }
          }
          ?>
