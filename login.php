@@ -8,12 +8,13 @@
       <link rel="icon" href="./icons/watermelon.svg">
       <link rel="stylesheet" href="./css/main.css">
       <link rel="stylesheet" href="./css/login.css">
+      <script src="https://unpkg.com/scrollreveal"></script>
       <title>Login</title>
    </head>
 
    <body>
       <header>
-         <nav>
+         <nav class="animation-top-delay">
             <div class="name">
                <a href="./">
                   <h2>Weerasiri <span>Grocery Mart</span></h2>
@@ -61,7 +62,7 @@
          ?>
       </div>
       <main>
-         <div class="form-container">
+         <div class="form-container animation-left">
             <h1>Login</h1>
             <form action="./includes/login_inc.php" method="POST">
                <?php
@@ -83,13 +84,14 @@
                <button type="submit" name="submit">Login</button>
             </form>
          </div>
-         <div class="img-container">
+         <div class="img-container animation-right">
             <img src="./images/food-table.png" alt="food" class="food">
          </div>
       </main>
       <script src="./js/menu.js"></script>
       <script src="./js/headsup.js"></script>
       <script src="./js/url.js"></script>
+      <script src="./js/animation.js"></script>
    </body>
 
 </html>

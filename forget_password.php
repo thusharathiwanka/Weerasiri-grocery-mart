@@ -11,6 +11,7 @@
       <link rel="icon" href="./icons/watermelon.svg">
       <link rel="stylesheet" href="./css/main.css">
       <link rel="stylesheet" href="./css/forget_password.css">
+      <script src="https://unpkg.com/scrollreveal"></script>
       <title>Forget Password</title>
    </head>
 
@@ -36,7 +37,7 @@
       </div>
       <div class="" id="landing">
          <header>
-            <nav>
+            <nav class="animation-top-delay">
                <div class="name">
                   <a href="./">
                      <h2>Weerasiri <span>Grocery Mart</span></h2>
@@ -54,17 +55,18 @@
          </header>
          <main>
             <div class="content">
-               <h3>Enter your email address to reset password</h2>
-                  <form action="./includes/forget_password_inc.php" method="POST">
+               <h3 class="animation-top">Enter your email address to reset password</h2>
+                  <form action="./includes/forget_password_inc.php" method="POST" class="animation-top">
                      <input type="email" name="email" autocomplete="off"><br>
                      <button type="submit" name="submit">Submit</button>
                   </form>
-                  <img src="./images/forget-pwd.png" alt="forget-pwd" class="forget-img">
+                  <img src="./images/forget-pwd.png" alt="forget-pwd" class="forget-img animation-bottom">
             </div>
          </main>
          <script src="./js/menu.js"></script>
          <script src="./js/headsup.js"></script>
          <script src="./js/url.js"></script>
+         <script src="./js/animation.js"></script>
    </body>
 
 </html>

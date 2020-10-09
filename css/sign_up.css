@@ -1,9 +1,10 @@
 /* Global styles */
 body {
   color: white;
-  min-height: 100vh;
   background: linear-gradient(#88332e, #fabb84);
   animation: landing 1s ease-in-out;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 a {
@@ -44,7 +45,7 @@ label {
   font-size: 1.5rem;
 }
 
-button {
+.signup-btn {
   outline: none;
   border: none;
   padding: 0.6rem 3rem;
@@ -59,8 +60,16 @@ button {
   word-wrap: none;
 }
 
-button:hover {
+.signup-btn:hover {
   background: #b84933;
+}
+
+/* Demo purposes */
+.demo-btn {
+  padding: 0.5rem 1rem;
+  position: absolute;
+  left: 47.5%;
+  bottom: -42%;
 }
 
 main img {

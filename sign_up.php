@@ -8,12 +8,13 @@
       <link rel="icon" href="./icons/watermelon.svg">
       <link rel="stylesheet" href="./css/main.css">
       <link rel="stylesheet" href="./css/sign_up.css">
+      <script src="https://unpkg.com/scrollreveal"></script>
       <title>Sign Up</title>
    </head>
 
    <body>
       <header>
-         <nav>
+         <nav class="animation-top-delay">
             <div class="name">
                <a href="./">
                   <h2>Weerasiri <span>Grocery Mart</span></h2>
@@ -55,77 +56,80 @@
                }
             ?>
          </div>
-         <h1>Sign Up</h1>
-         <form action="./includes/sign_up_inc.php" method="POST">
-            <?php
-               //Filling input fields when there is any error
-               if(isset($_GET['name'])) {
-                  $name = $_GET['name'];
-                  echo '<label for="name">Name</label>
-                        <input type="text" name="name" id="name" autocomplete="off" maxlength="50" value="'.$name.'">';
-               } else {
-                  echo '<label for="name">Name</label>
-                        <input type="text" name="name" id="name" autocomplete="off" maxlength="50">';
-               }
-               
-               if(isset($_GET['email'])) {
-                  $email = $_GET['email'];
-                  echo '<label for="email">E-mail</label>
-                        <input type="email" name="email" id="email" autocomplete="off" maxlength="50" value="'.$email.'">';
-               } else {
-                  echo '<label for="email">E-mail</label>
-                        <input type="email" name="email" id="email" autocomplete="off" maxlength="50">';
-               }
+         <h1 class="animation-top">Sign Up</h1>
+         <div class="form-container">
+            <form action="./includes/sign_up_inc.php" method="POST" class="animation-bottom">
+               <?php
+                  //Filling input fields when there is any error
+                  if(isset($_GET['name'])) {
+                     $name = $_GET['name'];
+                     echo '<label for="name">Name</label>
+                           <input type="text" name="name" id="name" autocomplete="off" maxlength="50" value="'.$name.'">';
+                  } else {
+                     echo '<label for="name">Name</label>
+                           <input type="text" name="name" id="name" autocomplete="off" maxlength="50">';
+                  }
+                  
+                  if(isset($_GET['email'])) {
+                     $email = $_GET['email'];
+                     echo '<label for="email">E-mail</label>
+                           <input type="email" name="email" id="email" autocomplete="off" maxlength="50" value="'.$email.'">';
+                  } else {
+                     echo '<label for="email">E-mail</label>
+                           <input type="email" name="email" id="email" autocomplete="off" maxlength="50">';
+                  }
 
-               if(isset($_GET['username'])) {
-                  $username = $_GET['username'];
-                  echo '<label for="username">Username</label>
-                        <input type="text" name="username" id="username" autocomplete="off" maxlength="20" value="'.$username.'">';
-               } else {
-                  echo '<label for="username">Username</label>
-                        <input type="text" name="username" id="username" autocomplete="off" maxlength="20">';
-               }
+                  if(isset($_GET['username'])) {
+                     $username = $_GET['username'];
+                     echo '<label for="username">Username</label>
+                           <input type="text" name="username" id="username" autocomplete="off" maxlength="20" value="'.$username.'">';
+                  } else {
+                     echo '<label for="username">Username</label>
+                           <input type="text" name="username" id="username" autocomplete="off" maxlength="20">';
+                  }
 
-               if(isset($_GET['password'])) {
-                  $password = $_GET['password'];
-                  echo '<label for="password">Password</label>
-                     <input type="password" name="password" id="password" autocomplete="off" maxlength="50" value="'.$password.'">';
-               } else {
-                  echo '<label for="password">Password</label>
-                     <input type="password" name="password" id="password" autocomplete="off" maxlength="50">';
-               }
+                  if(isset($_GET['password'])) {
+                     $password = $_GET['password'];
+                     echo '<label for="password">Password</label>
+                        <input type="password" name="password" id="password" autocomplete="off" maxlength="50" value="'.$password.'">';
+                  } else {
+                     echo '<label for="password">Password</label>
+                        <input type="password" name="password" id="password" autocomplete="off" maxlength="50">';
+                  }
 
-               if(isset($_GET['mobile'])) {
-                  $mobile = $_GET['mobile'];
-                  echo '<label for="mobile">Mobile Number</label>
-                        <input type="text" name="mobile" id="mobile" autocomplete="off" maxlength="10" value="'.$mobile.'">';
-               } else {
-                  echo '<label for="mobile">Mobile Number</label>
-                        <input type="text" name="mobile" id="mobile" autocomplete="off" maxlength="10">';
-               }
+                  if(isset($_GET['mobile'])) {
+                     $mobile = $_GET['mobile'];
+                     echo '<label for="mobile">Mobile Number</label>
+                           <input type="text" name="mobile" id="mobile" autocomplete="off" maxlength="10" value="'.$mobile.'">';
+                  } else {
+                     echo '<label for="mobile">Mobile Number</label>
+                           <input type="text" name="mobile" id="mobile" autocomplete="off" maxlength="10">';
+                  }
 
-               if(isset($_GET['address'])) {
-                  $address = $_GET['address'];
-                  echo '<label for="address">Home Address</label>
-                        <input type="text" name="address" id="address" autocomplete="off" maxlength="50" value="'.$address.'">';
-               } else {
-                  echo '<label for="address">Home Address</label>
-                        <input type="text" name="address" id="address" autocomplete="off" maxlength="50">';
-               }
+                  if(isset($_GET['address'])) {
+                     $address = $_GET['address'];
+                     echo '<label for="address">Home Address</label>
+                           <input type="text" name="address" id="address" autocomplete="off" maxlength="50" value="'.$address.'">';
+                  } else {
+                     echo '<label for="address">Home Address</label>
+                           <input type="text" name="address" id="address" autocomplete="off" maxlength="50">';
+                  }
 
-               if(isset($_GET['city'])) {
-                  $city = $_GET['city'];
-                  echo '<label for="city">City</label>
-                        <input type="text" name="city" id="city" autocomplete="off" value="'.$city.'">';
-               } else {
-                  echo '<label for="city">City</label>
-                        <input type="text" name="city" id="city" autocomplete="off" placeholder="Only yakkala area customers can be registered">';
-               }
-            ?>
-            <button type="submit" name="submit">Sign Up</button>
-         </form>
-         <img src="./images/cup-cake.png" alt="cup-cake" id="cup-cake">
-         <img src="./images/doughnut.png" alt="cup-cake" id="doughnut">
+                  if(isset($_GET['city'])) {
+                     $city = $_GET['city'];
+                     echo '<label for="city">City</label>
+                           <input type="text" name="city" id="city" autocomplete="off" value="'.$city.'">';
+                  } else {
+                     echo '<label for="city">City</label>
+                           <input type="text" name="city" id="city" autocomplete="off" placeholder="Only yakkala area customers can be registered">';
+                  }
+               ?>
+               <button type="submit" name="submit" class="signup-btn">Sign Up</button>
+            </form>
+            <button class="demo-btn">Demo</button>
+         </div>
+         <img src="./images/cup-cake.png" alt="cup-cake" id="cup-cake" class="animation-left">
+         <img src="./images/doughnut.png" alt="cup-cake" id="doughnut" class="animation-right">
       </main>
       <footer>
          <h3>Tel - 011 222 2222, 011 333 3333</h3>
@@ -138,6 +142,7 @@
       <script src="./js/menu.js"></script>
       <script src="./js/headsup.js"></script>
       <script src="./js/url.js"></script>
+      <script src="./js/animation.js"></script>
    </body>
 
 </html>
