@@ -14,7 +14,7 @@
          exit();
       } else {
          if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            header("Location: ../forget_password.php?forget=email_invalid");
+            header("Location: ../forget_password.php?forget=email_invalid&email=$email");
             exit();
          } else {
             //Searching if email is in the database
@@ -56,16 +56,16 @@
                      header("Location: ../login.php?forget=email_send");
                      exit();
                   } else {
-                     header("Location: ../forget_password.php?forget=email_not_send");
+                     header("Location: ../forget_password.php?forget=email_not_send&email=$email");
                      exit();
                   }
                } else {
-                  header("Location: ../forget_password.php?forget=password_not_changed");
+                  header("Location: ../forget_password.php?forget=password_not_changed&email=$email");
                   exit();
                }
 
             } else {
-               header("Location: ../forget_password.php?forget=email_not_found");
+               header("Location: ../forget_password.php?forget=email_not_found&email=$email");
                exit();
             }
          }

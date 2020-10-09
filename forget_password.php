@@ -57,7 +57,14 @@
             <div class="content">
                <h3 class="animation-top">Enter your email address to reset password</h2>
                   <form action="./includes/forget_password_inc.php" method="POST" class="animation-top">
-                     <input type="email" name="email" autocomplete="off"><br>
+                     <?php
+                        if(isset($_GET['email'])) {
+                           $email = $_GET['email'];
+                           echo '<input type="email" name="email" autocomplete="off" value="'.$email.'"><br>';
+                        } else {
+                           echo '<input type="email" name="email" autocomplete="off"><br>';
+                        }
+                     ?>
                      <button type="submit" name="submit">Submit</button>
                   </form>
                   <img src="./images/forget-pwd.png" alt="forget-pwd" class="forget-img animation-bottom">
