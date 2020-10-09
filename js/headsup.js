@@ -6,9 +6,9 @@ const success = document.querySelector(".success");
 if (error != null) {
   setTimeout(() => {
     error.style.display = "none";
-  }, 4000);
+  }, 5000);
 } else if (success != null) {
   setTimeout(() => {
     success.style.display = "none";
-  }, 4000);
+  }, 5000);
 }
