@@ -68,6 +68,7 @@ form input {
 #landing {
   min-height: 100vh;
   background: linear-gradient(#ff8e67, #dc5663);
+  overflow: hidden;
 }
 
 .cta {
@@ -110,6 +111,7 @@ form input {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .about .text-content {
@@ -138,6 +140,7 @@ form input {
   background: linear-gradient(#1c6f82, #1a7f86);
   text-align: center;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .services h1 {
@@ -186,6 +189,7 @@ footer h3 {
   min-height: 100vh;
   background: linear-gradient(#1a7f86, #00ccbe);
   position: relative;
+  overflow: hidden;
 }
 
 .contact .contact-container {

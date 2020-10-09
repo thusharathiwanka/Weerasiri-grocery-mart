@@ -11,6 +11,7 @@
       <link rel="icon" href="./icons/watermelon.svg">
       <link rel="stylesheet" href="./css/main.css">
       <link rel="stylesheet" href="./css/index.css">
+      <script src="https://unpkg.com/scrollreveal"></script>
       <title>Weerasiri Grocery Mart</title>
    </head>
 
@@ -28,7 +29,7 @@
       </div>
       <div class="" id="landing">
          <header>
-            <nav>
+            <nav class="animation-top-delay">
                <div class="name">
                   <h2>Weerasiri <span>Grocery Mart</span></h2>
                </div>
@@ -44,12 +45,12 @@
          </header>
          <main>
             <section class="hero" id="hero">
-               <div class="text-content">
+               <div class="text-content animation-left">
                   <h1><span>Supermarket</span> at Your Doorstep</h1>
                   <h3>Service available only in Yakkala area</h3>
                   <a href="./login.php" class="cta" id="home-cta">Explore</a>
                </div>
-               <div class="img-container">
+               <div class="img-container animation-right">
                   <img src="./images/cashier.png" alt="cashier">
                </div>
             </section>
@@ -57,10 +58,10 @@
       </div>
       <section class="about" id="about">
          <div class="about-container">
-            <div class="img-container">
+            <div class="img-container animation-left">
                <img src="./images/fruits.png" alt="fruits">
             </div>
-            <div class="text-content">
+            <div class="text-content animation-right">
                <h1>About us</h1>
                <div class="our-story">
                   <h2>Our Stroy</h2>
@@ -81,8 +82,8 @@
          </div>
       </section>
       <section class="services" id="services">
-         <h1>We Offer,</h1>
-         <div class="services-container">
+         <h1 class="animation-top">We Offer,</h1>
+         <div class="services-container animation-bottom">
             <div class="card card 1">
                <div class="icon-container">
                   <img src="./icons/money.svg" alt="money">
@@ -105,7 +106,7 @@
       </section>
       <section class="contact" id="contact">
          <div class="contact-container">
-            <div class="text-content">
+            <div class="text-content animation-left">
                <h1>Contact us</h1>
                <form action="https://formspree.io/mknqqewe" method="POST">
                   <input type="email" placeholder="Your email" name="_replyto" autocomplete="off"> <br>
@@ -117,12 +118,12 @@
                      target="blank">Our Location</a>
                </div>
             </div>
-            <div class="img-container">
+            <div class="img-container animation-right">
                <img src="./images/contact.png" alt="contact" class="contact-img">
             </div>
-            <a href="#landing"><img src="./icons/up.svg" alt="up-arrow" class="up-arrow"></a>
+            <a href="#landing"><img src="./icons/up.svg" alt="up-arrow" class="up-arrow animation-bottom-delay"></a>
          </div>
-         <footer>
+         <footer class="animation-bottom-delay">
             <h3>Tel - 011 222 2222, 011 333 3333</h3>
             <ul class="social-links">
                <li><a href="#"><img src="./icons/facebook.svg" alt="facebook"></a></li>
@@ -134,6 +135,7 @@
       <script src="./js/menu.js"></script>
       <script src="./js/headsup.js"></script>
       <script src="./js/url.js"></script>
+      <script src="./js/animation.js"></script>
    </body>
 
 </html>
