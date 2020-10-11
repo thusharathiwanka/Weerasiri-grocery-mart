@@ -10,7 +10,7 @@
     $customerData .= '<h1>Weerasiri Grocery Mart</h1>';
     $customerData .= '<p>A1, Yakkala</p><hr>';
     $customerData .= '</div>';
-    $customerData .= '<h2>Your Profile Details</h2><br>';
+    $customerData .= '<h2>Your Bill Details</h2><br>';
     $customerData .= '<strong>Customer Name - </strong>'.$_SESSION['customer_name'].'<br><br>';
     $customerData .= '<p>Generated on - '.date("Y-m-d   h:i:a").'</p>';
 
