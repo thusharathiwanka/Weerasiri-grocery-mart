@@ -3,7 +3,8 @@
 
    if(isset($_SESSION['owner_id'])) {
       include_once './includes/db_conn_inc.php';
-
+      
+      $searchKey = "";
       //Search
       if(isset($_POST['submit'])) {
          $searchKey = $_POST['search'];
@@ -84,7 +85,7 @@
                         <div class="form-container">
                            <form method="POST" class="search-form">
                               <p>Enter name to search customers</p>
-                              <input type="text" name="search" id="search">
+                              <input type="text" name="search" id="search" value="'.$searchKey.'">
                               <button type="submit" name="submit"><img src="./icons/search.svg" alt="search"
                                     id="search"></button>
                            </form>
