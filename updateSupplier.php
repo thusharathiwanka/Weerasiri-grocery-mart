@@ -1,7 +1,21 @@
 <?php
     session_start();
         include_once './includes/db_conn_inc.php';
+        $suppId = $_GET['supplier_id'];
+        $query = "select * from supplier where supplier_id='".$suppId."'";
+        $result = mysqli_query($conn, $query);
 
+        while($row=mysqli_fetch_assoc($result)){
+          $sname = $row['supplier_name'];
+          $cname = $row['supplier_company_name'];
+          $product = $row['supplier_product'];
+          $mobile = $row['supplier_mobile'];
+          $bankAcc = $row['supplier_bank_acc_no'];
+          $bankName = $row['supplier_bank'];
+
+        }
+
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,32 +66,32 @@
          <input type="hidden" name="supplierID" value="<?php echo $supplierID=$_GET['supplier_id']; ?>">
          <div class="add_details-container_s_name">
             <label id="s_name_lbl" for="s_name_lbl">Supplier Name</label>
-            <input id="s_name" type="text" name="s_name" placeholder="Supplier Name" value="<?php echo $sname = ''; ?>" required>
+            <input id="s_name" type="text" name="s_name" value="<?php echo $sname ?>" required>
          </div>
 
          <div class="add_details-container_cmpny_name">
             <label id="cmpny_name_lbl" for="cmpny_name_lbl">The Company Name</label>
-            <input id="cmpny_name" type="text" name="cmpny_name" placeholder="Company name" value="<?php echo $cname = ''; ?>" required>
+            <input id="cmpny_name" type="text" name="cmpny_name" value="<?php echo $cname ?>" required>
          </div>
 
          <div class="add_details-container_Item">
             <label id="item_lbl" for="item_lbl">Product</label>
-            <input id="item" type="text" name="item" placeholder="Product" value="<?php echo $product = ''; ?>" required>
+            <input id="item" type="text" name="item" value="<?php echo $product ?>" required>
          </div>
 
          <div class="add_details-container_Contact">
             <label id="cntct_lbl" for="cntct_lbl">Mobile</label>
-            <input id="cntct" type="tel" name="cntct" placeholder="Mobile" value="<?php echo $mobile = ''; ?>" required>
+            <input id="cntct" type="tel" name="cntct" value="<?php echo $mobile ?>" required>
          </div>
 
          <div class="add_details-container_bank_acc">
             <label id="bnk_acc_lbl" for="bnk_acc_lbl">Bank Account</label>
-            <input id="bnk_acc" type="text" name="bnk_acc" placeholder="Bank Account No." value="<?php echo $bankAcc = ''; ?>" required>
+            <input id="bnk_acc" type="text" name="bnk_acc" value="<?php echo $bankAcc ?>" required>
          </div>
 
          <div class="add_details-container_bank_name">
             <label id="bnk_lbl" for="bnk_lbl">Bank</label>
-            <input id="bnk" type="text" name="bnk" placeholder="Bank" value="<?php echo $bankName = ''; ?>" required>
+            <input id="bnk" type="text" name="bnk" value="<?php echo $bankName ?>" required>
          </div>
 
          <button type="submit" name="submit" id="submit">Edit & Save Details</button>
