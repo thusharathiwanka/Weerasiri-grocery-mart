@@ -1,10 +1,5 @@
 <?php
    use PHPUnit\Framework\TestCase;
-
-   /**
-    * Testing for profile management
-    * IT19076362
-    */
    class UserTest extends TestCase {
       /** 
        * @test 
