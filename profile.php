@@ -50,10 +50,10 @@
                    <a href="./salary.php">Add Salary Details</a>
                 </div>
                 <div class="btn-container btn5">
-                   <a href="./customer_feedback.php">Salary Report</a>
+                   <a href="./salary_table.php">Salary Table</a>
                 </div>
                 <div class="btn-container btn5">
-                   <a href="./driver.php">Add </a>
+                   <a href="./driver.php">Add Delivery Amount</a>
                 </div>
                 <div class="btn-container btn5">
                    <a href="./helper.php">Add Attendance</a>
@@ -258,12 +258,32 @@
         <!--Bank/DOB-->
         <div class="form-row">
           <!--Bank-->
+          <?php
+            if(isset($_GET['bank'])){
+              $bank = $_GET['bank'];?>
 
               <div class="col">
             <div class="md-form">
               <label for="">Bank</label>
               <select name="bank" class="form-control" id="inputGroupSelect01">
-                <option selected>Choose The Bank Name...</option>
+                <option selected><?php echo $bank;?></option>
+                <option value="BOC">BOC</option>
+                <option value="Peopel's Bank">Peopel's Bank</option>
+                <option value="Commercial Bank">Commercial Bank</option>
+                <option value="Sampath Bank">Sampath Bank</option>
+                <option value="HNB">HNB</option>
+                <option value="NTB">NTB</option>
+              </select>
+            </div>
+          </div>
+              <?php
+            }else{
+              ?>
+              <div class="col">
+            <div class="md-form">
+              <label for="">Bank</label>
+              <select name="bank" class="form-control" id="inputGroupSelect01">
+                <option selected><?php echo $product['bank'];?></option>
                 <option value="BOC">BOC</option>
                 <option value="Peopel's Bank">Peopel's Bank</option>
                 <option value="Commercial Bank">Commercial Bank</option>
@@ -274,7 +294,9 @@
             </div>
           </div>
 
-
+              <?php
+            }
+           ?>
 
         <!--DOB-->
         <?php
@@ -308,15 +330,34 @@
 
 
           <!--Designation-->
+          <?php
+            if(isset($_GET['designation'])){
+              $designation = $_GET['designation'];?>
+              <div class="md-form mt-0">
+                <label for="">Designation</label>
+                <select name="designation" class="form-control" id="inputGroupSelect01">
+                  <option selected><?php echo $product['designation']; ?></option>
+                  <option value="Driver">Driver</option>
+                  <option value="Helper">Helper</option>
+                </select>
+              </div><br>
+              <?php
+            }else{
+              ?>
+              <div class="md-form mt-0">
+                <label for="">Designation</label>
+                <select name="designation" class="form-control" id="inputGroupSelect01">
+                  <option selected><?php echo $product['designation']; ?></option>
+                  <option value="Driver">Driver</option>
+                  <option value="Helper">Helper</option>
+                </select>
+              </div><br>
+              <?php
+            }
 
-          <div class="md-form mt-0">
-            <label for="">Designation</label>
-            <select name="designation" class="form-control" id="inputGroupSelect01">
-              <option selected>Choose The Designation...</option>
-              <option value="Driver">Driver</option>
-              <option value="Helper">Helper</option>
-            </select>
-          </div><br>
+           ?>
+
+
 
           <!--TelePhone -->
           <?php if(isset($_GET['number'])){

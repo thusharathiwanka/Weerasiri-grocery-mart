@@ -51,15 +51,14 @@
                    <a href="./salary.php">Add Salary Details</a>
                 </div>
                 <div class="btn-container btn5">
-                   <a href="./customer_feedback.php">Salary Report</a>
+                   <a href="./salary_table.php">Salary Table</a>
                 </div>
                 <div class="btn-container btn5">
-                   <a href="./driver.php">Add </a>
+                   <a href="./driver.php">Add Delivery Amount</a>
                 </div>
                 <div class="btn-container btn5">
                    <a href="./helper.php">Add Attendance</a>
                 </div>
-
              </div>
           </div>
        </div>

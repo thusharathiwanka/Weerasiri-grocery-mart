@@ -1,9 +1,18 @@
 <?php
+/*IT18125580*/
 
 $update = '';
 $id = '';
 $empid = '';
 $bonus = '';
+$sal_id = '';
+$helper_id = '';
+$attendance = '';
+$design = '';
+$update2 = '';
+$update3 = '';
+$driver_id = '';
+$no_of_delivery = '';
 
 /* Insert Employee */
 if(isset($_POST['save'])){
@@ -127,7 +136,7 @@ if (isset($_POST['delete1'])) {
 
 }
 
-/* Update Employee fromprofil.php */
+/* Update Employee from profil.php */
 if(isset($_POST['update'])){
   include 'db_conn_inc.php';
   $id = $_POST['id'];
@@ -260,6 +269,8 @@ if(isset($_POST['add2'])){
 
 }
 
+
+/*Salary*/
 //Insert Salary
 if (isset($_POST['add3'])) {
 include 'db_conn_inc.php';
@@ -288,7 +299,7 @@ if($designation == 'Admin'){
   $netsalary = ($basicsalary * $attendance) + $bonus;
 
 }else if($designation == 'Driver'){
-  $frequency = 'Daily';
+  $frequency = 'Delivery';
   $basicsalary = 1500;
   $nodelivery = 0;
 
@@ -331,7 +342,6 @@ if(isset($_GET['delete2'])){
 
   if($result){
     header("Location: ../salary_table.php?delete2=success");
-    exit();
   }else{
     header("Location: ../salary_table.php?delete2=unsuccess");
   }
@@ -356,6 +366,16 @@ if(isset($_GET['edit2'])){
     $bonus = $row['bonus'];
     $netsalary = $row['net_salary'];
     $empid = $row['employee_id'];
+
+
+  $sql2 = "SELECT designation FROM employee WHERE employee_id=$empid";
+  $result1 = mysqli_query($conn,$sql2);
+
+    $row1 = mysqli_fetch_array($result1);
+    $design = $row1['designation'];
+
+
+    //header("location: ../salary.php?designation=$designation");
 
 }
 
@@ -409,6 +429,110 @@ if (isset($_POST['update2'])) {
     exit();
   }else {
     header("Location: ../salary.php?add3=not_updated");
+    exit();
+  }
+}
+
+
+/*Helper*/
+//Sent values to the helper.php page
+if(isset($_GET['edit3'])){
+  include 'db_conn_inc.php';
+  $id = $_GET['edit3'];
+  $update2 = true;
+
+  $sql = "SELECT* FROM helper WHERE helper_id =$id";
+  $result = mysqli_query($conn,$sql);
+
+  $row = mysqli_fetch_array($result);
+  $helper_id = $row['helper_id'];
+  $attendance = $row['attendance'];
+
+}
+
+//Update the helper details.
+if(isset($_POST['update3'])){
+  include 'db_conn_inc.php';
+  $id = $_POST['did'];
+  $attendance = $_POST['num'];
+
+  $sql = "UPDATE helper SET helper_id= $id, attendance = $attendance WHERE helper_id = $id";
+  $result = mysqli_query($conn, $sql);
+
+  if($result){
+    header("Location: ../helper.php?add2=updated");
+    exit();
+  }else {
+    header("Location: ../helper.php?add2=unupdated");
+    exit();
+  }
+}
+
+//Delete helper records
+if(isset($_GET['delete3'])){
+  include 'db_conn_inc.php';
+  $id = $_GET['delete3'];
+
+  $sql = "DELETE FROM helper WHERE helper_id = $id";
+  $result = mysqli_query($conn, $sql);
+
+  if($result){
+    header("Location: ../helperTable.php?add2=deleted");
+    exit();
+  }else {
+    header("Location: ../helperTable.php?add2=notdeleted");
+    exit();
+  }
+}
+
+
+/*Driver*/
+//Sent driver value to the driver.php file
+if(isset($_GET['edit4'])){
+  include 'db_conn_inc.php';
+  $id = $_GET['edit4'];
+  $update3 = true;
+
+  $sql = "SELECT* FROM driver WHERE driver_id =$id";
+  $result = mysqli_query($conn,$sql);
+
+  $row = mysqli_fetch_array($result);
+  $driver_id = $row['driver_id'];
+  $delivery = $row['no_of_delivery'];
+
+}
+
+//Update the driver table.
+if(isset($_POST['edit5'])){
+  include 'db_conn_inc.php';
+  $id = $_POST['did'];
+  $no_of_delivery = $_POST['num'];
+
+  $sql = "UPDATE driver SET driver_id= $id, no_of_delivery = $no_of_delivery WHERE driver_id = $id";
+  $result = mysqli_query($conn, $sql);
+
+  if($result){
+    header("Location: ../driver.php?add=updated");
+    exit();
+  }else {
+    header("Location: ../driver.php?add=notupdated");
+    exit();
+  }
+}
+
+//Delete the records in the driver table.
+if(isset($_GET['delete4'])){
+  include 'db_conn_inc.php';
+  $id = $_GET['delete4'];
+
+  $sql = "DELETE FROM driver WHERE driver_id = $id";
+  $result = mysqli_query($conn, $sql);
+
+  if($result){
+    header("Location: ../driverTable.php?add2=deleted");
+    exit();
+  }else {
+    header("Location: ../driverTable.php?add2=notdeleted");
     exit();
   }
 }

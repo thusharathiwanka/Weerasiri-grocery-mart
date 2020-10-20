@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -65,23 +66,15 @@
 
        <?php require_once './includes/process_inc.php' ?>
        <?php
-       if(isset($_GET['delete2'])) {
-          $checkSignup = $_GET['delete2'];
+       if(isset($_GET['add2'])) {
+          $checkSignup = $_GET['add2'];
 
 
-          if($checkSignup == "success") {
+          if($checkSignup == "deleted") {
              echo "<div class='status-field alert-danger'><p class='success'>Record has been deleted.</p></div>";
-          } else if($checkSignup == "unsuccess") {
-             echo "<div class='status-field danger'><p class='error'>Record ha not been deleted.</p></div>";
+          } else if($checkSignup == "notdeleted") {
+             echo "<div class='status-field danger'><p class='error'>Record has not been deleted.</p></div>";
           }
-       }else if(isset($_GET['sent'])){
-         $checkingMail = $_GET['sent'];
-
-         if($checkingMail == "sent"){
-           echo "<div class='status-field alert-danger'><p class='success'>Record has been Sent.</p></div>";
-         }else if($checkingMail == "notsent"){
-           echo "<div class='status-field danger'><p class='error'>Record ha not been sent. Check the mail address.</p></div>";
-         }
        }
         ?>
 
@@ -89,41 +82,32 @@
     <div class="order-container">
 
     <h4 class="card-header text-center">
-        <strong>Salary Details</strong>
+        <strong>Driver Details</strong>
     </h4><br>
     <div class="container">
     <?php
       include './includes/db_conn_inc.php';
 
-      $sql = "SELECT* FROM salary";
+      $sql = "SELECT* FROM driver";
       $query = mysqli_query($conn,$sql);
      ?>
     <div class="row justify-content-center">
       <table class="table table-striped " >
         <thead class="bg-info">
           <tr>
-            <th>Salary ID</th>
-            <th>Employee ID</th>
-            <th>Basic Salary</th>
-            <th>Salary Frequency</th>
-            <th>Bonus</th>
-            <th>Net Salary</th>
+            <th>Driver ID</th>
+            <th>No of Delivery</th>
             <th colspan="2">Action</th>
           </tr>
         </thead>
         <?php while($row=mysqli_fetch_assoc($query)){?>
           <tr>
-            <td><?php echo $row['salary_id']; ?></td>
-            <td><?php echo $row['employee_id']; ?></td>
-            <td><?php echo $row['basic_salary']; ?></td>
-            <td><?php echo $row['salary_frequency']; ?></td>
-            <td><?php echo $row['bonus']; ?></td>
-            <td><?php echo $row['net_salary']; ?></td>
+            <td><?php echo $row['driver_id']; ?></td>
+            <td><?php echo $row['no_of_delivery']; ?></td>
 
             <td>
-              <a href="salary.php?edit2=<?php echo $row['salary_id'];?>" class="btn btn-outline-primary border border-primary"  value="UPDATE">UPDATE</a>
-              <a href="./includes/process_inc.php?delete2=<?php echo $row['salary_id'];?>" class="btn btn-outline-danger border border-danger"  value="DELETE">DELETE</a>
-              <a href="./includes/empMail.php?sent=<?php echo $row['salary_id']; ?>" class="btn btn-outline-warning">SENT</a>
+              <a href="driver.php?edit4=<?php echo $row['driver_id'];?>" class="btn btn-outline-primary border border-primary"  value="UPDATE">UPDATE</a>
+              <a href="./includes/process_inc.php?delete4=<?php echo $row['driver_id'];?>" class="btn btn-outline-danger border border-danger"  value="DELETE">DELETE</a>
             </td>
           </tr>
         <?php } ?>

@@ -50,10 +50,10 @@
                    <a href="./salary.php">Add Salary Details</a>
                 </div>
                 <div class="btn-container btn5">
-                   <a href="./customer_feedback.php">Salary Report</a>
+                   <a href="./salary_table.php">Salary Table</a>
                 </div>
                 <div class="btn-container btn5">
-                   <a href="./driver.php">Add </a>
+                   <a href="./driver.php">Add Delivery Amount</a>
                 </div>
                 <div class="btn-container btn5">
                    <a href="./helper.php">Add Attendance</a>
@@ -108,7 +108,7 @@
           <div class="md-form">
             <label for="">Designation</label>
             <select name="designation" class="form-control border border-secondary" id="inputGroupSelect01">
-              <option selected>Choose The Bank Name...</option>
+              <option selected><?php echo $design ?></option>
               <option value="Admin">Admin</option>
               <option value="Helper">Helper</option>
               <option value="Driver">Driver</option>
@@ -151,7 +151,7 @@
 
 
 
-        </form>
+      </form><br><br>
       </div>
 
   </div>

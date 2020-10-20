@@ -51,10 +51,10 @@
                    <a href="./salary.php">Add Salary Details</a>
                 </div>
                 <div class="btn-container btn5">
-                   <a href="./customer_feedback.php">Salary Report</a>
+                   <a href="./salary_table.php">Salary Table</a>
                 </div>
                 <div class="btn-container btn5">
-                   <a href="./driver.php">Add </a>
+                   <a href="./driver.php">Add Delivery Amount</a>
                 </div>
                 <div class="btn-container btn5">
                    <a href="./helper.php">Add Attendance</a>
@@ -78,27 +78,54 @@
             echo "<div class='status-field'><p class='success'>Details saved successfully.</p></div>";
          } else if($checkSignup == "unsuccess") {
             echo "<div class='status-field'><p class='error'>Not saved.</p></div>";
+         }elseif($checkSignup == "updated"){
+           echo "<div class='status-field'><p class='success'>Record was Updated..</p></div>";
+         }elseif($checkSignup == "notupdated"){
+           echo "<div class='status-field'><p class='error'>Rocord was not updated.</p></div>";
          }
       }
        ?>
 
       <h4 class="card-header text-center">
-        <strong>Add</strong>
+        <strong>Add Delivery Amount</strong>
       </h4><br>
 
       <div class="class-body container mt-5">
         <form class="offset-md-3 col-md-6" action="./includes/process_Inc.php" method="post">
           <div class="md-form md-2">
             <label for="">Driver ID</label>
-            <input type="text" name="did" class="form-control border border-secondary" placeholder="Enter Driver ID" value="">
+            <input type="text" name="did" class="form-control border border-secondary" placeholder="Enter Driver ID" value="<?php echo $driver_id;?>">
           </div><br>
           <div class="mb-2">
             <label for="">No Of Delivery</label>
-            <input type="number" class="form-control border border-secondary" name="num" min="0" value="0">
+            <input type="number" class="form-control border border-secondary" name="num" min="0" value="<?php echo $delivery;?>" placeholder="0">
           </div><br>
-          <div class="md-form mt-0">
-            <input type="submit" class="btn btn-outline-success btn-block border border-success" name="add" value="ADD">
-          </div><br>
+
+          <div class="form-row">
+
+            <?php
+              if ($update3 == true){
+             ?>
+             <div class="col">
+               <div class="md-form">
+                 <button type="submit" class="btn btn-outline-success form-control border border-success" name="edit5">Update The Record</button>
+               </div>
+             </div>
+           <?php }else{ ?>
+            <div class="col">
+              <div class="md-form">
+                <button type="submit" class="btn btn-outline-success form-control border border-success" name="add">Save The Record</button>
+              </div>
+            </div>
+          <?php } ?>
+
+            <div class="col">
+              <div class="md-form">
+                <a href="./driverTable.php" class="btn btn-outline-info form-control border border-info"  value="">Driver Table</a>
+              </div>
+            </div>
+
+          </div>
         </form><br><br>
       </div>
 
