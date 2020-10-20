@@ -1,19 +1,20 @@
 <?php
-
+   session_start();
       include_once './includes/db_conn_inc.php';
+      $itemID = $_GET['Update_item'];
+      $query = "SELECT * FROM item where id ='$itemID'";
+      $result = mysqli_query($conn,$query);
 
-      //Search
-      if(isset($_POST['submit'])) {
-         $searchKey = $_POST['search'];
-         $sql = "SELECT * FROM item WHERE item_name LIKE '%$searchKey%'";
-      } else { 
-         //All items
-         $sql = "SELECT * FROM item";
+      while($row=mysqli_fetch_assoc($result)){
+         $Item_Id = $row['id'];
+         $item_name = $row['item_name'];
+         $item_unit_price = $row['item_unit_price'];
+         $item_description = $row['item_description'];
+         $item_quentity = $row['item_quentity'];
       }
-      $item = mysqli_query($conn, $sql);
-      $checkResult = mysqli_num_rows($item);
-
-      echo '<!DOCTYPE html>
+    ?>
+      
+      <!DOCTYPE html>
             <html lang="en">
             <head>
                <meta charset="UTF-8">
@@ -43,18 +44,9 @@
                         </ul>
                      </nav>
                   </header>
-               </div>';
-               if(isset($_GET['delete'])) {
-                  $checkitems = $_GET['delete'];
+               </div>
 
-                  //Checking for user deleting errors
-                  if($checkitems == "success") {
-                     echo "<div class='status-field'><p class='success'>items deleted successfully</p></div>";
-                  } else if($checkitems == "unsuccess") {
-                     echo "<div class='status-field'><p class='error'>items not deleted. try again later</p></div>";
-                  }
-               }
-               echo '<main>
+               <main>
                   <div class="content-container">
                      <div class="profile-container">
                         <div class="profile-content">
@@ -82,37 +74,39 @@
                                     id="search"></button>
                            </form>
                         </div>
-                        <h3 id="orders">Product</h3>
-                        <div class="orders-titles titles">
-                        <table>
-                        <tr>
-                           <th>Item Id</th>
-                           <th>Item Name</th>
-                           <th>Description</th>
-                           <th>price</th>
-                           <th>Quentity</th>
-                           <th>Action</th>
-                        </tr>
-                        </div>';
-                        if($checkResult > 0) {
-                           while($row = mysqli_fetch_array($item)) {
-                             
-                             
 
-                              echo "<tr><td>".$row['id']."</td><td>".$row['item_name']."</td><td>".$row['item_description']."</td><td>Rs.".$row['item_unit_price']."</td><td>".$row['item_quentity']."</td><td>".'<button type="submit" name="submit" class="allDelete" id="delete-items" onclick="return confirm(\'Do you want to delete this item ?\')"><a href="./includes/inventory_manager_inc.php?delete_item='.$row['id'].'">Delete</a></button>'.'<button type="submit" name="submit" class="allUpdate" id="Update-items" onclick="return confirm(\'Do you want to Update this item ?\')"><a href="./update_inventory.php?Update_item='.$row['id'].'">Update</a></button>'."</td></tr>";
-                              
-                           }
-                        } 
-                       
-                        else {
-                           echo "<p style='text-align: center;'>There are no matches for '".$searchKey."'</p>";
-                        }
-                        echo' </table>';
-                  echo '</div>
+                     <div class="order-container">
+                        <div class="edit-form-container">
+                           <h2>Edit Inventory</h2><br>
+                           <form class="edit-form" action="./includes/inventory_manager_inc.php" method="POST">
+                              <label for="Item Id" id="Item Id">Item Id</label><br>
+                              <input type="text" name="ItemId" id="ItemId" 
+                              value="<?php echo $Item_Id;?>"><br><br>
+                              <label for="Item Name">Item Name	</label><br>
+                              <input type="text" name="ItemName" id="ItemName"
+                              value="<?php echo $item_name;?>"><br><br>
+                              <label for="Description">Description</label><br>
+                              <input type="text" name="Description" id="Description"
+                              value="<?php echo $item_description;?>"><br><br>
+                              <label for="price">price</label><br>
+                              <input type="number" name="price" id="price"
+                              value="<?php echo $item_unit_price;?>"><br><br>
+                              <label for="Quentity">Quentity</label><br>
+                              <input type="number" name="Quentity" id="Quentity"
+                              value="<?php echo  $item_quentity;?>"><br><br>
+                              <button type="submit" name="submit" id="submit" >Save Changes</button>
+                           </form>
+                        </div>
+                     </div>
                   </div>
+                  
                </main>
+                     </body>
+
+
+    
+               <script src="./js/menu.js"></script>
                <script src="./js/headsup.js"></script>
             </body>
-         </html>';
 
-?>
+         </html>
