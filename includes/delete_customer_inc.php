@@ -1,6 +1,10 @@
 <?php
    if(isset($_GET['delete_id'])) {
       include_once 'db_conn_inc.php';
+      
+      //Unsettling the session
+      session_start();
+      unset($_SESSION['customer_id']);
 
       $customerID = $_GET['delete_id'];
 
