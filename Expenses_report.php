@@ -3,7 +3,7 @@
 
    if(isset($_SESSION['owner_id'])) {
       include_once './includes/db_conn_inc.php';
-
+ //Search
      if(isset($_POST['submit'])) {
          $searchKey = $_POST['search'];
          $sql = "SELECT * FROM expense WHERE vehicle_id = '$searchKey'";
@@ -25,6 +25,7 @@
                <link rel="icon" href="./icons/watermelon.svg">
                <link rel="stylesheet" href="./css/main.css">
                <link rel="stylesheet" type="text/css" href="css/expenses_css.css">
+               <link rel="stylesheet" type="text/css" href="css/vehicles_edit.css">
                <link rel="stylesheet" href="./css/customer.css">
                <link rel="stylesheet" href="./css/owner.css">
                <title>Admin - Owner</title>
@@ -75,7 +76,7 @@
                         <div class="form-container">
                            <form method="POST" class="search-form">
                               <p>Enter vehicle id to search expenses </p>
-                              <input type="text" name="search" id="search">
+                              <input type="text" name="search" id="search" autocomplete="off">
                               <button type="submit" name="submit"><img src="./icons/search.svg" alt="search"
                                     id="search"></button>
                            </form>
@@ -99,7 +100,7 @@ echo '<div class="limiter">
                         Description
                      </div>
                      <div class="cell">
-                        Cost
+                        Cost(Rs)
                      </div>
                      <div class="cell">
                        Date
@@ -123,12 +124,10 @@ echo '<div class="limiter">
                   echo '</div></div></div></div></div></div></div></div></div>';
 
   
-             echo'  <form style="position: absolute;
-  top: 118px;
-  right: 700px;
-  width: 100px;" method="post" action="./includes/export_expenses.php">
-     <input  type="submit" name="export"  value="Export" />
-    </form>
+             echo'  <div type="submit" class="containers">
+  <button class="btn_edit btnx"><a href="./chart.php">Expenses Statistics</a></button>
+  
+</div>
                <script src="./js/headsup.js"></script>
             </body>
          </html>';

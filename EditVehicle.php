@@ -3,15 +3,11 @@
 
    if(isset($_SESSION['owner_id'])) {
       include_once './includes/db_conn_inc.php';
- //Search
-     
-         //All customers
-         $sql = "SELECT * FROM vehicle";
-      
-      
+
+ $sql = "SELECT vehicle_id FROM vehicle";
       $vehicles = mysqli_query($conn, $sql);
       $checkResult = mysqli_num_rows($vehicles);
-
+      
       echo '<!DOCTYPE html>
             <html lang="en">
             <head>
@@ -20,11 +16,14 @@
                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
                <link rel="icon" href="./icons/watermelon.svg">
                <link rel="stylesheet" href="./css/main.css">
-               <link rel="stylesheet" type="text/css" href="css/vehicles_css.css">
-               <link rel="stylesheet" type="text/css" href="css/vehicles_edit.css">
                <link rel="stylesheet" href="./css/customer.css">
                <link rel="stylesheet" href="./css/owner.css">
                <title>Admin - Owner</title>
+               <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="http://resources/demos/style.css">
+  
             </head>
             <body>
                <div class="header-container">
@@ -43,7 +42,16 @@
                      </nav>
                   </header>
                </div>';
-               
+               if(isset($_GET['expense'])) {
+                  $checkSignup = $_GET['expense'];
+
+                  //Checking for user deleting errors
+                  if($checkSignup == "success") {
+                     echo "<div class='status-field'><p class='success'>Expense Added successfully</p></div>";
+                  } else if($checkSignup == "unsuccess") {
+                     echo "<div class='status-field'><p class='error'>Expense not Added. try again</p></div>";
+                  }
+               }
                echo '<main>
                   <div class="content-container">
                      <div class="profile-container">
@@ -69,53 +77,40 @@
                      </div>
                      <div class="order-container">
                         
-                        <h3 id="orders">Vehicles</h3>
-                        </div>
+                        <h3 id="orders">Edit Vehicle</h3>
+                        ';
+                        echo'<form style="position: absolute;
+  top: 210px;
+  left: 750px;
+  width: 200px;
+  height: 100px;" method="post" action="./includes/update_vehicle.php">
+      
+      <br>
+      Vehicle Id:<br>
+      <select style="position: relative; float: left; min-width: 270px; width: 100px; min-height: 45px; font-family: poppins, sans-serif; font-size: 18px; color: #777; font-weight: 300; background-color: #fff; color: #4B0082; box-shadow: 1px 2px 4px -2px " name="vehicle_id" data-style="btn-primary" >';
+         
+            if($checkResult > 0) {
+            while($row = mysqli_fetch_array($vehicles)) {
+            echo "<option value={$row['vehicle_id']}>".$row['vehicle_id']."</option>";
+}
+}       
+  echo'  </select>
+      
+      <br>
+      Mailage(km):<br>
+      <input type="text" name="mileage"  autocomplete="off" required>
+      <br>
+      Color:<br>
+      <input type="text" name="color"  autocomplete="off" required>
+      <br>
+      <br>
+      <input type="submit" name="edit" value="submit">
+   </form>';
+                       
+                  echo '</div>
                   </div>
-               </main>';
-echo '<div class="limiter">
-      <div class="container-table100">
-         <div class="wrap-table100">
-               <div class="table">
-                  <div class="row header">
-                     <div class="cell">
-                        ID
-                     </div>
-                     <div class="cell">
-                        Vehicle No
-                     </div>
-                     <div class="cell">
-                        Brand
-                     </div>
-                     <div class="cell">
-                        Color
-                     </div>
-                     <div class="cell">
-                       Maileage(km)
-                     </div>
-                     <div class="cell">
-                        Action
-                     </div>
-                  </div>';
-
-                           if($checkResult > 0) {
-                           while($row = mysqli_fetch_array($vehicles)) {
-
-                  echo'<div class="row">';
-                  echo '<div class="cell" >'.$row['vehicle_id'].'</div>';
-                  echo '<div class="cell" >'.$row['vehicle_regno'].'</div>';
-                  echo '<div class="cell" >'.$row['vahicle_brand'].'</div>';
-                  echo '<div class="cell" >'.$row['vehicle_color'].'</div>';
-                  echo '<div class="cell" >'.$row['vehicle_mileage'].'</div>';
-                  echo '<div class="cell" >'.'<button type="submit" name="submit" id="delete-customer" onclick="return confirm(\'Do you want to delete this vehicle ?\')"><a href="./includes/delete_vehicle_inc.php?delete_id='.$row['vehicle_id'].'">Delete</a></button>';
-                  echo' </div></div>';}}
-                  echo '</div></div></div></div></div></div></div></div></div>';
-                  echo '
+               </main>
                <script src="./js/headsup.js"></script>
-               <div type="submit" class="containers">
-  <button class="btn_edit btnx"><a href="./EditVehicle.php">Edit Vehicle</a></button>
-  
-</div>
             </body>
          </html>';
    } else {
