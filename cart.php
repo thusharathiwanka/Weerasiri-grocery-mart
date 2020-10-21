@@ -17,7 +17,7 @@ if(isset($_SESSION['customer_id'])) {
 					'item_id'			=>	$_GET["id"],
 					'item_name'			=>	$_POST["hidden_name"],
 					'item_price'		=>	$_POST["hidden_price"],
-					'item_quantity'		=>	$_POST["item_quantity"]
+					'item_quantity'	=>	$_POST["item_quantity"]
 				);
 				$_SESSION["shopping_cart"][$count] = $item_array;
 			}
@@ -97,7 +97,7 @@ if(isset($_SESSION['customer_id'])) {
                <img src="./icons/close.svg" alt="close" id="close">
             </nav>
          </header>
-      </div>';
+      </div>
       <div class="content-container">
          <div class="profile-container">
             <div class="profile-content">
@@ -114,9 +114,9 @@ if(isset($_SESSION['customer_id'])) {
                   </div>
                   <div class="btn-container btn3">
                      <img src="./icons/edit.svg" alt="edit">
-                     <a href="./includes/details_pdf.php">Details Report</a>
+                     <a href="./includes/bill_pdf.php">Download Your Current Bill</a>
                   </div>
-                  
+
                </div>
             </div>
          </div>
@@ -162,7 +162,7 @@ if(isset($_SESSION['customer_id'])) {
                      <tr>
                         <td><?php echo $values["item_name"]; ?></td>
                         <td><?php echo $values["item_quantity"]; ?></td>
-                        <td> <?php echo $values["item_price"]; ?></td>
+                        <td> Rs.<?php echo $values["item_price"]; ?>.00</td>
                         <td>Rs. <?php echo number_format($values["item_quantity"] * $values["item_price"], 2);?>
                         </td>
                         <td><a href="cart.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span

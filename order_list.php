@@ -6,13 +6,14 @@
 
     if(isset($_POST['submit'])) {
        $searchKey = $_POST['search'];
-       $sql = "SELECT * FROM customer_order WHERE item_name LIKE '%$searchKey%'";
+       $sql = "SELECT * FROM customer_order WHERE order_id LIKE '%$searchKey%'";
     } else { 
        //All items
        $sql = "SELECT * FROM customer_order";
     }
     $customers = mysqli_query($conn, $sql);
     $checkResult = mysqli_num_rows($customers);
+    
       echo '<!DOCTYPE html>
             <html lang="en">
 
@@ -25,6 +26,7 @@
                   <link rel="stylesheet" href="./css/main.css">
                   <link rel="stylesheet" href="./css/customer.css">
                   <link rel="stylesheet" href="./css/cart.css">
+                  <link rel="stylesheet" href="./css/order_list.css">
 
                   <title>WGM | Order List</title>
                </head>
@@ -73,12 +75,20 @@
                                  </div>
                                  <div class="btn-container btn3">
                                     <img src="./icons/edit.svg" alt="edit">
-                                    <a href="./includes/bill_pdf.php">Details Report</a>
+                                    <a href="./includes/bill_pdf.php">Download Your Current Bill</a>
                                  </div>
                               </div>
                            </div>
                         </div>
                         <div class="order-container">
+                        <div class="form-container">
+                        <form method="POST" class="search-form">
+                              <p>Enter order ID to search the order</p>
+                              <input type="text" name="search" id="search">
+                              <button type="submit" name="submit"><img src="./icons/search.svg" alt="search"
+                                    id="search"></button>
+                           </form>
+                           </div>
                            <div class="edit-form-container profile-details">
                               <h2 class="profile-title">All Orders</h2><br>
                                  <div class="orders-titles titles">
@@ -87,29 +97,56 @@
                                     <h3>Ordered Date</h3>
                                     <h3>Total Price</h3>
                                     <h3>Payment Method</h3>
-                                    <h3>Action</h3>
+                                    <h3>Update</h3>
+                                    <h3>Delete</h3>
                                  </div>';
 
-                                 if($checkResult > 0) {
-                                    while($row = mysqli_fetch_array($customers)) {
-                                       echo "<hr>";
-                                       echo '<div class="orders-titles customers">';
-                                       echo "<p>".$row['order_id']."</p>";
-                                       echo "<p>".$row['order_date']."</p>";
-                                       echo "<p>Rs.".$row['total_price'].".00</p>";
-                                       echo "<p>".$row['payment_method']."</p>";
-                                       echo '<button type="submit" name="submit" id="delete-customer" onclick="return confirm(\'Do you want to delete this order ?\')"><a href="./includes/delete_orders_inc.php?delete_id='.$row['order_id'].'">Delete</a></button>';
-                                       
+                                       $sql = "SELECT * FROM customer_order;";
+                                       $result = mysqli_query($conn, $sql);
+                                       $resultCheck = mysqli_num_rows($result);
 
-                                       echo '</div>';
-                                    }
+                                       if($resultCheck > 0){
+                                       while($row = mysqli_fetch_assoc($result)){
+                                          echo "<hr>";
+                                          echo '<div class="orders-titles customers">';
+                                          echo "<p>".$row['order_id']."</p>";
+                                          echo "<p>".$row['order_date']."</p>";
+                                          echo "<p>Rs.".$row['total_price'].".00</p>";
+                                          echo "<p>".$row['payment_method']."</p>";
+                                             
+                                          echo '<button type="submit" name="submit" id="edit"><a href="./update_order.php?order_id='.$row['order_id'].'">Edit</a></button>';
+                                           echo '<button type="submit" name="submit" id="delete-customer" onclick="return confirm(\'Do you want to delete this order ?\')"><a href="./includes/delete_orders_inc.php?delete_id='.$row['order_id'].'">Delete</a></button>';                                       
+         
+                                          echo '</div>';
 
+                                       // "<a href='./includes/supplier_remove.php?supplier_id=" .$row['supplier_id']. "'><button type='submit' name='remove' id='remove'>Remove</button></a></td><td>".
+                                       // "<a href='./updateSupplier.php?supplier_id=" .$row['supplier_id']. "'><button type='submit' name='edit' id='edit'>Edit</button></a></td></tr>";
+                                       }
+                                       }
+                                       mysqli_close($conn);
+
+
+                                 // if($checkResult > 0) {
+                                 //    while($row = mysqli_fetch_array($customers)) {
+                                 //       echo "<hr>";
+                                 //       echo '<div class="orders-titles customers">';
+                                 //       echo "<p>".$row['order_id']."</p>";
+                                 //       echo "<p>".$row['order_date']."</p>";
+                                 //       echo "<p>Rs.".$row['total_price'].".00</p>";
+                                 //       echo "<p>".$row['payment_method']."</p>";
+
+                                 //       echo '<button type="submit" name="submit"><a href="./update_order.php?order_id='.$row['order_id'].'">Edit</a></button>';
+                                 //       echo '<button type="submit" name="submit" id="delete-customer" onclick="return confirm(\'Do you want to delete this order ?\')"><a href="./includes/delete_orders_inc.php?delete_id='.$row['order_id'].'">Delete</a></button>';                                       
+
+                                 //       echo '</div>';
+                                 //    }
+
+                                 
+                                 // } 
+                                 // else {
+                                 //    //echo "<p style='text-align: center;'>'There are no matches for '".$searchKey."'</p>";
                                     
-                                 } 
-                                 else {
-                                    //echo "<p style='text-align: center;'>'There are no matches for '".$searchKey."'</p>";
-                                    
-                                 }
+                                 // }
 
                                  
                                
@@ -131,6 +168,8 @@
                   <script src="./js/cart.js"></script>
                   <script src="./js/menu.js"></script>
                   <script src="./js/headsup.js"></script>
+                  
+
                </body>
 
             </html>';

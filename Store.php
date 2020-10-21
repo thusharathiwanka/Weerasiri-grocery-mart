@@ -17,7 +17,7 @@ if(isset($_SESSION['customer_id'])) {
 					'item_id'			=>	$_GET["id"],
 					'item_name'			=>	$_POST["hidden_name"],
 					'item_price'		=>	$_POST["hidden_price"],
-					'item_quantity'		=>	$_POST["quantity"]
+					'item_quantity'	=>	$_POST["quantity"]
 				);
 				$_SESSION["shopping_cart"][$count] = $item_array;
 			}
@@ -56,7 +56,7 @@ if(isset($_SESSION['customer_id'])) {
 
 	if(isset($_POST['submit'])) {
 		$searchKey = $_POST['search'];
-		$sql = "SELECT * FROM item WHERE 'name' LIKE '%$searchKey%'";
+		$sql = "SELECT * FROM item WHERE 'item_name' LIKE '%$searchKey%'";
 	 }
 	 else { 
 		$sql = "SELECT * FROM item";
@@ -110,7 +110,7 @@ if(isset($_SESSION['customer_id'])) {
                <img src="./icons/close.svg" alt="close" id="close">
             </nav>
          </header>
-      </div>';
+      </div>
       <div class="content-container">
          <div class="profile-container">
             <div class="profile-content">
