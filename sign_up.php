@@ -143,7 +143,7 @@
       <script src="./js/headsup.js"></script>
       <script src="./js/url.js"></script>
       <script src="./js/animation.js"></script>
-      <script src="./js/demo.js"></script>
+      <script src="./js/demoSignup.js"></script>
    </body>
 
 </html>
