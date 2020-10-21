@@ -96,6 +96,7 @@
                            <h3>Delivery ID</h3>
                            <h3>Order NO</h3>
                            <h3>Driver ID</h3>
+                           <h3>Vehicle NO</h3>
                            <h3>Status</h3>
                            <h3>Action</h3>
                            <h3></h3>
@@ -107,10 +108,11 @@
                               echo "<p>".$row['delivery_id']."</p>";
                               echo "<p>".$row['order_id']."</p>";
                               echo "<p>".$row['driver_id']."</p>";
-                              
+                              echo "<p>".$row['vehicle_id']."</p>"; 
                               echo "<p>".$row['delivery_status']."</p>";
+
                               echo '<button type="submit" name="submit" id="delete-data" onclick="return confirm(\'Do you want to delete this customer ?\')"><a href="./includes/delete_deliveries_inc.php?delete_id='.$row['delivery_id'].'">Delete</a></button>';
-                              echo '<a href="add_deliveries.php"><button class="button" type="button">Update</button></a>';
+                             // echo '<a href="update_deliveries.php"><button class="button" type="button">Update</button></a>';
                               echo '</div>';
                            }
                         } 

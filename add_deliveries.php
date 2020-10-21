@@ -1,7 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-   <head>
+<!DOCTYPE html>  
+ <html lang="en" dir="ltr">
+      <head>  
       <meta charset="utf-8">
       <title>Add Deliveries</title>
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -9,10 +8,9 @@
       <link rel="stylesheet" href="./css/main.css">
       <link rel="stylesheet" href="./css/customer.css">
       <link rel="stylesheet" href="./css/add_deliveries.css">
-
-   </head>
-
-   <body>
+           
+      </head>  
+      <body>  
       <div class="header-container">
          <header>
             <nav>
@@ -55,54 +53,62 @@
                </div>
             </div>
          </div>
-         <form class="" action="./includes/insert_deliveries_inc.php" method="POST">
-            <?php
-      $mysqli = new mysqli('localhost','root','','supermarketdb') or die(mysqli_error($mysqli));
-      $result = $mysqli->query("SELECT o.order_id, c.customer_name, c.customer_address FROM customer_order o, customer c
-      WHERE o.order_id = c.customer_id ") or die($mysqli->error);
-           ?>
-
-            <h3 class="title1">Add Deliveries</h3>
-            <table>
-
-               <thead>
-                  <form>
-
-                     <tr>
-                        <th>Order NO</th>
-                        <th>Customer Name</th>
-                        <th>Customer Address</th>
-                        <th>Driver ID</th>
-                        <th>Vehicle</th>
-                        <th>Status</th>
-                        <th></th>
-                     </tr>
-                  </form>
-               </thead>
-
-               <?php 
-                  while ($row = mysqli_fetch_array($result)){
-                     ?>
-               <tr>
-                  <td><input type="text" name="order_id" value="<?php $order_id = $row['order_id']; echo $order_id; ?>">
-                  </td>
-                  <td><input type="text" name="name" value="<?php echo $row['customer_name']; ?>"></td>
-                  <td><input type="text" name="address" value="<?php echo $row['customer_address']; ?>"></td>
-                  <td>
-                     <div class="select">
-                        <select name="Did" id="driver_type" class="filter-type" required>
+        
+        <form class="" action="./includes/insert_deliveries_inc.php" method="POST">
+         <?php  
+            $connect = mysqli_connect("localhost", "root", "", "supermarketdb");  
+            $sql = "SELECT * FROM customer INNER JOIN customer_order ON customer.customer_id = customer_order.customer_id";  
+            $result = mysqli_query($connect, $sql);  
+         ?>   
+                        
+           <h3 class="title1">Add Deliveries</h3>                 
+               
+             <table>
+                <thead>
+                    <form>  
+                        <tr>  
+                            <th>Order NO</th>
+                            <th>Price</th>
+                            <th>Customer Name</th>
+                            <th>Customer Address</th>
+                            <th>Driver ID</th>
+                            <th>Vehicle</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </form>
+                </thead>  
+                <?php  
+                          if(mysqli_num_rows($result) > 0)  
+                          {  
+                               while($row = mysqli_fetch_array($result))  
+                               {  
+                          ?>  
+                          <tr>  
+                            <td><input type="text" name="order_id" value="<?php $order_id = $row['order_id']; echo $order_id; ?>"> </td>
+                            <td><input type="text" name="price" value="<?php echo $row['total_price']; ?>"></td>
+                            <td><input type="text" name="name" value="<?php echo $row['customer_name']; ?>"></td>
+                            <td><input type="text" name="address" value="<?php echo $row['customer_address']; ?>"></td>
+                            <td>
+                            <div class="select">
+                            <select name="Did" id="driver_type" class="filter-type" required>
                            <option selected>Driver ID</option>
                            <?php
-                           $res = $mysqli->query("SELECT employee_id FROM employee WHERE designation = 'Driver'") or die(mysqli_errpr($mysqli));
-                           while($rows = mysqli_fetch_array($res)) { ?>
+                           $res = $connect->query("SELECT employee_id FROM employee WHERE designation = 'Driver'") or die(mysqli_errpr($mysqli));
+                           
+                              
+                              while($rows = mysqli_fetch_array($res)) { ?>
+                           
                            <option value="<?php echo $rows['employee_id']?>"><?php echo $rows['employee_id']?></option>
                            <?php
                               }            
                            ?>
-                        </select>
+                          
+                           </select>
                      </div>
                   </td>
                   <td>
+                
                      <div class="select">
                         <select name="id" id="vehicle_type" class="filter-type" required>
                            <option value="Vehicle">Vehicle</option>
@@ -111,6 +117,7 @@
                            <option value=3>3</option>
                         </select>
                      </div>
+                    
                   </td>
                   <td>
                      <div class="select">
@@ -124,20 +131,18 @@
                   </td>
                   <td>
                      <div>
-                        <a href="all_deliveries.php"><button type="submit" name="insert" class="btn">ADD</button></a>
+                        <a href = "all_deliveries.php"><button type="submit" name="insert" class="btn">ADD</button></a>
+                        
                      </div>
                   </td>
                </tr>
 
                <?php
-        }
-       ?>
-            </table>
-         </form>
-   </body>
+                               }
+                          }
+               ?>
 
-
-
-
-
-</html>
+                  </table>  
+           </form>  
+      </body>  
+ </html>  
