@@ -55,7 +55,7 @@
                                  <a href="./Manage_reviews.php">Manage Feedbacks</a>
                               </div>
                               <div class="btn-container btn4">
-                                 <a href="./admin_edit.php">Update Details</a>
+                                 <a href="./admin_edit.php">Edit Admins</a>
                               </div>
                               <div class="btn-container btn5">
                                  <a href="./customer_feedback.php">Income Report</a>
