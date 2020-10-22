@@ -32,18 +32,23 @@
                //Creating sessions and login user
                if($adminType == "Owner") {
                   $_SESSION['owner_id'] = $row['admin_id'];
+                  $_SESSION['admin_type'] = $adminType;
                   header("Location: ../owner.php?login=success");
                } else if($adminType == "HR_manager") {
                   $_SESSION['hr_admin_id'] = $row['admin_id'];
+                  $_SESSION['admin_type'] = $adminType;
                   header("Location: ../employeelist.php?login=success"); 
                } else if($adminType == "Delivery_manager") {
                   $_SESSION['delivery_admin_id'] = $row['admin_id'];
+                  $_SESSION['admin_type'] = $adminType;
                   header("Location: ../add_deliveries.php?login=success");
                } else if($adminType == "Inventory_manager") {
                   $_SESSION['inventory_admin_id'] = $row['admin_id'];
+                  $_SESSION['admin_type'] = $adminType;
                   header("Location: ../inventory_manager.php?login=success"); 
                } else if($adminType == "Supplier_manager") {
                   $_SESSION['supplier_admin_id'] = $row['admin_id'];
+                  $_SESSION['admin_type'] = $adminType;
                   header("Location: ../supplier_manager.php?login=success");
                }
 
