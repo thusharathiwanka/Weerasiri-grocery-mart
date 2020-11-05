@@ -126,7 +126,6 @@
                ?>
                <button type="submit" name="submit" class="signup-btn">Sign Up</button>
             </form>
-            <button class="demo-btn">Demo</button>
          </div>
          <img src="./images/cup-cake.png" alt="cup-cake" id="cup-cake" class="animation-left">
          <img src="./images/doughnut.png" alt="cup-cake" id="doughnut" class="animation-right">
