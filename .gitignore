@@ -1,3 +1,3 @@
-./.vscode
-./vendor
-./.phpunit.result.cache
+.vscode
+vendor
+.phpunit.result.cache
